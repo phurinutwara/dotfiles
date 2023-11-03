@@ -2,10 +2,11 @@
     link:
       relink: true
 
-- clean: ['~']
+- clean: ["~"]
 
 - link:
     ~/.zshrc: zshrc
+    ~/.tmux.conf: tmux.conf
 
 - create:
     - ~/Works
