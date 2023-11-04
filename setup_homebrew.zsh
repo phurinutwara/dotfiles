@@ -8,3 +8,5 @@ brew install bat
 brew install git
 brew install httpie
 brew install nvim
+
+brew install --cask --no-quarantine alfred
