@@ -6,7 +6,11 @@
 
 - link:
     ~/.zshrc: zshrc
+    ~/.zshenv: zshenv
     ~/.tmux.conf: tmux.conf
+    ~/.config/bat:
+      create: true
+      path: config/bat
 
 - create:
     - ~/Works
