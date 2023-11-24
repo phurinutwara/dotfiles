@@ -1,0 +1,80 @@
+tap "abdfnx/tap"
+tap "bufbuild/buf"
+tap "eth-p/software"
+tap "fsouza/prettierd"
+tap "homebrew/bundle"
+tap "jakehilborn/jakehilborn"
+# Clone of cat(1) with syntax highlighting and Git integration
+brew "bat"
+# Resource monitor. C++ version and continuation of bashtop and bpytop
+brew "btop"
+# GNU File, Shell, and Text utilities
+brew "coreutils"
+# Modern replacement for 'ls'
+brew "exa"
+# Command-line fuzzy finder written in Go
+brew "fzf"
+# GitHub command-line tool
+brew "gh"
+# Distributed revision control system
+brew "git"
+# AVH edition of git-flow
+brew "git-flow-avh"
+# Open source programming language to build simple/reliable/efficient software
+brew "go"
+# Database migrations CLI tool
+brew "golang-migrate"
+# User-friendly cURL replacement (command-line HTTP client)
+brew "httpie"
+# Simple terminal UI for git commands
+brew "lazygit"
+# Pager program similar to more
+brew "less"
+# Fast, highly customisable system info script
+brew "neofetch"
+# Ambitious Vim-fork focused on extensibility and agility
+brew "neovim"
+# Port scanning utility for large networks
+brew "nmap"
+# Manage multiple Node.js versions
+brew "nvm"
+# Protocol buffers (Google's data interchange format)
+brew "protobuf"
+# User interface to the TELNET protocol
+brew "telnet"
+# Programmatically correct mistyped console commands
+brew "thefuck"
+# Simplified and community-driven man pages
+brew "tldr"
+# Terminal multiplexer
+brew "tmux"
+# Display directories as trees (with optional color/HTML output)
+brew "tree"
+# Fish-like fast/unobtrusive autosuggestions for zsh
+brew "zsh-autosuggestions"
+# Fish shell like syntax highlighting for zsh
+brew "zsh-syntax-highlighting"
+# A new way of working with Protocol Buffers.
+brew "bufbuild/buf/buf"
+# Bash scripts that integrate bat with various command-line tools
+brew "eth-p/software/bat-extras"
+# prettier, on SPEED!
+brew "fsouza/prettierd/prettierd"
+# App to build and share containerized applications and microservices
+cask "docker"
+# Web browser
+cask "google-chrome"
+# Terminal emulator as alternative to Apple's Terminal app
+cask "iterm2"
+# Open-source keystroke visualizer
+cask "keycastr"
+# Reverse proxy, secure introspectable tunnels to localhost
+cask "ngrok"
+# Collaboration platform for API development
+cask "postman"
+# HTTP debugging proxy
+cask "proxyman"
+# Native GUI tool for relational databases
+cask "tableplus"
+# Video communication and virtual meeting platform
+cask "zoom"
