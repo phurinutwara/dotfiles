@@ -4,10 +4,21 @@ echo "\n<<< Starting ZSH Setup >>>\n"
 
 # Installation unnecessary; it's in the Brewfile.
 
-echo "Enter superuser (sudo) password to edit /etc/shells"
-echo $(which -a zsh | head -1) | sudo tee -a '/etc/shells'
+expect_zsh=$(which zsh)
+sudo cat /etc/shells | grep $expect_zsh >/dev/null
+if [ $? = "1" ]; then
+	echo "\n[1/3] Enter superuser (sudo) password to edit /etc/shells"
+	echo $(which zsh) | sudo tee -a '/etc/shells'
+else
+	echo "\n[1/3] already have homebrew-installed zsh, skipping edit /etc/shells"
+fi
 
-echo "Enter user password to change login shell"
-chsh -s $(which -a zsh | head -1)
+current_shell=$(echo $SHELL)
+if [ $current_shell != $expect_zsh ]; then
+	echo "\n[2/3] Enter user password to change login shell"
+	chsh -s $(which zsh)
+else
+	echo "\n[2/3] login shell already changed, skipping change login shell"
+fi
 
 sudo ln -sfv $(which -a zsh | head -1) /private/var/select/sh
