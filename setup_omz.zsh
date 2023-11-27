@@ -12,4 +12,9 @@ else
 	ln -s $(pwd)/zshrc ~/.zshrc && echo "DONE" || echo "FAILED"
 	echo -n "resourcing sourcefile: "
 	source ~/.zshrc && echo "DONE" || echo "FAILED"
+
+	echo -n "installing custom plugins: "
+	git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+	git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+	echo "DONE"
 fi

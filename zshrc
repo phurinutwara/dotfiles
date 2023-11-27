@@ -70,8 +70,19 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
-
+plugins=(
+  alias-finder
+  aliases
+  aws
+  docker
+  git
+  history-substring-search
+  kubectl
+  vi-mode
+  z
+  zsh-autosuggestions
+  zsh-syntax-highlighting
+)
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -100,6 +111,16 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+bindkey '^e' autosuggest-accept
+bindkey '^L' vi-forward-word
+bindkey '^k' up-line-or-search
+bindkey '^j' down-line-or-search
+bindkey '^A' autosuggest-toggle
+
+zstyle ':omz:plugins:alias-finder' autoload yes # disabled by default
+zstyle ':omz:plugins:alias-finder' longer yes # disabled by default
+zstyle ':omz:plugins:alias-finder' exact yes # disabled by default
+zstyle ':omz:plugins:alias-finder' cheaper yes # disabled by default
 
 # =========================   PERSONAL CONFIG   ================================
 
@@ -111,7 +132,6 @@ export HOMEBREW_CASK_OPTS="--no-quarantine"
 export NULLCMD=bat
 ## WSL
 export LESS='--quit-if-one-screen --ignore-case --status-column --LONG-PROMPT --RAW-CONTROL-CHARS --HILITE-UNREAD --tabs=4 --no-init --window=-4 --mouse --wheel-lines=5'
-
 
 # Change ZSH Options
 
@@ -145,3 +165,5 @@ function mkcd() {
 
 # ...Other Surprises
 . /home/linuxbrew/.linuxbrew/etc/profile.d/z.sh
+
+eval "$($(which brew) shellenv)"
