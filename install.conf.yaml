@@ -17,9 +17,14 @@
 
 - shell:
     - command: ./setup_homebrew.zsh
+      stdin: true
       stdout: true
       stderr: true
     - command: ./setup_zsh.zsh
+      stdin: true
+      stdout: true
+      stderr: true
+    - command: ./setup_omz.zsh
       stdin: true
       stdout: true
       stderr: true
