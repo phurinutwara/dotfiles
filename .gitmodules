@@ -2,3 +2,8 @@
 	path = dotbot
 	url = https://github.com/anishathalye/dotbot
 	ignore = dirty
+[submodule "kickstart.nvim"]
+	path = kickstart.nvim
+	url = https://github.com/phurinutwara/kickstart.nvim
+	branch = master
+	ignore = dirty

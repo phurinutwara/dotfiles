@@ -12,6 +12,9 @@
       create: true
       path: config/bat
     ~/.p10k.zsh: p10k.zsh
+    ~/.config/nvim:
+      create: true
+      path: kickstart.nvim
 
 - create:
     - ~/Works
