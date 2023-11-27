@@ -21,4 +21,13 @@ else
 	echo "\n[2/3] login shell already changed, skipping change login shell"
 fi
 
-sudo ln -sfv $(which -a zsh | head -1) /private/var/select/sh
+
+linked_shell=$(realpath private/var/select/sh 2>&1 >/dev/null)
+if [ $linked_shell != $expect_zsh ]; then
+	echo -n "\n[3/3] "
+	sudo ln -sfv /bin/zsh /private/var/select/sh
+else
+	echo "\n[3/3] shell already linked, skipping create shell symlink"
+fi
+
+exit
