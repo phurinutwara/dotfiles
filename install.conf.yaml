@@ -11,6 +11,7 @@
     ~/.config/bat:
       create: true
       path: config/bat
+    ~/.p10k.zsh: p10k.zsh
 
 - create:
     - ~/Works
