@@ -30,7 +30,5 @@ brew "thefuck"
 brew "tldr"
 # Tracks most-used directories to make cd smarter
 brew "z"
-# UNIX shell (command interpreter)
-brew "zsh"
 # Bash scripts that integrate bat with various command-line tools
 brew "eth-p/software/bat-extras"
