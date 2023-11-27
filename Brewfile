@@ -24,6 +24,8 @@ brew "neovim"
 brew "nvm"
 # Code formatter for JavaScript, CSS, JSON, GraphQL, Markdown, YAML
 brew "prettier"
+# Prettier daemon
+brew "prettierd"
 # Programmatically correct mistyped console commands
 brew "thefuck"
 # Simplified and community-driven man pages
