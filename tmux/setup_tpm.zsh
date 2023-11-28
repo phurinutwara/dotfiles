@@ -1,4 +1,5 @@
 #!/usr/bin/env zsh
+
 TPM_PATH=~/.tmux/plugins/tpm
 
 echo "\n<<< Starting Tmux Plugin Manager Setup >>>\n"

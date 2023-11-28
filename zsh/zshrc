@@ -150,8 +150,10 @@ alias man=batman
 alias bbd='brew bundle dump --force --describe'
 alias trail='<<<${(F)path}'
 alias szsh='source ~/.zshrc'
+
 ##WSL
-alias wsl=wsl.exe
+alias wsl='wsl.exe'
+alias explorer='explorer.exe'
 alias ipconfig='ipconfig.exe'
 alias reset-network='ipconfig /release && ipconfig /flushdns && ipconfig /renew'
 alias szsh='source ~/.zshrc'
@@ -180,3 +182,6 @@ fi
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# To customize prompt, run `p10k configure` or edit ~/.dotfiles/p10k.zsh.
+[[ ! -f ~/.dotfiles/p10k.zsh ]] || source ~/.dotfiles/p10k.zsh

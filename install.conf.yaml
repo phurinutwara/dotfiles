@@ -5,34 +5,34 @@
 - clean: ["~"]
 
 - link:
-    ~/.zshrc: zshrc
-    ~/.zshenv: zshenv
-    ~/.tmux.conf: tmux.conf
+    ~/.zshrc: zsh/zshrc
+    ~/.zshenv: zsh/zshenv
+    ~/.tmux.conf: tmux/tmux.conf
     ~/.config/bat:
       create: true
       path: config/bat
-    ~/.p10k.zsh: p10k.zsh
+    ~/.p10k.zsh: p10k/p10k.zsh
     ~/.config/nvim:
       create: true
-      path: kickstart.nvim
+      path: nvim/kickstart.nvim
 
 - create:
     - ~/Works
 
 - shell:
-    - command: ./setup_homebrew.zsh
+    - command: ./homebrew/setup.zsh
       stdin: true
       stdout: true
       stderr: true
-    - command: ./setup_zsh.zsh
+    - command: ./zsh/setup.zsh
       stdin: true
       stdout: true
       stderr: true
-    - command: ./setup_omz.zsh
+    - command: ./omz/setup.zsh
       stdin: true
       stdout: true
       stderr: true
-    - command: ./setup_tpm.zsh
+    - command: ./tmux/setup_tpm.zsh
       stdin: true
       stdout: true
       stderr: true

@@ -9,7 +9,7 @@ else
 	echo -n "removing .zshrc from omz: "
 	rm ~/.zshrc && echo "DONE" || echo "FAILED"
 	echo -n "replacing with symlink: "
-	ln -s $(pwd)/zshrc ~/.zshrc && echo "DONE" || echo "FAILED"
+	ln -s $(pwd)/zsh/zshrc ~/.zshrc && echo "DONE" || echo "FAILED"
 	echo -n "resourcing sourcefile: "
 	source ~/.zshrc && echo "DONE" || echo "FAILED"
 
