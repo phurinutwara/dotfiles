@@ -14,7 +14,7 @@
     ~/.p10k.zsh: p10k/p10k.zsh
     ~/.config/nvim:
       create: true
-      path: nvim/kickstart.nvim
+      path: config/nvim
 
 - create:
     - ~/Works
