@@ -39,6 +39,7 @@ config.mouse_bindings = {
     action = wezterm.action.OpenLinkAtMouseCursor,
   },
 }
+config.bypass_mouse_reporting_modifiers = 'SHIFT'
 
 -- and finally, return the configuration to wezterm
 return config
