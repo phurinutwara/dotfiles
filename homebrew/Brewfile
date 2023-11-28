@@ -8,6 +8,8 @@ brew "btop"
 brew "exa"
 # Command-line fuzzy finder written in Go
 brew "fzf"
+# Remote repository management made easy
+brew "ghq"
 # Distributed revision control system
 brew "git"
 # Interactive command-line tool for using emoji in commit messages
