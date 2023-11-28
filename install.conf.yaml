@@ -15,6 +15,7 @@
     ~/.config/nvim:
       create: true
       path: config/nvim
+    ~/.wezterm.lua: wezterm/wezterm.lua
 
 - create:
     - ~/Works
