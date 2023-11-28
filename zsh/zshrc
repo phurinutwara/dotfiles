@@ -136,6 +136,8 @@ zstyle ':omz:plugins:alias-finder' cheaper yes # disabled by default
 # Syntax highlighting for man pages using bat
 # export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 export TZ=Asia/Bangkok
+export LANG=C.UTF-8
+
 export HOMEBREW_CASK_OPTS="--no-quarantine"
 export NULLCMD=bat
 ## WSL
