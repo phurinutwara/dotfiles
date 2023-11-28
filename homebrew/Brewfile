@@ -30,6 +30,10 @@ brew "prettierd"
 brew "thefuck"
 # Simplified and community-driven man pages
 brew "tldr"
+# Terminal multiplexer
+brew "tmux"
+# Process YAML, JSON, XML, CSV and properties documents from the CLI
+brew "yq"
 # Tracks most-used directories to make cd smarter
 brew "z"
 # Bash scripts that integrate bat with various command-line tools
