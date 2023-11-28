@@ -18,6 +18,8 @@ brew "gitmoji"
 brew "pygments"
 # User-friendly cURL replacement (command-line HTTP client)
 brew "httpie"
+# C library and command-line programs providing a simple interface to inotify
+brew "inotify-tools"
 # Fast, highly customisable system info script
 brew "neofetch"
 # Ambitious Vim-fork focused on extensibility and agility
