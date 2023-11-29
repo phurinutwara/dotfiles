@@ -14,6 +14,8 @@ brew "ghq"
 brew "git"
 # Interactive command-line tool for using emoji in commit messages
 brew "gitmoji"
+# Open source programming language to build simple/reliable/efficient software
+brew "go"
 # Generic syntax highlighter
 brew "pygments"
 # User-friendly cURL replacement (command-line HTTP client)
