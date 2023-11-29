@@ -11,18 +11,19 @@ if wezterm.config_builder then
 end
 
 -- This is where you actually apply your config choices
-function os.capture(cmd, raw)
-  local f = assert(io.popen(cmd, 'r'))
-  local s = assert(f:read('*a'))
-  f:close()
-  if raw then return s end
-  s = string.gsub(s, '^%s+', '')
-  s = string.gsub(s, '%s+$', '')
-  s = string.gsub(s, '[\n\r]+', ' ')
-  return s
-end
+-- function os.capture(cmd, raw)
+--   local f = assert(io.popen(cmd, 'r'))
+--   local s = assert(f:read('*a'))
+--   f:close()
+--   if raw then return s end
+--   s = string.gsub(s, '^%s+', '')
+--   s = string.gsub(s, '%s+$', '')
+--   s = string.gsub(s, '[\n\r]+', ' ')
+--   return s
+-- end
+-- local os_type = os.capture('echo $(uname) | tr "[:upper:]" "[:lower:]"')
 
-local os_type = os.capture('echo $(uname) | tr "[:upper:]" "[:lower:]"')
+local os_type = wezterm.target_triple
 if (string.match(os_type, 'darwin*')) then
   config.default_domain = 'local'
   config.window_background_opacity = 0.75
