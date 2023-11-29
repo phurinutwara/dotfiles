@@ -176,9 +176,8 @@ function mkcd() {
 # Use ZSH Plugins
 
 # ...Other Surprises
-. /home/linuxbrew/.linuxbrew/etc/profile.d/z.sh
-
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+  . /home/linuxbrew/.linuxbrew/etc/profile.d/z.sh
   eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 fi
 

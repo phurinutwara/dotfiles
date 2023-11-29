@@ -11,7 +11,25 @@ if wezterm.config_builder then
 end
 
 -- This is where you actually apply your config choices
-config.default_domain = 'WSL:Ubuntu-20.04'
+function os.capture(cmd, raw)
+  local f = assert(io.popen(cmd, 'r'))
+  local s = assert(f:read('*a'))
+  f:close()
+  if raw then return s end
+  s = string.gsub(s, '^%s+', '')
+  s = string.gsub(s, '%s+$', '')
+  s = string.gsub(s, '[\n\r]+', ' ')
+  return s
+end
+
+local os_type = os.capture('echo $(uname) | tr "[:upper:]" "[:lower:]"')
+if (string.match(os_type, 'darwin*')) then
+  config.default_domain = 'local'
+  config.window_background_opacity = 0.75
+else
+  config.default_domain = 'WSL:Ubuntu-20.04'
+  config.window_background_opacity = 0.90
+end
 
 config.color_scheme = 'Catppuccin Mocha'
 config.font = wezterm.font 'JetBrains Mono'
@@ -19,7 +37,6 @@ config.font_size = 13.0
 
 config.enable_tab_bar = true
 config.hide_tab_bar_if_only_one_tab = true
-config.window_background_opacity = 0.90
 config.macos_window_background_blur = 30
 
 config.window_decorations = 'RESIZE'
