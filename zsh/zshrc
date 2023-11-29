@@ -98,7 +98,7 @@ source $ZSH/oh-my-zsh.sh
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -136,7 +136,6 @@ zstyle ':omz:plugins:alias-finder' cheaper yes # disabled by default
 # Syntax highlighting for man pages using bat
 # export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 export TZ=Asia/Bangkok
-export LANG=C.UTF-8
 
 export HOMEBREW_CASK_OPTS="--no-quarantine"
 export NULLCMD=bat
