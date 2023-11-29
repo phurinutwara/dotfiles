@@ -39,7 +39,10 @@ config.enable_tab_bar = true
 config.hide_tab_bar_if_only_one_tab = true
 config.macos_window_background_blur = 30
 
-config.window_decorations = 'RESIZE'
+config.window_decorations = 'INTEGRATED_BUTTONS|RESIZE'
+config.window_padding = {
+  top = "1cell"
+}
 config.keys = {
   {
     key = 'f',
