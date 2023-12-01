@@ -28,15 +28,17 @@ if (string.match(os_type, 'darwin*')) then
   config.default_domain = 'local'
   config.window_background_opacity = 0.35
   config.macos_window_background_blur = 45
+  config.font = wezterm.font('JetBrains Mono', { weight = 'Bold', stretch = 'Normal' })
+  config.font_size = 17.0
 else
   config.default_domain = 'WSL:Ubuntu-20.04'
   config.window_background_opacity = 0.75
   config.win32_system_backdrop = 'Acrylic'
+  config.font = wezterm.font 'JetBrains Mono'
+  config.font_size = 13.0
 end
 
 config.color_scheme = 'Catppuccin Mocha'
-config.font = wezterm.font 'JetBrains Mono'
-config.font_size = 13.0
 
 config.enable_tab_bar = true
 config.hide_tab_bar_if_only_one_tab = true
