@@ -30,18 +30,23 @@ if (string.match(os_type, 'darwin*')) then
   config.macos_window_background_blur = 45
   config.font = wezterm.font('JetBrains Mono', { weight = 'Bold', stretch = 'Normal' })
   config.font_size = 17.0
+  config.enable_tab_bar = true
+  config.hide_tab_bar_if_only_one_tab = true
 else
   config.default_domain = 'WSL:Ubuntu-20.04'
   config.window_background_opacity = 0.75
-  config.win32_system_backdrop = 'Acrylic'
+  config.win32_system_backdrop = 'Auto'
   config.font = wezterm.font 'JetBrains Mono'
   config.font_size = 13.0
+  config.enable_tab_bar = true
+  config.hide_tab_bar_if_only_one_tab = false
 end
 
 config.color_scheme = 'Catppuccin Mocha'
+config.font = wezterm.font 'JetBrains Mono'
+config.font_size = 13.0
+config.max_fps = 240
 
-config.enable_tab_bar = true
-config.hide_tab_bar_if_only_one_tab = true
 
 config.window_decorations = 'INTEGRATED_BUTTONS|RESIZE'
 config.window_padding = {
