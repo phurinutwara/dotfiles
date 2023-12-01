@@ -26,8 +26,8 @@ end
 local os_type = wezterm.target_triple
 if (string.match(os_type, 'darwin*')) then
   config.default_domain = 'local'
-  config.window_background_opacity = 0.75
-  config.macos_window_background_blur = 30
+  config.window_background_opacity = 0.35
+  config.macos_window_background_blur = 45
 else
   config.default_domain = 'WSL:Ubuntu-20.04'
   config.window_background_opacity = 0.75
