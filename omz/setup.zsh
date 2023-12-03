@@ -2,7 +2,7 @@
 
 echo "\n<<< Starting oh-my-zsh Setup >>>\n"
 
-if exists omz; then
+if ls ~/.oh-my-zsh >/dev/null 2>&1; then
 	echo "omz exists, skipping install"
 else
 	curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh | /bin/bash
