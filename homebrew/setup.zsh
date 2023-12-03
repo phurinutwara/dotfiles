@@ -7,6 +7,11 @@ if exists brew; then
 else
 	echo "brew doesn't exist, continuing with install"
 	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+	if [[ "$OSTYPE$" == "linux-gnu"* ]]; then
+		sudo apt-get update
+		sudo apt-get install build-essential procps curl file git
+	fi
 fi
 
 # TODO: Keep an eye out for a different `--no-quarantine` solution.
@@ -15,4 +20,9 @@ fi
 # export HOMEBREW_CASK_OPTS="--no-quarantine"
 # https://github.com/Homebrew/homebrew-bundle/issues/474
 
-brew bundle --verbose --file='./homebrew/Brewfile/'
+if [[ "$SHELL" != "/usr/bin/zsh" ]]; then
+	echo "Please change your shell to zsh to use brew bundle"
+	exit 1
+else
+	brew bundle --verbose --file='./homebrew/Brewfile/'
+fi

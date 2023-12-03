@@ -21,11 +21,7 @@
     - ~/Works
 
 - shell:
-    - command: ./homebrew/setup.zsh
-      stdin: true
-      stdout: true
-      stderr: true
-    - command: ./zsh/setup.zsh
+    - command: ./zsh/setup.sh
       stdin: true
       stdout: true
       stderr: true
@@ -34,6 +30,10 @@
       stdout: true
       stderr: true
     - command: ./tmux/setup_tpm.zsh
+      stdin: true
+      stdout: true
+      stderr: true
+    - command: ./homebrew/setup.zsh
       stdin: true
       stdout: true
       stderr: true

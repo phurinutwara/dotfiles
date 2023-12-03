@@ -4,7 +4,7 @@ TPM_PATH=~/.tmux/plugins/tpm
 
 echo "\n<<< Starting Tmux Plugin Manager Setup >>>\n"
 
-if exa $TPM_PATH >/dev/null 2>&1; then
+if ls $TPM_PATH >/dev/null 2>&1; then
 	echo "tpm exists, skipping install"
 else
 	echo "tpm doesn't exist, continuing with install"

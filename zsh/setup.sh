@@ -1,14 +1,17 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env bash
 
 echo "\n<<< Starting ZSH Setup >>>\n"
 
 # Installation unnecessary; it's in the Brewfile.
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
 	echo "This might be WSL"
-	sudo apt install zsh
-	exit 1
+	if [[ "$SHELL" != "/usr/bin/zsh" ]]; then
+		echo "No zsh installed, installing zsh"
+		sudo apt install zsh
+	else
+		echo "zsh installed, continue binding zsh"
+	fi
 elif [[ "$OSTYPE" == "darwin"* ]]; then
-	# Mac OSX
 	echo "This is MacOS, continue binding zsh"
 else
 	echo "Unknown OS"
