@@ -187,3 +187,13 @@ fi
 export GOROOT=/usr/local/go
 export GOPATH=$HOME/go
 export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
+
+# Set up nvm
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+  mkdir ~/.nvm >/dev/null 2>&1
+  export NVM_DIR="$HOME/.nvm"
+  [ -s "/home/linuxbrew/.linuxbrew/opt/nvm/nvm.sh" ] && \. "/home/linuxbrew/.linuxbrew/opt/nvm/nvm.sh"  # This loads nvm
+  [ -s "/home/linuxbrew/.linuxbrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/home/linuxbrew/.linuxbrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+elif [[ "$OSTYPE" == "darmin"* ]]; then
+  # TODO: set up nvm for macOS
+fi
