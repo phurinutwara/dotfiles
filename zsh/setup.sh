@@ -20,7 +20,7 @@ fi
 
 expect_zsh=$(which zsh)
 sudo cat /etc/shells | grep $expect_zsh >/dev/null
-if [ $? = "1" ]; then
+if [ "$?" = "1" ]; then
 	echo -e "\n[1/3] Enter superuser (sudo) password to edit /etc/shells"
 	echo $expect_zsh | sudo tee -a '/etc/shells'
 else
@@ -28,17 +28,21 @@ else
 fi
 
 current_shell=$(echo $SHELL)
-if [ $current_shell != $expect_zsh ]; then
+if [ "$current_shell" != "$expect_zsh" ]; then
 	echo -e "\n[2/3] Enter user password to change login shell"
 	chsh -s $expect_zsh
 else
 	echo -e "\n[2/3] login shell already changed, skipping change login shell"
 fi
 
-linked_shell=$(realpath private/var/select/sh 2>&1 >/dev/null)
-if [ $linked_shell != $expect_zsh ]; then
-	echo -ne "\n[3/3] "
-	sudo ln -sfv /bin/zsh /private/var/select/sh
+linked_shell=$(realpath private/var/select/sh >/dev/null 2>&1)
+if [ "$linked_shell" != "$expect_zsh" ]; then
+	if [[ "$OSTYPE" == "darwin"* ]]; then
+		echo -ne "\n[3/3] "
+		sudo ln -sfv /bin/zsh /private/var/select/sh
+	else
+		echo -e "\n[3/3] this is not macOS, skipping create shell symlink"
+	fi
 else
 	echo -e "\n[3/3] shell already linked, skipping create shell symlink"
 fi
