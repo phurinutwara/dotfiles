@@ -32,6 +32,8 @@ brew "nvm"
 brew "prettier"
 # Prettier daemon
 brew "prettierd"
+# Search tool like grep and The Silver Searcher
+brew "ripgrep"
 # Programmatically correct mistyped console commands
 brew "thefuck"
 # Simplified and community-driven man pages
