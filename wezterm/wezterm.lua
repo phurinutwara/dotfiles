@@ -36,15 +36,16 @@ else
   config.default_domain = 'WSL:Ubuntu'
   config.window_background_opacity = 0.75
   config.win32_system_backdrop = 'Auto'
-  config.font = wezterm.font 'JetBrains Mono'
+  config.font = wezterm.font_with_fallback {
+    { family = 'JetBrains Mono', },
+    { family = 'Sarabun' },
+  }
   config.font_size = 13.0
   config.enable_tab_bar = true
   config.hide_tab_bar_if_only_one_tab = false
 end
 
 config.color_scheme = 'Catppuccin Mocha'
-config.font = wezterm.font 'JetBrains Mono'
-config.font_size = 13.0
 config.max_fps = 240
 
 
