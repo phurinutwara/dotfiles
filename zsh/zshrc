@@ -201,4 +201,8 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
   [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 fi
 
-alias gopen="git config --get remote.origin.url | perl -pe 's/:(?!\/\/)/\//g' | sed 's/^git@/https:\/\//' | sed 's/.git$//' | xargs open"
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+  export gopen="git config --get remote.origin.url | perl -pe 's/:(?!\/\/)/\//g' | sed 's/^git@/https:\/\//' | sed 's/.git$//' | xargs sensible-browser"
+elif [[ "$OSTYPE" == "darwin"* ]]; then
+  export gopen="git config --get remote.origin.url | perl -pe 's/:(?!\/\/)/\//g' | sed 's/^git@/https:\/\//' | sed 's/.git$//' | xargs open"
+fi
