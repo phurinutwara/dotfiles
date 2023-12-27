@@ -203,8 +203,8 @@ fi
 
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
   alias gopen="git config --get remote.origin.url | perl -pe 's/:(?!\/\/)/\//g' | sed 's/^git@/https:\/\//' | sed 's/.git$//' | xargs -I % echo 'sensible-browser %' | sh"
-  alias gopr="git config --get remote.origin.url | perl -pe 's/:(?!\/\/)/\//g' | sed 's/^git@/https:\/\//' | sed 's/.git$//' | xargs -I % echo 'sensible-browser %/pull-requests/new?source=$(git_current_branch)&dest=develop' | sh"
+  alias gopr="git config --get remote.origin.url | perl -pe 's/:(?!\/\/)/\//g' | sed 's/^git@/https:\/\//' | sed 's/.git$//' | xargs -I % echo 'sensible-browser %/pull-requests/new?source=$(git branch --show-current)&dest=develop' | sh"
 elif [[ "$OSTYPE" == "darwin"* ]]; then
   alias gopen="git config --get remote.origin.url | perl -pe 's/:(?!\/\/)/\//g' | sed 's/^git@/https:\/\//' | sed 's/.git$//' | xargs -I % echo 'open %' | sh"
-  alias gopr="git config --get remote.origin.url | perl -pe 's/:(?!\/\/)/\//g' | sed 's/^git@/https:\/\//' | sed 's/.git$//' | xargs -I % echo 'open %/pull-requests/new?source=$(git_current_branch)&dest=develop' | sh"
+  alias gopr="git config --get remote.origin.url | perl -pe 's/:(?!\/\/)/\//g' | sed 's/^git@/https:\/\//' | sed 's/.git$//' | xargs -I % echo 'open %/pull-requests/new?source=$(git branch --show-current)&dest=develop' | sh"
 fi
