@@ -1,9 +1,14 @@
 tap "eth-p/software"
 tap "homebrew/bundle"
+tap "homebrew/services"
+# Another PostgreSQL diff tool
+brew "apgdiff"
 # Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
 # Resource monitor. C++ version and continuation of bashtop and bpytop
 brew "btop"
+# Get a file from an HTTP, HTTPS or FTP server
+brew "curl"
 # Modern replacement for 'ls'
 brew "exa"
 # Command-line fuzzy finder written in Go
@@ -22,12 +27,16 @@ brew "pygments"
 brew "httpie"
 # C library and command-line programs providing a simple interface to inotify
 brew "inotify-tools"
+# Small memory footprint, flexible web-server
+brew "lighttpd", restart_service: true
 # Fast, highly customisable system info script
 brew "neofetch"
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
 # Manage multiple Node.js versions
 brew "nvm"
+# Object-relational database system
+brew "postgresql@14"
 # Code formatter for JavaScript, CSS, JSON, GraphQL, Markdown, YAML
 brew "prettier"
 # Prettier daemon
@@ -40,6 +49,8 @@ brew "thefuck"
 brew "tldr"
 # Terminal multiplexer
 brew "tmux"
+# JavaScript package manager
+brew "yarn"
 # Process YAML, JSON, XML, CSV and properties documents from the CLI
 brew "yq"
 # Tracks most-used directories to make cd smarter
