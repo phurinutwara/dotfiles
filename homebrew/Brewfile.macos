@@ -4,6 +4,8 @@ tap "eth-p/software"
 tap "fsouza/prettierd"
 tap "homebrew/bundle"
 tap "jakehilborn/jakehilborn"
+# Another PostgreSQL diff tool
+brew "apgdiff"
 # Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
 # Resource monitor. C++ version and continuation of bashtop and bpytop
@@ -16,20 +18,38 @@ brew "exa"
 brew "fzf"
 # GitHub command-line tool
 brew "gh"
+# Remote repository management made easy
+brew "ghq"
 # Distributed revision control system
 brew "git"
 # AVH edition of git-flow
 brew "git-flow-avh"
+# Interactive command-line tool for using emoji in commit messages
+brew "gitmoji"
 # Open source programming language to build simple/reliable/efficient software
 brew "go"
 # Database migrations CLI tool
 brew "golang-migrate"
+# Generic syntax highlighter
+brew "pygments"
 # User-friendly cURL replacement (command-line HTTP client)
 brew "httpie"
+# Lightweight and flexible command-line JSON processor
+brew "jq"
+# CLI calendar application
+brew "khal"
 # Simple terminal UI for git commands
 brew "lazygit"
 # Pager program similar to more
 brew "less"
+# Postgres C API library
+brew "libpq", link: true
+# Small memory footprint, flexible web-server
+brew "lighttpd"
+# Protocol buffers (Google's data interchange format)
+brew "protobuf"
+# Remote terminal application
+brew "mosh"
 # Fast, highly customisable system info script
 brew "neofetch"
 # Ambitious Vim-fork focused on extensibility and agility
@@ -38,8 +58,10 @@ brew "neovim"
 brew "nmap"
 # Manage multiple Node.js versions
 brew "nvm"
-# Protocol buffers (Google's data interchange format)
-brew "protobuf"
+# Code formatter for JavaScript, CSS, JSON, GraphQL, Markdown, YAML
+brew "prettier"
+# Search tool like grep and The Silver Searcher
+brew "ripgrep"
 # User interface to the TELNET protocol
 brew "telnet"
 # Programmatically correct mistyped console commands
@@ -50,11 +72,17 @@ brew "tldr"
 brew "tmux"
 # Display directories as trees (with optional color/HTML output)
 brew "tree"
+# Process YAML, JSON, XML, CSV and properties documents from the CLI
+brew "yq"
+# Tracks most-used directories to make cd smarter
+brew "z"
+# UNIX shell (command interpreter)
+brew "zsh"
 # Fish-like fast/unobtrusive autosuggestions for zsh
 brew "zsh-autosuggestions"
 # Fish shell like syntax highlighting for zsh
 brew "zsh-syntax-highlighting"
-# A new way of working with Protocol Buffers.
+# The best way of working with Protocol Buffers.
 brew "bufbuild/buf/buf"
 # Bash scripts that integrate bat with various command-line tools
 brew "eth-p/software/bat-extras"
@@ -64,10 +92,10 @@ brew "fsouza/prettierd/prettierd"
 cask "docker"
 # Web browser
 cask "google-chrome"
-# Terminal emulator as alternative to Apple's Terminal app
-cask "iterm2"
 # Open-source keystroke visualizer
 cask "keycastr"
+# GPU-based terminal emulator
+cask "kitty"
 # Reverse proxy, secure introspectable tunnels to localhost
 cask "ngrok"
 # Collaboration platform for API development
@@ -76,5 +104,7 @@ cask "postman"
 cask "proxyman"
 # Native GUI tool for relational databases
 cask "tableplus"
+# GPU-accelerated cross-platform terminal emulator and multiplexer
+cask "wezterm"
 # Video communication and virtual meeting platform
 cask "zoom"

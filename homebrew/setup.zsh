@@ -20,7 +20,7 @@ fi
 # export HOMEBREW_CASK_OPTS="--no-quarantine"
 # https://github.com/Homebrew/homebrew-bundle/issues/474
 
-if [[ "$SHELL" != "/usr/bin/zsh" ]]; then
+if [[ "$SHELL" != "/bin/zsh" ]]; then
 	echo "Please change your shell to zsh to use brew bundle"
 	exit 1
 else
