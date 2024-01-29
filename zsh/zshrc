@@ -194,9 +194,10 @@ fi
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # Go environments
-export GOROOT=/usr/local/go
+# export GOROOT=/usr/local/go
+export GOROOT="$(brew --prefix golang)/libexec"
 export GOPATH=$HOME/go
-export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
+export PATH=$PATH:$GOPATH/bin:$GOROOT/bin:$PATH
 
 # Set up nvm
 mkdir ~/.nvm >/dev/null 2>&1
