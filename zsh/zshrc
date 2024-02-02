@@ -150,7 +150,6 @@ export LESS='--quit-if-one-screen --ignore-case --status-column --LONG-PROMPT --
 alias ls='exa -laFh --git'
 alias exa='exa -laFh --git'
 alias man=batman
-alias bbd='brew bundle dump --force --describe'
 alias trail='<<<${(F)path}'
 alias szsh='source ~/.zshrc'
 
@@ -173,6 +172,15 @@ alias szsh='source ~/.zshrc'
 function mkcd() {
   mkdir -p "$@" && cd "$_"
 }
+function bbd() {
+  if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+    brew bundle dump --force --describe --file "~/.dotfiles/homebrew/Brewfile"
+  elif [[ "$OSTYPE" == "darwin"* ]]; then
+    brew bundle dump --force --describe --file "~/.dotfiles/homebrew/Brewfile.macos"
+  else
+    echo "Unknow \$OSTYPE"
+  fi
+}
 
 # Use ZSH Plugins
 
@@ -186,9 +194,10 @@ fi
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # Go environments
-export GOROOT=/usr/local/go
+# export GOROOT=/usr/local/go
+export GOROOT="$(brew --prefix golang)/libexec"
 export GOPATH=$HOME/go
-export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
+export PATH=$PATH:$GOPATH/bin:$GOROOT/bin:$PATH
 
 # Set up nvm
 mkdir ~/.nvm >/dev/null 2>&1
