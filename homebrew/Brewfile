@@ -1,5 +1,6 @@
 tap "eth-p/software"
 tap "homebrew/bundle"
+tap "homebrew/core"
 tap "homebrew/services"
 # Another PostgreSQL diff tool
 brew "apgdiff"
@@ -23,18 +24,28 @@ brew "gitmoji"
 brew "go"
 # Generic syntax highlighter
 brew "pygments"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.12"
 # User-friendly cURL replacement (command-line HTTP client)
 brew "httpie"
 # C library and command-line programs providing a simple interface to inotify
 brew "inotify-tools"
+# Lightweight and flexible command-line JSON processor
+brew "jq"
+# Generic command-line non-JVM Apache Kafka producer and consumer
+brew "kcat"
 # Small memory footprint, flexible web-server
 brew "lighttpd", restart_service: true
+# Pluggable Authentication Modules for Linux
+brew "linux-pam"
 # Fast, highly customisable system info script
 brew "neofetch"
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
 # Manage multiple Node.js versions
 brew "nvm"
+# Development kit for the Java programming language
+brew "openjdk@17"
 # Object-relational database system
 brew "postgresql@14"
 # Code formatter for JavaScript, CSS, JSON, GraphQL, Markdown, YAML
@@ -49,6 +60,8 @@ brew "thefuck"
 brew "tldr"
 # Terminal multiplexer
 brew "tmux"
+# Manage complex tmux sessions easily
+brew "tmuxinator"
 # JavaScript package manager
 brew "yarn"
 # Process YAML, JSON, XML, CSV and properties documents from the CLI
