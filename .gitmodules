@@ -6,4 +6,4 @@
 	path = config/nvim
 	url = https://github.com/phurinutwara/kickstart.nvim
 	branch = master
-	ignore = dirty
+	ignore = all
