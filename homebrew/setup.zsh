@@ -8,7 +8,7 @@ else
 	echo "brew doesn't exist, continuing with install"
 	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-	if [[ "$OSTYPE$" == "linux-gnu"* ]]; then
+	if [[ "$OSTYPE" == "linux-gnu"* ]]; then
 		sudo apt-get update
 		sudo apt-get install build-essential procps curl file git
 	fi
