@@ -4,6 +4,6 @@
 	ignore = dirty
 [submodule "config/nvim"]
 	path = config/nvim
-	url = https://github.com/phurinutwara/kickstart.nvim
-	branch = master
+	url = https://github.com/phurinutwara/nvim
+	branch = main
 	ignore = all
