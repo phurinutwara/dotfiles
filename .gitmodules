@@ -5,4 +5,4 @@
 [submodule "config/nvim"]
 	path = config/nvim
 	url = https://github.com/phurinutwara/nvim
-	ignore = all
+	ignore = dirty
