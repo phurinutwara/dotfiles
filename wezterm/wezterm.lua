@@ -41,15 +41,15 @@ else
 	config.window_background_opacity = 0.75
 	config.win32_system_backdrop = "Auto"
 	config.font = wezterm.font_with_fallback({
-		{ family = "JetBrains Mono" },
-		{ family = "Sarabun" },
+		{ family = "JetBrains Mono" }, -- TODO: TO BE FIXED
+		{ family = "Sarabun" }, -- TODO: TO BE FIXED
 	})
 	config.font_size = 13.0
 	config.enable_tab_bar = true
 	config.hide_tab_bar_if_only_one_tab = false
 end
 
-config.color_scheme = "Catppuccin Mocha"
+config.color_scheme = "Catppuccin Frappe"
 config.max_fps = 240
 config.front_end = "WebGpu"
 
@@ -57,6 +57,7 @@ config.window_decorations = "INTEGRATED_BUTTONS|RESIZE"
 config.window_padding = {
 	top = "1cell",
 }
+
 config.keys = {
 	{
 		key = "f",
