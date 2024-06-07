@@ -28,8 +28,12 @@ if string.match(os_type, "darwin*") then
 	config.default_domain = "local"
 	config.window_background_opacity = 0.35
 	config.macos_window_background_blur = 45
-	config.font = wezterm.font("JetBrains Mono", { weight = "Bold", stretch = "Normal" })
-	config.font_size = 17.0
+	config.font = wezterm.font_with_fallback({
+		{ family = "JetBrains Mono", weight = "Regular", stretch = "Normal" },
+		{ family = "Symbols Nerd Font Mono", scale = 0.75 },
+		{ family = "Ayuthaya", scale = 1.0 },
+	})
+	config.font_size = 16.0
 	config.enable_tab_bar = true
 	config.hide_tab_bar_if_only_one_tab = true
 else
@@ -47,6 +51,7 @@ end
 
 config.color_scheme = "Catppuccin Mocha"
 config.max_fps = 240
+config.front_end = "WebGpu"
 
 config.window_decorations = "INTEGRATED_BUTTONS|RESIZE"
 config.window_padding = {
