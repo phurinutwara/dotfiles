@@ -44,7 +44,7 @@ else
 		{ family = "JetBrains Mono" }, -- TODO: TO BE FIXED
 		{ family = "Sarabun" }, -- TODO: TO BE FIXED
 	})
-	config.font_size = 13.0
+	config.font_size = 16.0
 	config.enable_tab_bar = true
 	config.hide_tab_bar_if_only_one_tab = false
 end
@@ -53,9 +53,12 @@ config.color_scheme = "Catppuccin Frappe"
 config.max_fps = 240
 config.front_end = "WebGpu"
 
-config.window_decorations = "INTEGRATED_BUTTONS|RESIZE"
+config.window_decorations = "RESIZE" -- NOTE: 'INTEGRATED_BUTTONS|RESIZE' to add 3 window buttons
 config.window_padding = {
-	top = "1cell",
+	left = "1cell",
+	right = "1cell",
+	top = "0.5cell",
+	bottom = "0cell",
 }
 
 config.keys = {
