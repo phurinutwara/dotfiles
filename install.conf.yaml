@@ -15,7 +15,7 @@
     ~/.config/nvim:
       create: true
       path: ./config/nvim
-    ~/.wezterm.lua: ./wezterm/wezterm.lua
+    ~/.config/wezterm: ./config/wezterm
     ~/.config/kitty:
       create: true
       path: ./config/kitty
