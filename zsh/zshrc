@@ -154,12 +154,17 @@ alias man=batman
 alias trail='<<<${(F)path}'
 alias szsh='source ~/.zshrc'
 
-##WSL
-alias wsl='wsl.exe'
-alias explorer='explorer.exe'
-alias ipconfig='ipconfig.exe'
-alias reset-network='ipconfig /release && ipconfig /flushdns && ipconfig /renew'
-alias szsh='source ~/.zshrc'
+## SPECIFY BY OS
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  export BREWFILE_PATH="~/.dotfiles/homebrew/macos/Brewfile"
+elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
+  export BREWFILE_PATH="~/.dotfiles/homebrew/linux/Brewfile"
+  alias wsl='wsl.exe'
+  alias explorer='explorer.exe'
+  alias ipconfig='ipconfig.exe'
+  alias reset-network='ipconfig /release && ipconfig /flushdns && ipconfig /renew'
+fi
+
 
 # Customize Prompt(s)
 # PROMPT='
@@ -175,15 +180,13 @@ function mkcd() {
 }
 function bbd() {
   if [[ "$OSTYPE" == "darwin"* ]]; then
-    export BREWFILE_PATH="~/.dotfiles/homebrew/macos/Brewfile"
     brew bundle dump --force --describe --file "$BREWFILE_PATH" \
       && zsh -c "echo \"\" >> $BREWFILE_PATH && echo -e \"# vim:ft=ruby\" >> $BREWFILE_PATH"
   elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
-    export BREWFILE_PATH="~/.dotfiles/homebrew/linux/Brewfile"
     brew bundle dump --force --describe --file "$BREWFILE_PATH" \
       && zsh -c "echo \"\" >> $BREWFILE_PATH && echo -e \"# vim:ft=ruby\" >> $BREWFILE_PATH"
   else
-    echo "Unknow \$OSTYPE"
+    echo "Unknown \$OSTYPE, aborting process"
   fi
 }
 
