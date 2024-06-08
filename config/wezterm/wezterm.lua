@@ -34,7 +34,8 @@ if string.match(os_type, "darwin*") then
 	font = require("font/macOS")
 	ui = require("ui/macOS")
 else
-	config.default_domain = "WSL:Ubuntu"
+	local wsl_ssh = require("ssh/wsl")
+	wsl_ssh.apply_to_config(config)
 	font = require("font/windows")
 	ui = require("ui/windows")
 end

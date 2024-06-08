@@ -142,7 +142,6 @@ export EDITOR="nvim"
 
 export HOMEBREW_CASK_OPTS="--no-quarantine"
 export NULLCMD=bat
-## WSL
 export LESS='--quit-if-one-screen --ignore-case --status-column --LONG-PROMPT --RAW-CONTROL-CHARS --HILITE-UNREAD --tabs=4 --no-init --window=-4 --mouse --wheel-lines=5'
 
 # Change ZSH Options
@@ -160,6 +159,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
   export BREWFILE_PATH="~/.dotfiles/homebrew/linux/Brewfile"
   alias wsl='wsl.exe'
+  alias wezterm='wezterm.exe'
   alias explorer='explorer.exe'
   alias ipconfig='ipconfig.exe'
   alias reset-network='ipconfig /release && ipconfig /flushdns && ipconfig /renew'
