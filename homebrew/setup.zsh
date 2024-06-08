@@ -10,7 +10,7 @@ else
 
 	if [[ "$OSTYPE" == "linux-gnu"* ]]; then
 		sudo apt-get update
-		sudo apt-get install build-essential procps curl file git
+		sudo apt-get -y install build-essential procps curl file git
 	fi
 fi
 
@@ -20,13 +20,13 @@ fi
 # export HOMEBREW_CASK_OPTS="--no-quarantine"
 # https://github.com/Homebrew/homebrew-bundle/issues/474
 
-if [[ "$SHELL" != "/bin/zsh" ]]; then
+if [[ "$SHELL" != "/bin/zsh" && "$SHELL" != "/usr/bin/zsh" && "$0" != *"zsh" ]]; then
 	echo "Please change your shell to zsh to use brew bundle"
 	exit 1
 else
 	if [[ "$OSTYPE" == "darwin"* ]]; then
-		brew bundle --verbose --file='./homebrew/Brewfile/'
+		brew bundle --verbose --file "$BREWFILE_PATH"
 	elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
-		brew bundle --verbose --file='./homebrew/Brewfile/'
+		brew bundle --verbose --file "$BREWFILE_PATH"
 	fi
 fi

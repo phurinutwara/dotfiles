@@ -7,18 +7,19 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
 	echo "This might be WSL"
 	if [[ "$SHELL" != "/usr/bin/zsh" ]]; then
 		echo "No zsh installed, installing zsh"
-		sudo apt install zsh
+		sudo apt -y install zsh
+		expect_zsh="/usr/bin/zsh"
 	else
 		echo "zsh installed, continue binding zsh"
 	fi
 elif [[ "$OSTYPE" == "darwin"* ]]; then
 	echo "This is MacOS, continue binding zsh"
+	expect_zsh="/bin/zsh"
 else
 	echo "Unknown OS"
 	exit 1
 fi
 
-expect_zsh=$(which zsh)
 sudo cat /etc/shells | grep $expect_zsh >/dev/null
 if [ "$?" = "1" ]; then
 	echo -e "\n[1/3] Enter superuser (sudo) password to edit /etc/shells"
