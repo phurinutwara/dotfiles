@@ -40,7 +40,3 @@
       stdin: true
       stdout: true
       stderr: true
-    - command: ./config/kitty/install.zsh
-      stdin: true
-      stdout: true
-      stderr: true
