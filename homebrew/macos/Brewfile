@@ -79,8 +79,6 @@ brew "nvm"
 brew "openfortivpn"
 # Development kit for the Java programming language
 brew "openjdk@17"
-# Execute binaries from Python packages in isolated environments
-brew "pipx"
 # Object-relational database system
 brew "postgresql@14", restart_service: true, link: false
 # Code formatter for JavaScript, CSS, JSON, GraphQL, Markdown, YAML
