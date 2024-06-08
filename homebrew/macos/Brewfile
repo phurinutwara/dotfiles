@@ -3,7 +3,14 @@ tap "bufbuild/buf"
 tap "eth-p/software"
 tap "fsouza/prettierd"
 tap "homebrew/bundle"
+tap "homebrew/services"
 tap "jakehilborn/jakehilborn"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.12", link: false
+# OpenType text shaping engine
+brew "harfbuzz"
+# Development kit for the Java programming language
+brew "openjdk"
 # Another PostgreSQL diff tool
 brew "apgdiff"
 # Clone of cat(1) with syntax highlighting and Git integration
@@ -12,30 +19,38 @@ brew "bat"
 brew "btop"
 # GNU File, Shell, and Text utilities
 brew "coreutils"
+# Get a file from an HTTP, HTTPS or FTP server
+brew "curl"
 # Modern replacement for 'ls'
 brew "exa"
 # Command-line fuzzy finder written in Go
 brew "fzf"
+# GNU debugger
+brew "gdb"
 # GitHub command-line tool
 brew "gh"
 # Remote repository management made easy
 brew "ghq"
 # Distributed revision control system
 brew "git"
+# Quickly rewrite git repository history
+brew "git-filter-repo"
 # AVH edition of git-flow
 brew "git-flow-avh"
+# Platform built on V8 to build network applications
+brew "node"
 # Interactive command-line tool for using emoji in commit messages
 brew "gitmoji"
 # Open source programming language to build simple/reliable/efficient software
 brew "go"
 # Database migrations CLI tool
 brew "golang-migrate"
-# Generic syntax highlighter
-brew "pygments"
 # User-friendly cURL replacement (command-line HTTP client)
 brew "httpie"
 # Lightweight and flexible command-line JSON processor
 brew "jq"
+# Generic command-line non-JVM Apache Kafka producer and consumer
+brew "kcat"
 # CLI calendar application
 brew "khal"
 # Simple terminal UI for git commands
@@ -45,7 +60,9 @@ brew "less"
 # Postgres C API library
 brew "libpq", link: true
 # Small memory footprint, flexible web-server
-brew "lighttpd"
+brew "lighttpd", restart_service: true
+# Drop-in replacement for MySQL
+brew "mariadb"
 # Protocol buffers (Google's data interchange format)
 brew "protobuf"
 # Remote terminal application
@@ -58,10 +75,20 @@ brew "neovim"
 brew "nmap"
 # Manage multiple Node.js versions
 brew "nvm"
+# Open Fortinet client for PPP+TLS VPN tunnel services
+brew "openfortivpn"
+# Development kit for the Java programming language
+brew "openjdk@17"
+# Object-relational database system
+brew "postgresql@14", restart_service: true, link: false
 # Code formatter for JavaScript, CSS, JSON, GraphQL, Markdown, YAML
 brew "prettier"
+# Generic syntax highlighter
+brew "pygments"
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
+# Command-line interface for https://speedtest.net bandwidth tests
+brew "speedtest-cli"
 # User interface to the TELNET protocol
 brew "telnet"
 # Programmatically correct mistyped console commands
@@ -70,8 +97,14 @@ brew "thefuck"
 brew "tldr"
 # Terminal multiplexer
 brew "tmux"
+# Manage complex tmux sessions easily
+brew "tmuxinator"
 # Display directories as trees (with optional color/HTML output)
 brew "tree"
+# Access X11 clipboards from the command-line
+brew "xclip"
+# JavaScript package manager
+brew "yarn", link: false
 # Process YAML, JSON, XML, CSV and properties documents from the CLI
 brew "yq"
 # Tracks most-used directories to make cd smarter
@@ -88,23 +121,33 @@ brew "bufbuild/buf/buf"
 brew "eth-p/software/bat-extras"
 # prettier, on SPEED!
 brew "fsouza/prettierd/prettierd"
-# App to build and share containerized applications and microservices
+# Clipboard manager with advanced features
+cask "copyq"
+# Voice and text chat software
+cask "discord"
+# App to build and share containerised applications and microservices
 cask "docker"
 # Web browser
 cask "google-chrome"
-# Open-source keystroke visualizer
+# Open-source keystroke visualiser
 cask "keycastr"
 # GPU-based terminal emulator
 cask "kitty"
+# Plugin, App, and Theme store which includes plugin injection
+cask "macforge"
 # Reverse proxy, secure introspectable tunnels to localhost
 cask "ngrok"
 # Collaboration platform for API development
 cask "postman"
 # HTTP debugging proxy
 cask "proxyman"
+# Share peripherals between computers
+cask "sharemouse"
 # Native GUI tool for relational databases
 cask "tableplus"
 # GPU-accelerated cross-platform terminal emulator and multiplexer
 cask "wezterm"
 # Video communication and virtual meeting platform
 cask "zoom"
+
+# vim:ft=ruby

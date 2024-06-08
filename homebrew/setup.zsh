@@ -24,5 +24,9 @@ if [[ "$SHELL" != "/bin/zsh" ]]; then
 	echo "Please change your shell to zsh to use brew bundle"
 	exit 1
 else
-	brew bundle --verbose --file='./homebrew/Brewfile/'
+	if [[ "$OSTYPE" == "darwin"* ]]; then
+		brew bundle --verbose --file='./homebrew/Brewfile/'
+	elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
+		brew bundle --verbose --file='./homebrew/Brewfile/'
+	fi
 fi

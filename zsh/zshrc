@@ -174,10 +174,14 @@ function mkcd() {
   mkdir -p "$@" && cd "$_"
 }
 function bbd() {
-  if [[ "$OSTYPE" == "linux-gnu"* ]]; then
-    brew bundle dump --force --describe --file "~/.dotfiles/homebrew/Brewfile"
-  elif [[ "$OSTYPE" == "darwin"* ]]; then
-    brew bundle dump --force --describe --file "~/.dotfiles/homebrew/Brewfile.macos"
+  if [[ "$OSTYPE" == "darwin"* ]]; then
+    export BREWFILE_PATH="~/.dotfiles/homebrew/macos/Brewfile"
+    brew bundle dump --force --describe --file "$BREWFILE_PATH" \
+      && zsh -c "echo \"\" >> $BREWFILE_PATH && echo -e \"# vim:ft=ruby\" >> $BREWFILE_PATH"
+  elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
+    export BREWFILE_PATH="~/.dotfiles/homebrew/linux/Brewfile"
+    brew bundle dump --force --describe --file "$BREWFILE_PATH" \
+      && zsh -c "echo \"\" >> $BREWFILE_PATH && echo -e \"# vim:ft=ruby\" >> $BREWFILE_PATH"
   else
     echo "Unknow \$OSTYPE"
   fi
