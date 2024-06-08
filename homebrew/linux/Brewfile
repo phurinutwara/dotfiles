@@ -1,28 +1,44 @@
+tap "abdfnx/tap"
+tap "bufbuild/buf"
 tap "eth-p/software"
+tap "fsouza/prettierd"
 tap "homebrew/bundle"
 tap "homebrew/services"
+tap "jakehilborn/jakehilborn"
 # Interpreted, interactive, object-oriented programming language
-brew "python@3.12"
+brew "python@3.12", link: false
 # Another PostgreSQL diff tool
 brew "apgdiff"
 # Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
 # Resource monitor. C++ version and continuation of bashtop and bpytop
 brew "btop"
+# GNU File, Shell, and Text utilities
+brew "coreutils"
 # Get a file from an HTTP, HTTPS or FTP server
 brew "curl"
 # Modern, maintained replacement for ls
 brew "eza"
 # Command-line fuzzy finder written in Go
 brew "fzf"
+# GNU debugger
+brew "gdb"
+# GitHub command-line tool
+brew "gh"
 # Remote repository management made easy
 brew "ghq"
 # Distributed revision control system
 brew "git"
+# Quickly rewrite git repository history
+brew "git-filter-repo"
+# AVH edition of git-flow
+brew "git-flow-avh"
 # Interactive command-line tool for using emoji in commit messages
 brew "gitmoji"
 # Open source programming language to build simple/reliable/efficient software
 brew "go"
+# Database migrations CLI tool
+brew "golang-migrate"
 # User-friendly cURL replacement (command-line HTTP client)
 brew "httpie"
 # C library and command-line programs providing a simple interface to inotify
@@ -31,20 +47,38 @@ brew "inotify-tools"
 brew "jq"
 # Generic command-line non-JVM Apache Kafka producer and consumer
 brew "kcat"
+# CLI calendar application
+brew "khal"
+# Simple terminal UI for git commands
+brew "lazygit"
+# Pager program similar to more
+brew "less"
+# Postgres C API library
+brew "libpq"
 # Small memory footprint, flexible web-server
 brew "lighttpd", restart_service: true
 # Pluggable Authentication Modules for Linux
 brew "linux-pam"
+# Drop-in replacement for MySQL
+brew "mariadb"
+# Protocol buffers (Google's data interchange format)
+brew "protobuf"
+# Remote terminal application
+brew "mosh"
 # Fast, highly customisable system info script
 brew "neofetch"
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
+# Port scanning utility for large networks
+brew "nmap"
 # Manage multiple Node.js versions
 brew "nvm"
+# Open Fortinet client for PPP+TLS VPN tunnel services
+brew "openfortivpn"
 # Development kit for the Java programming language
 brew "openjdk@17"
 # Object-relational database system
-brew "postgresql@14"
+brew "postgresql@14", restart_service: true, link: false
 # Code formatter for JavaScript, CSS, JSON, GraphQL, Markdown, YAML
 brew "prettier"
 # Prettier daemon
@@ -53,6 +87,8 @@ brew "prettierd"
 brew "pygments"
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
+# Command-line interface for https://speedtest.net bandwidth tests
+brew "speedtest-cli"
 # Programmatically correct mistyped console commands
 brew "thefuck"
 # Simplified and community-driven man pages
@@ -61,12 +97,26 @@ brew "tldr"
 brew "tmux"
 # Manage complex tmux sessions easily
 brew "tmuxinator"
+# Display directories as trees (with optional color/HTML output)
+brew "tree"
+# Internet file retriever
+brew "wget"
+# Access X11 clipboards from the command-line
+brew "xclip"
 # JavaScript package manager
-brew "yarn"
+brew "yarn", link: false
 # Process YAML, JSON, XML, CSV and properties documents from the CLI
 brew "yq"
 # Tracks most-used directories to make cd smarter
 brew "z"
+# UNIX shell (command interpreter)
+brew "zsh"
+# Fish-like fast/unobtrusive autosuggestions for zsh
+brew "zsh-autosuggestions"
+# Fish shell like syntax highlighting for zsh
+brew "zsh-syntax-highlighting"
+# The best way of working with Protocol Buffers.
+brew "bufbuild/buf/buf"
 # Bash scripts that integrate bat with various command-line tools
 brew "eth-p/software/bat-extras"
 
