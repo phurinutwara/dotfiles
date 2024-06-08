@@ -6,7 +6,7 @@ function module.apply_to_config(config)
 	config.keys = {
 		{
 			key = "f",
-			mods = "CTRL",
+			mods = "CTRL|SHIFT",
 			action = wezterm.action.ToggleFullScreen,
 		},
 	}
