@@ -1,7 +1,8 @@
 tap "eth-p/software"
 tap "homebrew/bundle"
-tap "homebrew/core"
 tap "homebrew/services"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.12"
 # Another PostgreSQL diff tool
 brew "apgdiff"
 # Clone of cat(1) with syntax highlighting and Git integration
@@ -10,8 +11,8 @@ brew "bat"
 brew "btop"
 # Get a file from an HTTP, HTTPS or FTP server
 brew "curl"
-# Modern replacement for 'ls'
-brew "exa"
+# Modern, maintained replacement for ls
+brew "eza"
 # Command-line fuzzy finder written in Go
 brew "fzf"
 # Remote repository management made easy
@@ -22,10 +23,6 @@ brew "git"
 brew "gitmoji"
 # Open source programming language to build simple/reliable/efficient software
 brew "go"
-# Generic syntax highlighter
-brew "pygments"
-# Interpreted, interactive, object-oriented programming language
-brew "python@3.12"
 # User-friendly cURL replacement (command-line HTTP client)
 brew "httpie"
 # C library and command-line programs providing a simple interface to inotify
@@ -46,12 +43,16 @@ brew "neovim"
 brew "nvm"
 # Development kit for the Java programming language
 brew "openjdk@17"
+# Execute binaries from Python packages in isolated environments
+brew "pipx"
 # Object-relational database system
 brew "postgresql@14"
 # Code formatter for JavaScript, CSS, JSON, GraphQL, Markdown, YAML
 brew "prettier"
 # Prettier daemon
 brew "prettierd"
+# Generic syntax highlighter
+brew "pygments"
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
 # Programmatically correct mistyped console commands
@@ -70,3 +71,5 @@ brew "yq"
 brew "z"
 # Bash scripts that integrate bat with various command-line tools
 brew "eth-p/software/bat-extras"
+
+# vim:ft=ruby
