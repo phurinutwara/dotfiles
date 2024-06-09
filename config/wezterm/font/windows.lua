@@ -10,8 +10,9 @@ local module = {}
 --
 -- references:
 -- 1. https://github.com/wez/wezterm/issues/3704
--- 2. Setting up ssh: https://jmmv.dev/2022/02/wsl-ssh-access.html
--- 3. WezTerm ssh config: https://wezfurlong.org/wezterm/config/lua/SshDomain.html
+-- 2. setting up ssh: https://jmmv.dev/2022/02/wsl-ssh-access.html
+-- 3. wezTerm ssh config: https://wezfurlong.org/wezterm/config/lua/SshDomain.html
+-- 4. nerdfonts download link: https://www.nerdfonts.com/font-downloads
 
 function module.apply_to_config(config)
 	config.treat_east_asian_ambiguous_width_as_wide = false
