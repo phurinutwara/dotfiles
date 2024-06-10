@@ -152,6 +152,7 @@ alias eza='eza -lah --git'
 alias man=batman
 alias trail='<<<${(F)path}'
 alias szsh='source ~/.zshrc'
+alias c=clear
 
 ## SPECIFY BY OS
 if [[ "$OSTYPE" == "darwin"* ]]; then

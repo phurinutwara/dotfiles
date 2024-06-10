@@ -11,3 +11,8 @@ function exists() {
   # STDOUT (Display)  = 1
   # STDERR (Display)  = 2
 }
+
+function cc() {
+  clear
+  tmux clear-history
+}
