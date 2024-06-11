@@ -23,9 +23,11 @@ end
 -- end
 -- local os_type = os.capture('echo $(uname) | tr "[:upper:]" "[:lower:]"')
 
+local common_font = require("font/common")
+local common_ui = require("ui/common")
+
 local font
 local ui
-local common_ui = require("ui/common")
 local key = require("keymap")
 
 local os_type = wezterm.target_triple
@@ -40,10 +42,11 @@ else
 	ui = require("ui/windows")
 end
 
-font.apply_to_config(config)
-ui.apply_to_config(config)
+common_font.apply_to_config(config)
 common_ui.apply_to_config(config)
+font.apply_to_config(config)
 key.apply_to_config(config)
+ui.apply_to_config(config)
 
 -- and finally, return the configuration to wezterm
 return config
