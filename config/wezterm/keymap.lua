@@ -3,6 +3,9 @@ local wezterm = require("wezterm")
 local module = {}
 
 function module.apply_to_config(config)
+	-- turn this on to debug key events on wezterm debugger (<C-S-l>)
+	config.debug_key_events = false
+
 	config.keys = {
 		{
 			key = "f",
