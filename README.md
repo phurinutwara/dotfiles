@@ -1,31 +1,48 @@
-# dotfiles
+## :zap: phurinutwara's dotfiles
 
-## TODO
-- Terminal Preferences
-- Changed Shell to ZSH
-- Dock Preferences
-- Mission Control Preference (don't rearrange spaces)
-- Finder Show Path Bar
-- Trackpad (Three Finger Drag and Tap to Click)
-- Git (config and SSH)
+:rainbow: **Showcases**
 
-## To detect OS, try this script
+![Showcase Image](.github/assets/transparent-showcase.png)
 
-```zsh
-if [[ "$OSTYPE" == "linux-gnu"* ]]; then
-        # ...
-elif [[ "$OSTYPE" == "darwin"* ]]; then
-        # Mac OSX
-elif [[ "$OSTYPE" == "cygwin" ]]; then
-        # POSIX compatibility layer and Linux environment emulation for Windows
-elif [[ "$OSTYPE" == "msys" ]]; then
-        # Lightweight shell and GNU utilities compiled for Windows (part of MinGW)
-elif [[ "$OSTYPE" == "win32" ]]; then
-        # I'm not sure this can happen.
-elif [[ "$OSTYPE" == "freebsd"* ]]; then
-        # ...
-else
-        # Unknown.
-fi
+---
+
+:sparkles: **Features**
+
+| Tool    | Ready ?            |
+| ------- | ------------------ |
+| Neovim  | :white_check_mark: |
+| TMUX    | :white_check_mark: |
+| Wezterm | :white_check_mark: |
+
+---
+
+:pushpin: **How to use**
+
+1. Clone this repo to your machine
+
+```bash
+git clone git@github.com:phurinutwara/dotfiles.git ~/.dotfiles --recurse-submodules
 ```
-See more: https://stackoverflow.com/questions/394230/how-to-detect-the-os-from-a-bash-script
+
+2. Go to dotfiles directory and execute the installer
+
+```bash
+cd ~/.dotfiles && ./install
+```
+
+---
+
+<details>
+        <summary>
+                📚 <b>TODOs</b>
+        </summary>
+
+- [ ] Terminal Preferences
+- [ ] Changed Shell to ZSH
+- [ ] Dock Preferences
+- [ ] Mission Control Preference (don't rearrange spaces)
+- [ ] Finder Show Path Bar
+- [ ] Trackpad (Three Finger Drag and Tap to Click)
+- [ ] Git (config and SSH)
+
+</details>
