@@ -9,9 +9,9 @@ function module.apply_to_config(config)
 	config.window_decorations = "RESIZE" -- NOTE: 'INTEGRATED_BUTTONS|RESIZE' to add 3 window buttons
 	config.window_padding = {
 		left = "1cell",
-		right = "1cell",
+		right = "0cell",
 		top = "0.5cell",
-		bottom = "0cell",
+		bottom = "0.5cell",
 	}
 end
 

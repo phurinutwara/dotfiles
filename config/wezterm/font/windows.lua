@@ -21,7 +21,7 @@ function module.apply_to_config(config)
 		{ family = "Symbols Nerd Font Mono", scale = 0.75 },
 		{ family = "Courier MonoThai", scale = 1.10 },
 	})
-	config.font_size = 10.0
+	config.font_size = 12.0
 end
 
 return module
