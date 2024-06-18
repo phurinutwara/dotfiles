@@ -6,7 +6,7 @@ tap "homebrew/bundle"
 tap "homebrew/services"
 tap "jakehilborn/jakehilborn"
 # Interpreted, interactive, object-oriented programming language
-brew "python@3.12", link: false
+brew "python@3.12"
 # OpenType text shaping engine
 brew "harfbuzz"
 # Development kit for the Java programming language
@@ -47,8 +47,12 @@ brew "go"
 brew "golang-migrate"
 # User-friendly cURL replacement (command-line HTTP client)
 brew "httpie"
+# DevTools proxy for iOS devices
+brew "ios-webkit-debug-proxy"
 # Lightweight and flexible command-line JSON processor
 brew "jq"
+# Apache Kafka C/C++ library
+brew "librdkafka"
 # Generic command-line non-JVM Apache Kafka producer and consumer
 brew "kcat"
 # CLI calendar application
@@ -79,6 +83,8 @@ brew "nvm"
 brew "openfortivpn"
 # Development kit for the Java programming language
 brew "openjdk@17"
+# Execute binaries from Python packages in isolated environments
+brew "pipx"
 # Object-relational database system
 brew "postgresql@14", restart_service: true, link: false
 # Code formatter for JavaScript, CSS, JSON, GraphQL, Markdown, YAML
