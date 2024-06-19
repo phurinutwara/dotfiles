@@ -139,8 +139,6 @@ cask "docker"
 cask "google-chrome"
 # Open-source keystroke visualiser
 cask "keycastr"
-# GPU-based terminal emulator
-cask "kitty"
 # Plugin, App, and Theme store which includes plugin injection
 cask "macforge"
 # Reverse proxy, secure introspectable tunnels to localhost
