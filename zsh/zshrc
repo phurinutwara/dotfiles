@@ -140,6 +140,9 @@ zstyle ':omz:plugins:alias-finder' cheaper yes # disabled by default
 export TZ=Asia/Bangkok
 export EDITOR="nvim"
 
+# USE NVIM as VISUAL EDITOR: https://unix.stackexchange.com/a/501863
+export VISUAL="$EDITOR"
+
 export HOMEBREW_CASK_OPTS="--no-quarantine"
 export NULLCMD=bat
 export LESS='--quit-if-one-screen --ignore-case --status-column --LONG-PROMPT --RAW-CONTROL-CHARS --HILITE-UNREAD --tabs=4 --no-init --window=-4 --mouse --wheel-lines=5'
