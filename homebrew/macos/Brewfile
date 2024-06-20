@@ -67,6 +67,8 @@ brew "libpq", link: true
 brew "lighttpd", restart_service: true
 # Drop-in replacement for MySQL
 brew "mariadb"
+# Mac App Store command-line interface
+brew "mas"
 # Protocol buffers (Google's data interchange format)
 brew "protobuf"
 # Remote terminal application
@@ -153,5 +155,21 @@ cask "tableplus"
 cask "wezterm"
 # Video communication and virtual meeting platform
 cask "zoom"
+mas "ColorSlurp", id: 1287239339
+mas "Disk Drill Media Recovery", id: 431224317
+mas "EasyRes", id: 688211836
+mas "GhostText", id: 1552641506
+mas "Gifox", id: 1461845568
+mas "Goodnotes", id: 1444383602
+mas "iMovie", id: 408981434
+mas "LINE", id: 539883307
+mas "Magnet", id: 441258766
+mas "Nitefall", id: 1575190591
+mas "Notability", id: 360593530
+mas "Numbers", id: 409203825
+mas "OneDrive", id: 823766827
+mas "The Unarchiver", id: 425424353
+mas "Vimari", id: 1480933944
+mas "Xcode", id: 497799835
 
 # vim:ft=ruby
