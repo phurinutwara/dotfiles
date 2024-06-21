@@ -137,6 +137,8 @@ cask "discord"
 cask "docker"
 # Web browser
 cask "google-chrome"
+# Keyboard customiser
+cask "karabiner-elements"
 # Open-source keystroke visualiser
 cask "keycastr"
 # Plugin, App, and Theme store which includes plugin injection
