@@ -37,12 +37,14 @@ cd ~/.dotfiles && ./install
                 📚 <b>TODOs</b>
         </summary>
 
-- [ ] Terminal Preferences
-- [ ] Changed Shell to ZSH
+- [x] Terminal Preferences (via dotfile installation)
+- [x] Changed Shell to ZSH (via dotfile installation)
 - [ ] Dock Preferences
 - [ ] Mission Control Preference (don't rearrange spaces)
 - [ ] Finder Show Path Bar
 - [ ] Trackpad (Three Finger Drag and Tap to Click)
 - [ ] Git (config and SSH)
+- [ ] Turn off spelling auto completion
+- [ ] Maximize key repeat period
 
 </details>
