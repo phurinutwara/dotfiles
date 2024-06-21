@@ -19,6 +19,9 @@
     ~/.config/kitty:
       create: true
       path: ./config/kitty
+    ~/.config/btop:
+      create: true
+      path: ./config/btop/
 
 - create:
     - ~/Works
