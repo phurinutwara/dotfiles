@@ -151,6 +151,8 @@ cask "postman"
 cask "proxyman"
 # Share peripherals between computers
 cask "sharemouse"
+# Controls screen display settings
+cask "switchresx"
 # Native GUI tool for relational databases
 cask "tableplus"
 # GPU-accelerated cross-platform terminal emulator and multiplexer
