@@ -6,7 +6,9 @@ tap "homebrew/bundle"
 tap "homebrew/services"
 tap "jakehilborn/jakehilborn"
 # Interpreted, interactive, object-oriented programming language
-brew "python@3.12", link: false
+brew "python@3.12"
+# Development kit for the Java programming language
+brew "openjdk"
 # Another PostgreSQL diff tool
 brew "apgdiff"
 # Clone of cat(1) with syntax highlighting and Git integration
@@ -17,6 +19,8 @@ brew "btop"
 brew "coreutils"
 # Get a file from an HTTP, HTTPS or FTP server
 brew "curl"
+# Modern replacement for 'ls'
+brew "exa"
 # Modern, maintained replacement for ls
 brew "eza"
 # Command-line fuzzy finder written in Go
@@ -33,6 +37,8 @@ brew "git"
 brew "git-filter-repo"
 # AVH edition of git-flow
 brew "git-flow-avh"
+# Platform built on V8 to build network applications
+brew "node"
 # Interactive command-line tool for using emoji in commit messages
 brew "gitmoji"
 # Open source programming language to build simple/reliable/efficient software
@@ -78,7 +84,7 @@ brew "openfortivpn"
 # Development kit for the Java programming language
 brew "openjdk@17"
 # Object-relational database system
-brew "postgresql@14", restart_service: true, link: false
+brew "postgresql@14", link: false
 # Code formatter for JavaScript, CSS, JSON, GraphQL, Markdown, YAML
 brew "prettier"
 # Prettier daemon
