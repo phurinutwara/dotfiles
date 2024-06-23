@@ -3,7 +3,7 @@ local wezterm = require("wezterm")
 local module = {}
 
 function module.apply_to_config(config)
-	config.color_scheme = "Catppuccin Frappe"
+	config.color_scheme = "Catppuccin Mocha"
 	config.front_end = "WebGpu"
 	config.webgpu_power_preference = "HighPerformance"
 	config.max_fps = 240
