@@ -1,4 +1,5 @@
 tap "abdfnx/tap"
+tap "arl/arl"
 tap "bufbuild/buf"
 tap "eth-p/software"
 tap "fsouza/prettierd"
@@ -110,7 +111,7 @@ brew "wget"
 # Access X11 clipboards from the command-line
 brew "xclip"
 # JavaScript package manager
-brew "yarn", link: false
+brew "yarn"
 # Process YAML, JSON, XML, CSV and properties documents from the CLI
 brew "yq"
 # Tracks most-used directories to make cd smarter
@@ -121,6 +122,8 @@ brew "zsh"
 brew "zsh-autosuggestions"
 # Fish shell like syntax highlighting for zsh
 brew "zsh-syntax-highlighting"
+# Git in your tmux status bar.
+brew "arl/arl/gitmux"
 # The best way of working with Protocol Buffers.
 brew "bufbuild/buf/buf"
 # Bash scripts that integrate bat with various command-line tools

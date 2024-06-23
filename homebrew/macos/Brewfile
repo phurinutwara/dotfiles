@@ -1,4 +1,5 @@
 tap "abdfnx/tap"
+tap "arl/arl"
 tap "bufbuild/buf"
 tap "eth-p/software"
 tap "fsouza/prettierd"
@@ -123,6 +124,8 @@ brew "zsh"
 brew "zsh-autosuggestions"
 # Fish shell like syntax highlighting for zsh
 brew "zsh-syntax-highlighting"
+# Git in your tmux status bar.
+brew "arl/arl/gitmux"
 # The best way of working with Protocol Buffers.
 brew "bufbuild/buf/buf"
 # Bash scripts that integrate bat with various command-line tools
