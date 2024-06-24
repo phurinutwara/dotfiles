@@ -1,0 +1,26 @@
+[user]
+    name = Phurinut Waranich
+    email = phurinut.wara@gmail.com
+[core]
+    excludesfile = ~/.gitignore_global
+    pager = delta
+    editor = nvim
+[commit]
+    template = ~/.stCommitMsg
+[alias]
+    lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+[init]
+    defaultBranch = main
+[interactive]
+    diffFilter = delta --color-only
+[delta]
+    navigate = true    # use n and N to move between diff sections
+    width = -2
+    true-color = auto
+    syntax-themes = base16
+    dark = true
+    line-numbers = true
+[merge]
+    conflictstyle = diff3
+[diff]
+    colorMoved = default

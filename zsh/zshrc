@@ -152,7 +152,7 @@ export LESS='--quit-if-one-screen --ignore-case --status-column --LONG-PROMPT --
 # Create Aliases
 alias ls='eza -lah --git'
 alias eza='eza -lah --git'
-alias man=batman
+alias man='BAT_THEME="Monokai Extended" batman "$@"'
 alias trail='<<<${(F)path}'
 alias szsh='source ~/.zshrc'
 alias c=clear

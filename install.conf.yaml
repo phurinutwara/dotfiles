@@ -22,6 +22,7 @@
     ~/.config/btop:
       create: true
       path: ./config/btop/
+    ~/.gitconfig: ./.gitconfig
 
 - create:
     - ~/Works
