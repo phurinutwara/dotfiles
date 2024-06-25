@@ -156,6 +156,7 @@ alias man='BAT_THEME="Monokai Extended" batman "$@"'
 alias trail='<<<${(F)path}'
 alias szsh='source ~/.zshrc'
 alias c=clear
+alias lg=lazygit
 
 ## SPECIFY BY OS
 if [[ "$OSTYPE" == "darwin"* ]]; then
