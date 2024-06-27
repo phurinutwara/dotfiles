@@ -45,28 +45,28 @@
 
 Current stable (Mr.Silentz config):
 ```
-- Display Server:                          **Xorg(x11)** (due to compatability)       # $XDG_SESSION_TYPE to specify
-- Display Manger:                          Ly
-- Desktop Environment:                     xfce
-- Window Manager:                          xfwm4
-- Panel:                                   xfce4-panel
-- Desktop Manager:                         xfdesktop
-- File Manager:                            thunar
-- Volume Manager:                          thunar-volman
-- Audio:                                   pulseaudio (works with my GSX1000)
+- Display Server:         **Xorg(x11)** (due to compatability)       # $XDG_SESSION_TYPE to specify
+- Display Manger:         Ly
+- Desktop Environment:    xfce
+- Window Manager:         xfwm4
+- Panel:                  xfce4-panel
+- Desktop Manager:        xfdesktop
+- File Manager:           thunar
+- Volume Manager:         thunar-volman
+- Audio:                  pulseaudio (works with my GSX1000)
 ```
 
 Goal to switch:
 ```
-- Display Server:                          **Wayland** (XWayland for compatability)   # $XDG_SESSION_TYPE to specify
-- Dispaly Manager:                         Ly
-- Desktop Environment:                     ?? (Still experimenting)
-- Window Manager:                          Sway
-- Panel:                                   ?? (Still experimenting) 
-- Desktop Manager:                         ?? (Still experimenting) 
-- File Manager:                            thunar
-- Volume Manager:                          thunar-volman
-- Audio:                                   pulseaudio (works with my GSX1000)
+- Display Server:         **Xorg(x11)** (due to compatability)       # $XDG_SESSION_TYPE to specify
+- Display Manager:        Ly
+- Desktop Environment:    xfce (Still experimenting)
+- Window Manager:         i3 (tiled) + keymap hint
+- Panel:                  ?? (Still experimenting) 
+- Desktop Manager:        ?? (Still experimenting) 
+- File Manager:           thunar
+- Volume Manager:         thunar-volman
+- Audio:                  pulseaudio (works with my GSX1000)
 ```
 
 ---
@@ -306,28 +306,26 @@ reboot
    1. Install Nvidia Graphic Driver (Pick just one choice)
 
       A. [Appropriate Driver](https://linuxiac.com/arch-linux-install/#10-install-a-desktop-environment-on-arch-linux) Open-source driver for ease
-
       ```sh
       $ pacman -S nvidia nvidia-utils
       ```
 
       B. [Proprietary Driver]( https://github.com/QuantiniumX/Guide-to-install-Arch-Linux/blob/main/Graphics/Nvidia.md )
 
-   2. Install Desktop Server (Pick just one)
+   2. Install Desktop Server 
 
       A. [Xorg](https://github.com/silentz/arch-linux-install-guide?tab=readme-ov-file#configuring-installed-arch-linux) <- My main choice
       ```sh
       $ pacman -S xorg xorg-apps xorg-xinit xdotool xclip
       ```
 
-      B. Wayland <- I will go experiment on here later
-      <!-- TODO: USE Wayland instead -->
-
-   3. Desktop Environment (Pick just one)
-   <!-- TODO: USE Sway instead -->
-      A. Sway
+   3. Desktop Environment (DE/WM)
+      A. i3 (My main)
       ```sh
-      ...TODO...
+      $ sudo pacman -S i3-wm i3status i3lock lxappearance
+      $ sudo pacman -S polybar rofi ranger thunar alacritty dunst feh \
+      $                xss-lock picom light pango flameshot gsimplecal \
+      $                thunar-archive-plugin thunar-media-tags-plugin
       ```
 
       B. Xfce (Silentz's stable)
@@ -339,15 +337,7 @@ reboot
       $   xfce4-wavelan-plugin xfce4-weather-plugin xfce4-whiskermenu-plugin network-manager-applet
       ```
 
-      C. i3
-      ```sh
-      $ sudo pacman -S i3-wm i3status i3lock lxappearance
-      $ sudo pacman -S polybar rofi ranger thunar alacritty dunst feh \
-      $                xss-lock picom light pango flameshot gsimplecal \
-      $                thunar-archive-plugin thunar-media-tags-plugin
-      ```
-
-   4. Desktop Manager
+   4. Desktop Manager (For switch between i3 and Xfce)
    ```sh
    $ sudo pacman -S ly
    $ sudo systemctl enable ly
@@ -398,6 +388,12 @@ reboot
    11. Setup the fastest pacman mirror
    ```sh
    $ sudo reflector --country Thailand,Singapore --fastest 10 --threads `nproc` --save /etc/pacman.d/mirrorlist
+   ```
+
+   12. Intall printing settings
+   ```sh
+   $ sudo pacman -S cups cups-filters cups-pdf system-config-printer --needed
+   $ sudo systemctl enable cups.service
    ```
 
    12. NetworkManager additionals:
@@ -460,3 +456,5 @@ DE: Desktop Environment (GNOME, KDE, XFCE)
   : It gets me zero-effort support for suspend/hibernate, volume keys, brightness keys, etc.
   : On my workstation, I just run i3wm via lightdm.
 
+WM: i3wm
+- https://www.youtube.com/watch?v=8YE1LlTxfMQ&list=PLsz00TDipIffGKMW4hmzmwXTvARXyJMn8&index=2

@@ -23,6 +23,9 @@
       create: true
       path: ./config/btop/
     ~/.gitconfig: ./.gitconfig
+    ~/.config/sway:
+      create: true
+      path: ./config/sway
 
 - create:
     - ~/Works
