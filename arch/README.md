@@ -319,16 +319,32 @@ reboot
       $ pacman -S xorg xorg-apps xorg-xinit xdotool xclip
       ```
 
-   3. Desktop Environment (DE/WM)
+   3. Arch User Repository helper (I go for [ yay ](https://github.com/Jguer/yay)
+   ```sh
+   $ pacman -S --needed git base-devel
+   $ git clone https://aur.archlinux.org/yay.git
+   $ cd yay
+   $ makepkg -si
+   ```
+
+   4. Desktop Environment (DE/WM)
       A. i3 (My main)
       ```sh
-      $ sudo pacman -S i3-wm i3status i3lock lxappearance
-      $ sudo pacman -S polybar rofi ranger thunar alacritty dunst feh \
-      $                xss-lock picom light pango flameshot gsimplecal \
-      $                thunar-archive-plugin thunar-media-tags-plugin
-      ```
+      $ sudo pacman -S i3 dmenu firefox i3status i3lock lxappearance
+      $ sudo pacman -S rofi ranger thunar alacritty dunst \
+                       xss-lock picom light pango flameshot gsimplecal \
+                       thunar-archive-plugin thunar-media-tags-plugin
 
-      B. Xfce (Silentz's stable)
+      $ yay -S picom        # pycom as composite manager (x11 compositor)
+      $ yay -S polybar      # polybar for status bar
+      $ yay -S feh          # Image viewer (as background)
+      $ yay -S rofi         # better of dmenu
+      $ yay -S lxappearance # for customise theme
+      $ yay -S light        # for customise theme
+      ```
+      NOTE: use `xrandr` to adjust desktop resolution size
+
+      B. Xfce (Silentz's stable as a Fallback DE)
       ```sh
       $ sudo pacman -S dbus xfce4 xfce4-screenshooter \
       $   thunar-archive-plugin thunar-media-tags-plugin \
@@ -337,33 +353,36 @@ reboot
       $   xfce4-wavelan-plugin xfce4-weather-plugin xfce4-whiskermenu-plugin network-manager-applet
       ```
 
-   4. Desktop Manager (For switch between i3 and Xfce)
+   5. Desktop Manager (For switch between i3 and Xfce)
    ```sh
    $ sudo pacman -S ly
    $ sudo systemctl enable ly
    ```
 
-   5. [Useful packages](https://github.com/silentz/arch-linux-install-guide?tab=readme-ov-file#configuring-installed-arch-linux)
+   6. [Useful packages](https://github.com/silentz/arch-linux-install-guide?tab=readme-ov-file#configuring-installed-arch-linux)
    <!-- TODO: Take a look on each utils -->
    ```sh
    $ sudo pacman -S bind dialog intel-ucode git reflector bash-completion w3m
    $ sudo pacman -S base-devel lshw zip unzip htop xsel tree fuse2 keychain arandr powertop inxi
    $ sudo pacman -S wget iw wpa_supplicant openbsd-netcat axel tcpdump mtr net-tools rsync conntrack-tools ethtool
    $ sudo pacman -S sof-firmware pulseaudio alsa-utils alsa-plugins pavucontrol
+
+   $ sudo pacman -S pipewire               # some one said better than pulseaudio
+   $ yay -S openfortigui
    ```
 
-   6. SSD TRIM
+   7. SSD TRIM
    ```sh
    $ sudo systemctl enable fstrim.timer
    ```
 
-   7. Bluetooth
+   8. Bluetooth
    ```sh
    $ sudo pacman -S bluez bluez-utils blueman
    $ sudo systemctl enable bluetooth
    ```
 
-   8. Improve battery usage
+   9. Improve battery usage
    ```sh
    $ sudo pacman -S tlp tlp-rdw acpi acpi_call
    $ sudo systemctl enable tlp
@@ -371,38 +390,58 @@ reboot
    $ sudo systemctl mask systemd-rfkill.socket
    ```
 
-   9. Fonts
-   <!-- TODO: Customize your own -->
+   10. Fonts (`fc-list` to view installed fonts name)
    ```sh
    $ sudo pacman -S noto-fonts noto-fonts-emoji ttf-ubuntu-font-family ttf-dejavu ttf-freefont
    $ sudo pacman -S ttf-liberation ttf-droid ttf-roboto terminus-font
+   $ yay -S ttf-nerd-fonts
+   $ yay -S ttf-jetbrains-mono-nerd
+   $ yay -S ttf-nerd-fonts-symbols
+   $ yay -S ttf-nerd-fonts-symbols-mono
    ```
 
-   10. Theme and Icons
+   11. Theme and Icons
    <!-- TODO: Customize your own -->
    ```sh
    $ sudo pacman -S arc-gtk-theme
    $ sudo pacman -S papirus-icon-theme
    ```
 
-   11. Setup the fastest pacman mirror
+   12. Setup the fastest pacman mirror
    ```sh
    $ sudo reflector --country Thailand,Singapore --fastest 10 --threads `nproc` --save /etc/pacman.d/mirrorlist
    ```
 
-   12. Intall printing settings
+   13. Intall printing settings
    ```sh
    $ sudo pacman -S cups cups-filters cups-pdf system-config-printer --needed
    $ sudo systemctl enable cups.service
    ```
 
-   12. NetworkManager additionals:
+   14. NetworkManager additionals:
    <!-- TODO: Do research -->
    ```sh
    $ sudo pacman -S nm-connection-editor networkmanager-openvpn
    ```
 
-   13. TODO: Keymap language switcher
+   15. TODO: Keymap binder and language switcher
+
+   16. TODO: My wifi dongle (TP-Link Archer TX20UH)
+
+   ```ssh
+   $ sudo lshw
+     *-usb:1 UNCLAIMED
+          description: Generic USB device
+          product: 802.11ac WLAN Adapter
+          vendor: Realtek
+          physical id: 5
+          bus info: usb@1:5
+          version: 0.00
+          serial: 00e04c000001
+          capabilities: usb-2.00
+          configuration: maxpower=500mA speed=480Mbit/s
+
+   ```
 
 ---
 
