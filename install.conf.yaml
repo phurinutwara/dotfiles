@@ -23,9 +23,19 @@
       create: true
       path: ./config/btop/
     ~/.gitconfig: ./.gitconfig
-    ~/.config/sway:
+    # Linux stuffs
+    ~/.config/i3:
       create: true
-      path: ./config/sway
+      path: ./config/i3
+    ~/.config/picom:
+      create: true
+      path: ./config/picom
+    ~/.config/polybar:
+      create: true
+      path: ./config/polybar
+    ~/.config/rofi:
+      create: true
+      path: ./config/rofi
 
 - create:
     - ~/Works
