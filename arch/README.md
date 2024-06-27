@@ -339,10 +339,18 @@ reboot
       $ yay -S polybar      # polybar for status bar
       $ yay -S feh          # Image viewer (as background)
       $ yay -S rofi         # better of dmenu
-      $ yay -S lxappearance # for customise theme
-      $ yay -S light        # for customise theme
+      $ yay -S ranger       # cli-styled file explorer
+      $ yay -S lxappearance # for customize theme of i3
+      $ yay -S light        # for customize display light
+      $ yay -S pango        # for text-rendering
       ```
       NOTE: use `xrandr` to adjust desktop resolution size
+      ```sh
+      # ~/.xprofile to run xrandr when logging in
+      # see more: https://askubuntu.com/a/754233
+      
+      xrandr --output DP-4 --mode 5120x1440 --rate 240
+      ```
 
       B. Xfce (Silentz's stable as a Fallback DE)
       ```sh
@@ -412,11 +420,7 @@ reboot
    $ sudo reflector --country Thailand,Singapore --fastest 10 --threads `nproc` --save /etc/pacman.d/mirrorlist
    ```
 
-   13. Intall printing settings
-   ```sh
-   $ sudo pacman -S cups cups-filters cups-pdf system-config-printer --needed
-   $ sudo systemctl enable cups.service
-   ```
+   13. TODO: Intall printing settings
 
    14. NetworkManager additionals:
    <!-- TODO: Do research -->
@@ -425,8 +429,12 @@ reboot
    ```
 
    15. TODO: Keymap binder and language switcher
+   See more: https://ejmastnak.com/tutorials/arch/typematic-rate/
+   See more: https://wiki.archlinux.org/title/Linux_console/Keyboard_configuration#Systemd_service
 
    16. TODO: My wifi dongle (TP-Link Archer TX20UH)
+
+   17. Enable hibernation
 
    ```ssh
    $ sudo lshw
