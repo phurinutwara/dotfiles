@@ -85,6 +85,8 @@ Goal to switch:
    - Basic CLI/TUI usage:
      - you will have to run a lot of commands through installation\
        without helping of GUI (if you want deeply understand each command I suggest use `man`)
+     - I use $ before command to demonstrate a command to run in shell prompt\
+       otherwise, just a description in a code-block
    - A lot of Googling Research:
      - you usually might ran into problem while installing and you need\
        to be able to fix that stuck point on your own
@@ -101,24 +103,29 @@ Goal to switch:
 0. Burn Arch Linux Image ISO to USB-stick with Etcher (it's ease of use software)
 
 1. ... make the way until boot to arch linux installer medium... (i'll update this later with pic example)
+   : NOTE: I just saw there are easy [GUIDED INTERACTIVE INSTALLATION](https://youtu.be/8YE1LlTxfMQ?si=bWozdqmq2g_jG1q-&t=280) by using
+   : arch install script so I'll give a try later
+   : ```sh
+     root@archiso ~ $ archinstall
+     ```
 
 2. Synchronize pacman packages
 
-   1. Make sure you have internet connection by trying `ping archlinux.org`\
+   1. Make sure you have [internet connection](https://wiki.archlinux.org/title/installation_guide#Connect_to_the_internet) by trying `ping archlinux.org`\
       because if you doesn't has internet connection you won't able to install any\
       required package and once you alter your disk by `cfdisk`\
       you won't be able to boot to your OS back if you only have one OS installed on your PC
+
    2. Use pacman to sync all packages to medium \
-      (you will get newest release cli-app due to rolling updates)
+      (So you will get newest release of cli utility apps when `pacman -S` later in this guide)
       ```sh
-      $ pacman -Syy                            
+      $ pacman -Syy
 
       # Explanation of flags (try `man pacman` for detail)
 
       # -S, --sync is Synchronize packages. 
       # Packages are installed directly from the remote
       # repositories, including all dependencies required to run the packages.
-      # NOTE: AKA yarn add [...]
 
       # -y, --refresh
       # Download a fresh copy of the master package databases (repo.db) from the
@@ -126,10 +133,10 @@ Goal to switch:
       # use --sysupgrade or -u. Passing two --refresh or -y flags will force a refresh of
       # all package databases, even if they appear to be up-to-date.
 
+      # NOTE: This performs like `brew update`
       ```
 
 3. Disk Partitioning (take longest time to understand)
-
 
    1. `lsblk` to view summary of disk and partitions\
    (**NOTE: do this everytimes to prevent unintended
@@ -137,13 +144,13 @@ Goal to switch:
 
    2. It needs 3 partitions for arch linux according to [Arch Documentation](https://wiki.archlinux.org/title/Installation_guide#Example_layouts)
       1. EFI System Partition at /boot (**1 GB**)
-      2. Root Partition (> 32 GB) [Type: Linux system]
-      3. Linux Swap (> 4 GB base on your ram) [It will need when hibernation]
+      2. Root Partition (**> 32 GB**) [Type: Linux system]
+      3. Linux Swap (**> 4 GB base on your ram**) [It will need when hibernation]
 
-   3. `fdisk -l | less` to view list with details of disk and partitions
+   3. [`fdisk -l | less`](https://wiki.archlinux.org/title/installation_guide#Partition_the_disks) to view list with details of disk and partitions
 
    4. But I recommend use `cfdisk /dev/nvme1n_p_` to manipulate changes of partition for ease of use
-      - do noted that if you can not found the free space on cfdisk\
+      - noted that if you can not found the free space on cfdisk\
         you might use `cfdisk /dev/nvme1n1` rather than `cfdisk /dev/nvme1n1p5`\
         (this means you want to `cfdisk` all spaces in the disk not just partitioned one)
    
@@ -174,7 +181,7 @@ Goal to switch:
    $ mkfs.ext4 /dev/nvme1n1p5              # use your Linux system partition (for /root)
    ```
 
-4. Mounting time
+4. [Mounting](https://wiki.archlinux.org/title/installation_guide#Mount_the_file_systems) those drives
 ```sh
 $ mount /dev/nvme1n1p5 /mnt                # mount your root drive
 
@@ -182,26 +189,24 @@ $ mkdir /mnt/boot/efi                      # create efi boot partition for Linux
 $ mount /dev/nvme1n1p3 /mnt/boot/efi       # mount your EFI partition
 ```
 
-5. Prepare base/essential packages by `pacstrap`
+5. Prepare [base/essential packages](https://wiki.archlinux.org/title/installation_guide#Install_essential_packages) by [`pacstrap`](https://man.archlinux.org/man/pacstrap.8)
 ```sh
 $ pacstrap -K /mnt base linux linux-firmware sudo vim zsh
 
 # Explanation of flags (try `man pacstrap` for detail)
-# ...
-#  TODO: Explains the flags here
-#        Mr.Silentz use -i flag
-#        Other-else use -K flag
+# Mr.Silentz use -i flag to Prompt for package confirmation when needed (run interactively).
+# Other-else use -K flag to Initialize an empty pacman keyring in the target (implies -G).
 # ...
 
-# Explanation of each packages
-# base is                     ... [REQUIRED]
-# linux is                    ... [REQUIRED]
-# linux-firmware is           ... [REQUIRED]
-# sudo is                     ... [REQUIRED]
-# vim is                      ... [REQUIRED]
+# Explanation of each packages 
+# (take a look here, https://archlinux.org/packages/?name=base)
+# [REQUIRED] base is Minimal package set to define a basic Arch Linux installation
+# [REQUIRED] linux is The Linux kernel and modules 
+# [REQUIRED] linux-firmware is Firmware files for Linux 
+# [REQUIRED] sudo is Give certain users the ability to run some commands as root 
 ```
 
-6. Generate fstab into your new file system
+6. Generate [fstab](https://wiki.archlinux.org/title/installation_guide#Fstab) into your new file system
 ```sh
 $ genfstab -U -p /mnt > /mnt/etc/fstab
 
@@ -209,31 +214,31 @@ $ genfstab -U -p /mnt > /mnt/etc/fstab
 # TODO: ...explain here...
 ```
 
-7. arch-chroot (change root) to mounted drive
+7. arch-chroot ([change root](https://wiki.archlinux.org/title/Change_root)) to mounted drive
 ```sh
 $ arch-chroot /mnt
 ```
 
-8. Setup locale
+8. [Setup locale](https://wiki.archlinux.org/title/installation_guide#Localization)
 ```sh
 $ vim /etc/locale.gen                      # uncomment your using langauge, for me `en_US.UTF-8` and `th_TH.UTF-8`
 $ locale-gen                               # this will uses /etc/locale.gen to generate
 ```
 
-9. Setup system timezone
+9. [Setup system timezone](https://wiki.archlinux.org/title/installation_guide#Time)
 ```sh
 echo "LANG=en_US.UTF-8" > /etc/locale.conf
 $ ln -sf /usr/share/zoneinfo/Asia/Bangkok /etc/localtime
 ```
 
-10. Setup hardware clock
+10. Setup hardware clock (Run [`hwclock`](https://man.archlinux.org/man/hwclock.8) to generate `/etc/adjtime`)
 ```sh
 $ hwclock --systohc
 ```
 
-11. Setup hostname and `/etc/hosts`
+11. [Setup hostname](https://wiki.archlinux.org/title/installation_guide#Network_configuration) and `/etc/hosts`
 ```sh
-echo 'phurinutw-pc' > /etc/hostname
+$ echo 'phurinutw-pc' > /etc/hostname
 $ vim /etc/hosts
 
 # add these 3 lines at the end of the `/etc/hosts` file
@@ -242,7 +247,7 @@ $ vim /etc/hosts
 127.0.1.1    phurinutw-pc
 ```
 
-12. Add new user
+12. [Add new user](https://wiki.archlinux.org/title/Users_and_groups#Example_adding_a_user)
 ```sh
 $ useradd -m -G wheel,storage,power,audio,video -s /bin/zsh phurinutw 
 
@@ -251,17 +256,20 @@ $ useradd -m -G wheel,storage,power,audio,video -s /bin/zsh phurinutw
 # if you added user and group but your typo was wrong,
 # later you can use usermod to alter the user. for example,
 
-# $ useradd -m -G wheel -s /bin/besh phurinutw   <- you config default shell wrong and also you want more usergroup
-# $ usermod -m -G wheel,storage,power,audio,video -s /bin/zsh phurinutw   <- this will modified all of your params
+# $ useradd -m -G wheel -s /bin/besh phurinutw   
+#    ∟ you config default shell wrong and also you want more usergroup
+
+# $ usermod -m -G wheel,storage,power,audio,video -s /bin/zsh phurinutw
+#    ∟ this will modified all of your params
 ```
 
-13. Set up your root and your user password
+13. Set up your [root](https://wiki.archlinux.org/title/installation_guide#Root_password) and your user password
 ```sh
 $ passwd                                   # this will set-up the root password
 $ passwd phurinutw                         # this will set-up your user password for login
 ```
 
-14. Add wheel group to make your user able to use sudo cmds
+14. Add [wheel group](https://wiki.archlinux.org/title/Users_and_groups#Group_list) to make your user able to use sudo cmds
 ```sh
 EDITOR=vim visudo                          # I use vim so I add EDITOR env
                                            # If you don't, just leave plain with `visudo`
@@ -269,7 +277,7 @@ EDITOR=vim visudo                          # I use vim so I add EDITOR env
 # uncomment this line in visudo file:
 # %wheel ALL=(ALL) ALL
 ```
-15. Install and config grub (it's the bootloader)
+15. Install and config [grub](https://wiki.archlinux.org/title/GRUB) (it's the [bootloader](https://wiki.archlinux.org/title/Arch_boot_process#Boot_loader))
 ```sh
 $ pacman -S grub efibootmgr os-prober mtools
                                            # `grub` and `efibootmgr` is required but
@@ -284,12 +292,14 @@ $ grub-mkconfig -o /boot/grub/grub.cfg     # this will genearate the config
 
 16. Install essential network packages, The Network Manager
     : so we can make connection during post-installation
+    : (We use `systemctl` to control [service management](https://wiki.archlinux.org/title/General_recommendations#Service_management) which is called [systemd](https://wiki.archlinux.org/title/Systemd))
 ```sh
 $ pacman -S dhcpcd networkmanager resolvconf
-$ systemctl enable sshd
-$ systemctl enable dhcpcd
-$ systemctl enable NetworkManager
-$ systemctl enable systemd-resolved
+$ systemctl enable sshd                    # sshd is the OpenSSH server process
+$ systemctl enable dhcpcd                  # DHCP Client, https://wiki.archlinux.org/title/dhcpcd
+$ systemctl enable NetworkManager          # Detect and config to automatically connect to networks, https://wiki.archlinux.org/title/NetworkManager
+$ systemctl enable systemd-resolved        # Provide network name resolution to local apps via a D-Bus interface, https://wiki.archlinux.org/title/Systemd-resolved
+
 $ exit                                     # exit the arch-chroot terminal from mnt drive to medium
 ```
 
@@ -300,28 +310,30 @@ reboot
 ```
 ---
 
-##### POST-Installation ( WM/DE Goes here )
+##### POST-Installation (WM/DE Goes here)
+
 1. Installation each components (most fun and customizable part)
 
    1. Install Nvidia Graphic Driver (Pick just one choice)
 
-      A. [Appropriate Driver](https://linuxiac.com/arch-linux-install/#10-install-a-desktop-environment-on-arch-linux) Open-source driver for ease
+      A. [Appropriate Driver](https://linuxiac.com/arch-linux-install/#10-install-a-desktop-environment-on-arch-linux) Open-source driver for ease (I use this, it's easy choice)
       ```sh
       $ pacman -S nvidia nvidia-utils
       ```
 
       B. [Proprietary Driver]( https://github.com/QuantiniumX/Guide-to-install-Arch-Linux/blob/main/Graphics/Nvidia.md )
 
-   2. Install Desktop Server 
-
-      A. [Xorg](https://github.com/silentz/arch-linux-install-guide?tab=readme-ov-file#configuring-installed-arch-linux) <- My main choice
+   2. Install Desktop Server: [Xorg](https://github.com/silentz/arch-linux-install-guide?tab=readme-ov-file#configuring-installed-arch-linux)
+      
       ```sh
       $ pacman -S xorg xorg-apps xorg-xinit xdotool xclip
       ```
 
-   3. Arch User Repository helper (I go for [ yay ](https://github.com/Jguer/yay)
+   3. Arch User Repository helper (I go for [yay](https://github.com/Jguer/yay))
    ```sh
+   # base-devel is Basic tools to build Arch Linux packages
    $ pacman -S --needed git base-devel
+
    $ git clone https://aur.archlinux.org/yay.git
    $ cd yay
    $ makepkg -si
@@ -330,15 +342,15 @@ reboot
    4. Desktop Environment (DE/WM)
       A. i3 (My main)
       ```sh
-      $ sudo pacman -S i3 dmenu firefox i3status i3lock lxappearance
+      $ sudo pacman -S i3 i3lock lxappearance firefox
       $ sudo pacman -S rofi ranger thunar alacritty dunst \
                        xss-lock picom light pango flameshot gsimplecal \
                        thunar-archive-plugin thunar-media-tags-plugin
 
       $ yay -S picom        # pycom as composite manager (x11 compositor)
-      $ yay -S polybar      # polybar for status bar
+      $ yay -S polybar      # polybar for status bar (use this instead of i3status)
       $ yay -S feh          # Image viewer (as background)
-      $ yay -S rofi         # better of dmenu
+      $ yay -S rofi         # better of dmenu (use this instead of dmenu)
       $ yay -S ranger       # cli-styled file explorer
       $ yay -S lxappearance # for customize theme of i3
       $ yay -S light        # for customize display light
@@ -368,15 +380,15 @@ reboot
    ```
 
    6. [Useful packages](https://github.com/silentz/arch-linux-install-guide?tab=readme-ov-file#configuring-installed-arch-linux)
-   <!-- TODO: Take a look on each utils -->
+   <!-- TODO: Take a look on each utils and turn it to list.txt file for later use -->
    ```sh
-   $ sudo pacman -S bind dialog intel-ucode git reflector bash-completion w3m
+   $ sudo pacman -S bind dialog intel-ucode reflector bash-completion w3m
    $ sudo pacman -S base-devel lshw zip unzip htop xsel tree fuse2 keychain arandr powertop inxi
    $ sudo pacman -S wget iw wpa_supplicant openbsd-netcat axel tcpdump mtr net-tools rsync conntrack-tools ethtool
    $ sudo pacman -S sof-firmware pulseaudio alsa-utils alsa-plugins pavucontrol
 
-   $ sudo pacman -S pipewire               # some one said better than pulseaudio
-   $ yay -S openfortigui
+   $ sudo pacman -S pipewire               # some one said it's better than pulseaudio
+   $ yay -S openfortivpn                   # for forticlient VPN
    ```
 
    7. SSD TRIM
@@ -454,10 +466,12 @@ reboot
 ---
 
 ##### References:
+0. [Arch Linux Wiki](https://wiki.archlinux.org/)
+   : Please make this as your new home, you gonna visit there a lot
 1. [Official Arch installation (archlinux.org)](https://wiki.archlinux.org/title/Installation_guide):
    : Hardest but always up-to-dated, use this as reference when other guide failed due to out-dated
 2. [Easy-follow but outdated installation](https://linuxiac.com/arch-linux-install/)
-   : This is the first place I follow but I stuck when mount the device
+   : This is the first place I follow but I stuck when mount the device but `cfdisk` is beginner friendly :)
    : (I did not create swap partition and somehow `mount` does not work)
 3. [QuantiniumX/Guide-to-install-Arch-Linux](https://github.com/QuantiniumX/Guide-to-install-Arch-Linux)
    : Nicely explains but bloat on pre-install packages
@@ -465,8 +479,8 @@ reboot
    : because I don't know whether all of those packages will work on my PC or not
 4. [silentz/arch-linux-install-guide](https://github.com/silentz/arch-linux-install-guide)
    : His step is very clean and clear and somehow his commands are more reasonable than the official doc
-   : I followed him later until I chose to go with Xfce desktop environment, and it's beatiful and stable to use
-   : Only downside is, he use `fdisk` while partitioning drives and it's hard to follow
+   : I followed him later and I chose to go with Xfce desktop environment, his config is beatiful and stable to use
+   : Only one thing to mention is, he use `fdisk` while partitioning drives and that's hard to follow as a linux newb
 5. [itsfoss](https://itsfoss.com/install-arch-linux/)
    : Somehow I like how this blog using words and examples to explain, it easy to read and follow
 
@@ -480,28 +494,33 @@ My [Post-installation](https://wiki.archlinux.org/title/Installation_guide#Post-
 
 #### TODO:
 
-- Catagorized install processes to group and explain more simpler and clearer
-- Add some gif for better explanation
-- Try switch to use i3, awesomeWM once expertise at Arch linux
-- Move this doc to [docusaurus](https://docusaurus.io/) for powered with MDX
+- [x] Catagorized install processes to group and explain more simpler and clearer
+- [x] Try switch to use **i3**, ~~awesomeWM~~ once expertise at Arch linux
+- [ ] Add some pics and gifs for better explanation
+- [ ] Move this doc to [docusaurus](https://docusaurus.io/) for powered with MDX
 
 ---
 
 #### Current research:
 
-Display Server (Xorg, Wayland)
-- https://www.tuxedocomputers.com/en/Whats-the-deal-with-X11-and-Wayland-_1.tuxedo
-- https://www.baeldung.com/linux/display-server-xorg-wayland
+- [GUI](https://wiki.archlinux.org/title/General_recommendations#Graphical_user_interface)
 
-DM: Display Manager (GDM, SDDM, **Ly**)
-- https://www.baeldung.com/linux/display-managers-install-uninstall
+   - Display Server (**Xorg**, Wayland)
 
-DE: Desktop Environment (GNOME, KDE, XFCE)
-- https://www.vpsserver.com/gnome-vs-xfce-vs-kde/
-- https://www.reddit.com/r/i3wm/comments/9lonc8/what_de_if_any_do_i3users_use/
-  : E39M5S62 - I run i3wm on top of XFCE on my laptop (xfdesktop, bar, etc are all disabled).
-  : It gets me zero-effort support for suspend/hibernate, volume keys, brightness keys, etc.
-  : On my workstation, I just run i3wm via lightdm.
+      - https://www.tuxedocomputers.com/en/Whats-the-deal-with-X11-and-Wayland-_1.tuxedo
+      - https://www.baeldung.com/linux/display-server-xorg-wayland
 
-WM: i3wm
-- https://www.youtube.com/watch?v=8YE1LlTxfMQ&list=PLsz00TDipIffGKMW4hmzmwXTvARXyJMn8&index=2
+   - DM: Display Manager (GDM, SDDM, **Ly**)
+
+      - https://www.baeldung.com/linux/display-managers-install-uninstall
+
+   - DE: Desktop Environment (GNOME, KDE, XFCE)
+
+      - https://www.vpsserver.com/gnome-vs-xfce-vs-kde/
+      - https://www.reddit.com/r/i3wm/comments/9lonc8/what_de_if_any_do_i3users_use/
+        : E39M5S62 - I run i3wm on top of XFCE on my laptop (xfdesktop, bar, etc are all disabled).
+        : It gets me zero-effort support for suspend/hibernate, volume keys, brightness keys, etc.
+        : On my workstation, I just run i3wm via lightdm.
+
+   - WM: i3wm
+     - https://www.youtube.com/watch?v=8YE1LlTxfMQ&list=PLsz00TDipIffGKMW4hmzmwXTvARXyJMn8&index=2
