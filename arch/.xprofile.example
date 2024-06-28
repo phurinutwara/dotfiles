@@ -1,0 +1,5 @@
+xrandr --output DP-4 --mode 5120x1440 --rate 240
+
+# manually set with kbdrate -d 200 -r 75
+# see more: https://ejmastnak.com/tutorials/arch/typematic-rate/
+xset r rate 175 70
