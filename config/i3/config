@@ -68,7 +68,10 @@ tiling_drag modifier titlebar
 bindsym $mod+Return exec kitty
 
 # kill focused window
-bindsym $mod+Shift+q kill
+# bindsym $mod+Shift+q kill
+
+# I personally like just mod+q because it's easier to reach
+bindsym $mod+q kill
 
 # start dmenu (a program launcher)
 # bindsym $mod+d exec --no-startup-id dmenu_run
