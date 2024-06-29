@@ -21,13 +21,13 @@
 1. Clone this repo to your machine
 
 ```bash
-git clone git@github.com:phurinutwara/dotfiles.git ~/.dotfiles --recurse-submodules
+$ git clone git@github.com:phurinutwara/dotfiles.git --recursive
 ```
 
 2. Go to dotfiles directory and execute the installer
 
 ```bash
-cd ~/.dotfiles && ./install
+$ cd ~/dotfiles && ./install
 ```
 
 ---
