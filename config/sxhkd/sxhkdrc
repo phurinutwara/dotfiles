@@ -1,0 +1,3 @@
+space + alt
+  setxkbmap -query | grep -q 'th' && setxkbmap us || setxkbmap th,us
+
