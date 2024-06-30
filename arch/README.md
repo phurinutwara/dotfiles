@@ -369,8 +369,9 @@ reboot
       $ sudo pacman -S pango               # for text-rendering
       $ sudo pacman -S thunar              # GUI file explorer
       ```
-      NOTE: use `xrandr` to adjust desktop resolution size
+      NOTE: use `sudo nvidia-settings` to adjust desktop resolution size and save to `/etc/X11/xorg.conf` file
       ```sh
+      # or manual config with xrandr
       # ~/.xprofile to run xrandr when logging in
       # see more: https://askubuntu.com/a/754233
 
