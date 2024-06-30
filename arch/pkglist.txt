@@ -73,6 +73,7 @@ reflector
 ripgrep
 rofi
 rsync
+samba
 sof-firmware
 speedtest-cli
 sudo
