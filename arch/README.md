@@ -530,9 +530,9 @@ reboot
    $ echo 'exec --no-startup-id sxhkd' >> ~/.config/i3/config
    ```
 
-   16. TODO: My wifi dongle (TP-Link Archer TX20UH)
+   16. My wifi dongle (TP-Link Archer TX20UH -- rtl8188gu chip)
       ```sh
-      $ sudo pacman -S linux-headers bc
+      $ sudo pacman -S linux-headers bc gcc
 
       # $ pacman -Qo lspci
       # /usr/bin/lspci is owned by pciutils 3.6.2-2
@@ -540,6 +540,9 @@ reboot
       # /usr/bin/lsusb is owned by usbutils 012-2
       # so
       $ sudo pacman -S pciutils usbutils
+      $ sudo pacman -S usb_modeswitch
+      $ yay -S rtl8188gu-dkms-git
+      $ sudo dkms status
       ```
 
       ```ssh
