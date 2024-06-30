@@ -36,6 +36,9 @@
     ~/.config/rofi:
       create: true
       path: ./config/rofi
+    ~/.config/sxhkd:
+      create: true
+      path: ./config/sxhkd
 
 - create:
     - ~/Works

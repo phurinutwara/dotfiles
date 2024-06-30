@@ -105,7 +105,7 @@ Goal to switch:
 1. ... make the way until boot to arch linux installer medium... (i'll update this later with pic example)
    : NOTE: I just saw there are easy [GUIDED INTERACTIVE INSTALLATION](https://youtu.be/8YE1LlTxfMQ?si=bWozdqmq2g_jG1q-&t=280) by using
    : arch install script so I'll give a try later
-   : ```sh
+     ```sh
      root@archiso ~ $ archinstall
      ```
 
@@ -178,7 +178,8 @@ Goal to switch:
    $ swapon /dev/nvme1n1p4                 # use your Linux swap partition
 
    # Linux root stuffs
-   $ mkfs.ext4 /dev/nvme1n1p5              # use your Linux system partition (for /root)
+   $ mkfs.btrfs /dev/nvme1n1p5             # use your Linux system partition (for /root) (lately i use btrfs)
+   # $ mkfs.ext4 /dev/nvme1n1p5              # use your Linux system partition (for /root)
    ```
 
 4. [Mounting](https://wiki.archlinux.org/title/installation_guide#Mount_the_file_systems) those drives
@@ -229,6 +230,7 @@ $ locale-gen                               # this will uses /etc/locale.gen to g
 ```sh
 echo "LANG=en_US.UTF-8" > /etc/locale.conf
 $ ln -sf /usr/share/zoneinfo/Asia/Bangkok /etc/localtime
+$ locale-gen
 ```
 
 10. Setup hardware clock (Run [`hwclock`](https://man.archlinux.org/man/hwclock.8) to generate `/etc/adjtime`)
@@ -286,7 +288,7 @@ $ pacman -S grub efibootmgr os-prober mtools
 
 $ vim /etc/default/grub                    # Uncomment > GRUB_DISABLE_OS_PROBER=false
 
-$ grub-install /dev/nvme1n1p3              # use your previous mounted EFI System Partition
+$ grub-install --target=x86_64-efi --bootloader-id=grub_uefi --recheck      # use your previous mounted EFI System Partition
 $ grub-mkconfig -o /boot/grub/grub.cfg     # this will genearate the config
 ```
 
@@ -294,7 +296,7 @@ $ grub-mkconfig -o /boot/grub/grub.cfg     # this will genearate the config
     : so we can make connection during post-installation
     : (We use `systemctl` to control [service management](https://wiki.archlinux.org/title/General_recommendations#Service_management) which is called [systemd](https://wiki.archlinux.org/title/Systemd))
 ```sh
-$ pacman -S dhcpcd networkmanager resolvconf
+$ pacman -S openssh dhcpcd networkmanager resolvconf
 $ systemctl enable sshd                    # sshd is the OpenSSH server process
 $ systemctl enable dhcpcd                  # DHCP Client, https://wiki.archlinux.org/title/dhcpcd
 $ systemctl enable NetworkManager          # Detect and config to automatically connect to networks, https://wiki.archlinux.org/title/NetworkManager
@@ -314,14 +316,20 @@ reboot
 
 1. Installation each components (most fun and customizable part)
 
-   1. Install Nvidia Graphic Driver (Pick just one choice)
+   1. Install [Nvidia Graphic Driver](https://wiki.archlinux.org/title/Xorg#Driver_installation)
 
-      A. [Appropriate Driver](https://linuxiac.com/arch-linux-install/#10-install-a-desktop-environment-on-arch-linux) Open-source driver for ease (I use this, it's easy choice)
+      A. [Appropriate/Proprietary Driver](https://linuxiac.com/arch-linux-install/#10-install-a-desktop-environment-on-arch-linux)
       ```sh
       $ pacman -S nvidia nvidia-utils
-      ```
+      $ pacman -S nvidia-settings          # GUI Graphic Settings for Nvidia
 
-      B. [Proprietary Driver]( https://github.com/QuantiniumX/Guide-to-install-Arch-Linux/blob/main/Graphics/Nvidia.md )
+      # enable these will help suspend and hibernate more able to successful
+      $ sudo systemctl enable nvidia-hibernate.service 
+      $ sudo systemctl enable nvidia-persistenced.service
+      $ sudo systemctl enable nvidia-powerd.service
+      $ sudo systemctl enable nvidia-resume.service
+      $ sudo systemctl enable nvidia-suspend.service
+      ```
 
    2. Install Desktop Server: [Xorg](https://github.com/silentz/arch-linux-install-guide?tab=readme-ov-file#configuring-installed-arch-linux)
       
@@ -343,24 +351,29 @@ reboot
       A. i3 (My main)
       ```sh
       $ sudo pacman -S i3 i3lock lxappearance firefox
-      $ sudo pacman -S rofi ranger thunar alacritty dunst \
-                       xss-lock picom light pango flameshot gsimplecal \
+      $ sudo pacman -S dunst \
+                       xss-lock picom flameshot gsimplecal \
                        thunar-archive-plugin thunar-media-tags-plugin
 
-      $ yay -S picom        # pycom as composite manager (x11 compositor)
-      $ yay -S polybar      # polybar for status bar (use this instead of i3status)
-      $ yay -S feh          # Image viewer (as background)
-      $ yay -S rofi         # better of dmenu (use this instead of dmenu)
-      $ yay -S ranger       # cli-styled file explorer
-      $ yay -S lxappearance # for customize theme of i3
-      $ yay -S light        # for customize display light
-      $ yay -S pango        # for text-rendering
+      # you can install these at one commands but I seperate 
+      # to comment description line-by-line
+      $ sudo pacman -S picom               # pycom as composite manager (x11 compositor)
+      $ sudo pacman -S polybar             # polybar for status bar (use this instead of i3status)
+      $ sudo pacman -S feh                 # Image viewer (as background)
+      $ sudo pacman -S rofi                # better of dmenu (use this instead of dmenu)
+      $ sudo pacman -S alacritty           # default term for i3
+      $ sudo pacman -S kitty               # my prefered choice of term emu
+      $ sudo pacman -S ranger              # cli-styled file explorer
+      $ sudo pacman -S lxappearance        # for customize theme of i3
+      $ sudo pacman -S light               # for customize display light
+      $ sudo pacman -S pango               # for text-rendering
+      $ sudo pacman -S thunar              # GUI file explorer
       ```
       NOTE: use `xrandr` to adjust desktop resolution size
       ```sh
       # ~/.xprofile to run xrandr when logging in
       # see more: https://askubuntu.com/a/754233
-      
+
       xrandr --output DP-4 --mode 5120x1440 --rate 240
       ```
 
@@ -432,7 +445,64 @@ reboot
    $ sudo reflector --country Thailand,Singapore --fastest 10 --threads `nproc` --save /etc/pacman.d/mirrorlist
    ```
 
-   13. TODO: Intall printing settings
+   13. Enable [Hibernation](https://wiki.archlinux.org/title/Power_management/Suspend_and_hibernate)
+   ```sh
+   # 1. find the swap partition first
+   $ sudo swapon --show
+
+   # 2. put your swap in grub bootloader (i use device name as a beginner easy to lookup but uuid specific might better)
+   $ sudo vim /etc/default/grub
+   # Find `GRUB_CMDLINE_ LINUX_DEFAULT="..."` then put resume hook on the last e.g.
+   # FROM `GRUB_CMDLINE_LINUX_DEFAULT="loglevel=3 quiet"` to
+   GRUB_CMDLINE_LINUX_DEFAULT="loglevel=3 quiet resume=/dev/nvme1n1p4"
+
+   # 4. Regenerate grub again
+   $ sudo grub-mkconfig -o /boot/grub/grub.cfg
+
+   # 5. config the initramfs to add resume hook
+   $ sudo vim /etc/mkinitcpio.conf
+
+   # 6. Look for an HOOKS=(base udev ... filesystems ... fsck)
+   # adding the `resume` hook but the resume hook must go after the udev hook
+   # so for me it's like
+   HOOKS=(base udev autodetect microcode modconf kms keyboard keymap consolefont block filesystems resume fsck)
+
+   # 7. Regenerate initramfs
+   $ sudo mkinitcpio -p linux
+
+   # 8. restart to apply changes
+   $ sudo reboot
+
+   # 9. Now test your hiberating by
+   $ sudo systemctl hibernate
+
+   ```
+   NOTE: If you found when you `sudo systemctl sleep` and it immediately wake up take a look [here](https://wiki.archlinux.org/title/Power_management/Wakeup_triggers#Instantaneous_wakeups_from_suspend)
+   ```sh
+   # you might want dmidecode to view the last wake up source device triggered
+   $ sudo pacman -S dmidecode
+   $ dmidecode -t system | grep -P '\tWake-up Type\: '
+
+   # for me it's XHC that cause wakeup so
+   $ su root                               # login as root
+   $ echo XHC > /proc/acpi/wakeup
+   $ exit                                  # exit root
+   # /proc/acpi/wakeup will be a temporary method after reboot we have to echo it again so
+
+   # to automate this, try systemd-tmpfiles: https://wiki.archlinux.org/title/Systemd#systemd-tmpfiles_-_temporary_files
+   $ su root
+   $ sudo pacman -S samba
+   $ cat /usr/lib/tmpfiles.d/samba.conf    # just to view that samba got permission as 0755
+   
+   $ vim /etc/tmpfiles.d/disable-usb-wake.conf 
+   # put this in the file
+   #    Path                  Mode UID  GID  Age Argument
+   w+   /proc/acpi/wakeup     -    -    -    -   XHC
+
+   $ exit                                  # exit root
+   $ sudo systemctl sleep                  # try your config, it should not wake up instantly.
+                                           # to wake your pc up, use power button
+   ```
 
    14. NetworkManager additionals:
    <!-- TODO: Do research -->
@@ -440,28 +510,54 @@ reboot
    $ sudo pacman -S nm-connection-editor networkmanager-openvpn
    ```
 
-   15. TODO: Keymap binder and language switcher
-   See more: https://ejmastnak.com/tutorials/arch/typematic-rate/
-   See more: https://wiki.archlinux.org/title/Linux_console/Keyboard_configuration#Systemd_service
+   15. [Keyboard configuration](https://wiki.archlinux.org/title/Xorg/Keyboard_configuration)
+       : See more: https://ejmastnak.com/tutorials/arch/typematic-rate/
+       : See more: https://wiki.archlinux.org/title/Linux_console/Keyboard_configuration#Systemd_service
+   ```sh
+   # 1. For Xorg keyboard configs at login we will use .xprofile to remember our config
+   $ echo "xset r rate 175 70" >> ~/.xprofile
+
+   # 2. Using `sxhkd` to make keyboard layout switchers, https://wiki.archlinux.org/title/Xorg/Keyboard_configuration#Switch_languages_using_Alt_Shift
+   $ localectl                                        # to show your current settings
+   $ localectl list-x11-keymap-layouts | grep "th"    # to view the list and grep your language (for me "th")
+
+   $ sudo pacman -S sxhkd                             # sxhkd - Simple X hotkey daemon, https://wiki.archlinux.org/title/Sxhkd
+   $ mkdir -p ~/.config/sxhkd
+   $ echo 'space + alt
+      setxkbmap -query | grep -q 'th' && setxkbmap us || setxkbmap th,us
+   ' >> ~/.config/sxhkd/sxhkdrc
+   # add the sxhkd daemon to i3config file
+   $ echo 'exec --no-startup-id sxhkd' >> ~/.config/i3/config
+   ```
 
    16. TODO: My wifi dongle (TP-Link Archer TX20UH)
+      ```sh
+      $ sudo pacman -S linux-headers bc
 
-   17. Enable hibernation
+      # $ pacman -Qo lspci
+      # /usr/bin/lspci is owned by pciutils 3.6.2-2
+      # $ pacman -Qo lsusb
+      # /usr/bin/lsusb is owned by usbutils 012-2
+      # so
+      $ sudo pacman -S pciutils usbutils
+      ```
 
-   ```ssh
-   $ sudo lshw
-     *-usb:1 UNCLAIMED
-          description: Generic USB device
-          product: 802.11ac WLAN Adapter
-          vendor: Realtek
-          physical id: 5
-          bus info: usb@1:5
-          version: 0.00
-          serial: 00e04c000001
-          capabilities: usb-2.00
-          configuration: maxpower=500mA speed=480Mbit/s
+      ```ssh
+      $ sudo lshw
+         *-usb:1 UNCLAIMED
+            description: Generic USB device
+            product: 802.11ac WLAN Adapter
+            vendor: Realtek
+            physical id: 5
+            bus info: usb@1:5
+            version: 0.00
+            serial: 00e04c000001
+            capabilities: usb-2.00
+            configuration: maxpower=500mA speed=480Mbit/s
 
-   ```
+      ```
+
+   17. TODO: Intall printing settings
 
 ---
 
