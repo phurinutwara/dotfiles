@@ -14,5 +14,7 @@ function exists() {
 
 function cc() {
   clear
-  tmux clear-history
+  if [ "$TMUX" != "" ]; then
+    tmux clear-history
+  fi
 }
