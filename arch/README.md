@@ -350,7 +350,7 @@ reboot
    4. Desktop Environment (DE/WM)
       A. i3 (My main)
       ```sh
-      $ sudo pacman -S i3 i3lock lxappearance firefox
+      $ sudo pacman -S i3 i3lock lxappearance firefox xfce4
       $ sudo pacman -S dunst \
                        xss-lock picom flameshot gsimplecal \
                        thunar-archive-plugin thunar-media-tags-plugin
