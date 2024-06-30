@@ -167,8 +167,8 @@ Goal to switch:
    # ├─nvme1n1p1 259:1    0    16M  0 part
    # ├─nvme1n1p2 259:2    0 578.3G  0 part
    # ├─nvme1n1p3 259:3    0     1G  0 part <-- I will use this as EFI System Partition (/boot/efi)
-   # ├─nvme1n1p4 259:4    0     8G  0 part <-- I will use this as Linux Swap Partition
-   # └─nvme1n1p5 259:5    0 344.2G  0 part <-- I will use this as Linux System Partition (/) (root folder)
+   # ├─nvme1n1p4 259:4    0    24G  0 part <-- I will use this as Linux Swap Partition
+   # └─nvme1n1p5 259:5    0 328.2G  0 part <-- I will use this as Linux System Partition (/) (root folder)
 
    # EFI Stuffs
    $ mkfs.fat -F 32 /dev/nvme1n1p3         # use your EFI System Partition
@@ -451,11 +451,12 @@ reboot
    # 1. find the swap partition first
    $ sudo swapon --show
 
-   # 2. put your swap in grub bootloader (i use device name as a beginner easy to lookup but uuid specific might better)
+   # 2. put your swap in grub bootloader (view your uuid on `cat /etc/fstab` or `sudo blkid`)
    $ sudo vim /etc/default/grub
    # Find `GRUB_CMDLINE_ LINUX_DEFAULT="..."` then put resume hook on the last e.g.
+   # also add acpi_osi for nvidia specific configs
    # FROM `GRUB_CMDLINE_LINUX_DEFAULT="loglevel=3 quiet"` to
-   GRUB_CMDLINE_LINUX_DEFAULT="loglevel=3 quiet resume=/dev/nvme1n1p4"
+   GRUB_CMDLINE_LINUX_DEFAULT="loglevel=3 quiet resume=UUID=7948187b-f119-450d-9511-9d7707c80be2 acpi_osi=! acpi_osi=\"Windows 2009\""
 
    # 4. Regenerate grub again
    $ sudo grub-mkconfig -o /boot/grub/grub.cfg
@@ -468,11 +469,16 @@ reboot
    # so for me it's like
    HOOKS=(base udev autodetect microcode modconf kms keyboard keymap consolefont block filesystems resume fsck)
 
-   # 7. Regenerate initramfs
-   $ sudo mkinitcpio -p linux
+   # 7. Configure NVIDIA Settings, https://download.nvidia.com/XFree86/Linux-x86_64/555.58/README/powermanagement.html
+   ```sh
+   $ sudo nvim /etc/modprobe.d/nvidia.conf
+   options nvidia NVreg_PreserveVideoMemoryAllocations=1
+   options nvidia NVreg_TemporaryFilePath=/var/tmp
+   options nvidia NVreg_EnableMSI=1
+   ```
 
-   # 8. restart to apply changes
-   $ sudo reboot
+   # 8. Regenerate initramfs
+   $ sudo mkinitcpio -p linux
 
    # 9. Now test your hiberating by
    $ sudo systemctl hibernate
@@ -482,7 +488,7 @@ reboot
    ```sh
    # you might want dmidecode to view the last wake up source device triggered
    $ sudo pacman -S dmidecode
-   $ dmidecode -t system | grep -P '\tWake-up Type\: '
+   $ sudo dmidecode -t system | grep -P '\tWake-up Type\: '
 
    # for me it's XHC that cause wakeup so
    $ su root                               # login as root
@@ -491,8 +497,8 @@ reboot
    # /proc/acpi/wakeup will be a temporary method after reboot we have to echo it again so
 
    # to automate this, try systemd-tmpfiles: https://wiki.archlinux.org/title/Systemd#systemd-tmpfiles_-_temporary_files
-   $ su root
    $ sudo pacman -S samba
+   $ su root
    $ cat /usr/lib/tmpfiles.d/samba.conf    # just to view that samba got permission as 0755
    
    $ vim /etc/tmpfiles.d/disable-usb-wake.conf 
@@ -544,21 +550,6 @@ reboot
       $ sudo pacman -S usb_modeswitch
       $ yay -S rtl8188gu-dkms-git
       $ sudo dkms status
-      ```
-
-      ```ssh
-      $ sudo lshw
-         *-usb:1 UNCLAIMED
-            description: Generic USB device
-            product: 802.11ac WLAN Adapter
-            vendor: Realtek
-            physical id: 5
-            bus info: usb@1:5
-            version: 0.00
-            serial: 00e04c000001
-            capabilities: usb-2.00
-            configuration: maxpower=500mA speed=480Mbit/s
-
       ```
 
    17. TODO: Intall printing settings

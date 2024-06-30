@@ -74,6 +74,7 @@ ripgrep
 rofi
 rsync
 rtl8188gu-dkms-git
+samba
 sof-firmware
 speedtest-cli
 sudo
