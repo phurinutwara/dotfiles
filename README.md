@@ -39,12 +39,8 @@ $ cd ~/dotfiles && ./install
 
 - [x] Terminal Preferences (via dotfile installation)
 - [x] Changed Shell to ZSH (via dotfile installation)
-- [ ] Dock Preferences
-- [ ] Mission Control Preference (don't rearrange spaces)
-- [ ] Finder Show Path Bar
-- [ ] Trackpad (Three Finger Drag and Tap to Click)
+- [x] Maximize key repeat period (configured for arch)
 - [ ] Git (config and SSH)
-- [ ] Turn off spelling auto completion
-- [ ] Maximize key repeat period
+- [ ] use arch on mac (See more: https://github.com/kyoz/mac-arch, https://t2linux.org)
 
 </details>

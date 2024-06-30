@@ -44,7 +44,11 @@
     - ~/Works
 
 - shell:
-    - command: ./zsh/setup.sh
+    - command: git submodule sync --recursive
+      stdin: true
+      stdout: true
+      stderr: true
+    - command: command -v zsh >> /dev/null 2>&1 || ./zsh/setup.sh && echo '<<< skipping install zsh >>>\n'
       stdin: true
       stdout: true
       stderr: true
@@ -56,11 +60,7 @@
       stdin: true
       stdout: true
       stderr: true
-    - command: ./homebrew/setup.zsh
-      stdin: true
-      stdout: true
-      stderr: true
-    - command: ./config/kitty/install.zsh
+    - command: "[[ $OSTYPE == darwin* ]] && ./homebrew/setup.zsh"
       stdin: true
       stdout: true
       stderr: true

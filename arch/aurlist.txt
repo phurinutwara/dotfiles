@@ -1,0 +1,4 @@
+rtl8188gu-dkms-git
+tmuxinator
+yay
+yay-debug
