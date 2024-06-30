@@ -160,9 +160,9 @@ alias lg=lazygit
 
 ## SPECIFY BY OS
 if [[ "$OSTYPE" == "darwin"* ]]; then
-  export BREWFILE_PATH="~/.dotfiles/homebrew/macos/Brewfile"
+  export BREWFILE_PATH="~/dotfiles/homebrew/macos/Brewfile"
 elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
-  export BREWFILE_PATH="~/.dotfiles/homebrew/linux/Brewfile"
+  export BREWFILE_PATH="~/dotfiles/homebrew/linux/Brewfile"
   alias wsl='wsl.exe'
   alias wezterm='wezterm.exe'
   alias explorer='explorer.exe'
