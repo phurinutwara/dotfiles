@@ -97,6 +97,7 @@ Goal to switch:
      - You should know how to boot to Installation medium (USB-stick)\
        by knowing how to open **boot menu** in your bios,\
        turning off fast secure boot, etc.
+   - [Best Reddit for newb ever](https://www.reddit.com/r/archlinux/comments/u5by1d/how_does_a_noob_read_the_arch_wiki/) !
 
 ---
 
@@ -145,7 +146,7 @@ Goal to switch:
    2. It needs 3 partitions for arch linux according to [Arch Documentation](https://wiki.archlinux.org/title/Installation_guide#Example_layouts)
       1. EFI System Partition at /boot (**1 GB**)
       2. Root Partition (**> 32 GB**) [Type: Linux system]
-      3. Linux Swap (**> 4 GB base on your ram**) [It will need when hibernation]
+      3. Linux Swap (**[Recommend swap space](https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/8/html/managing_storage_devices/getting-started-with-swap_managing-storage-devices#recommended-system-swap-space_getting-started-with-swap)**) [It will need when hibernation] (See also: [discussion](https://askubuntu.com/questions/49109/i-have-16gb-ram-do-i-need-32gb-swap))
 
    3. [`fdisk -l | less`](https://wiki.archlinux.org/title/installation_guide#Partition_the_disks) to view list with details of disk and partitions
 

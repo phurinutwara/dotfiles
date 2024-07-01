@@ -3,3 +3,5 @@ alt + space
 
 super + shift + q
   i3lock-fancy -- maim
+
+# TODO: Caplock as ESC
