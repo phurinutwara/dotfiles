@@ -17,9 +17,12 @@ gaps outer 1
 #smart_borders on
 
 set $mod Mod4
+exec_always --no-startup-id setxkbmap -option caps:escape
 
 exec --no-startup-id picom
-exec --no-startup-id sxhkd
+
+exec_always --no-startup-id killall sxhkd
+exec_always --no-startup-id sxhkd
 
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock-fancy --nofork
 exec_always --no-startup-id xset dpms 0 0 120
