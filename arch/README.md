@@ -403,6 +403,7 @@ reboot
    $ sudo pacman -S sof-firmware pulseaudio alsa-utils alsa-plugins pavucontrol
 
    $ sudo pacman -S pipewire               # some one said it's better than pulseaudio
+   $ sudo pacman -S gparted                # A Partition Magic clone, frontend to GNU Parted
    ```
 
    7. SSD TRIM
