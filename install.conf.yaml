@@ -48,7 +48,7 @@
       stdin: true
       stdout: true
       stderr: true
-    - command: command -v zsh >> /dev/null 2>&1 || ./zsh/setup.sh && echo '<<< skipping install zsh >>>\n'
+    - command: ./zsh/setup.sh
       stdin: true
       stdout: true
       stderr: true

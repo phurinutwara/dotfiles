@@ -1,4 +1,10 @@
 #!/usr/bin/env zsh
+. /etc/os-release
+
+if [[ $ID == "arch" ]]; then
+	echo "you are using arch, skipping homebrew"
+	exit 0
+fi
 
 echo "\n<<< Starting Homebrew Setup >>>\n"
 
