@@ -208,7 +208,8 @@ fi
 
 # Go environments
 # export GOROOT=/usr/local/go
-export GOROOT="$(brew --prefix golang)/libexec"
+# export GOROOT="$(brew --prefix golang)/libexec"
+export GOROOT=/usr/lib/go
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin:$GOROOT/bin:$PATH
 
