@@ -65,6 +65,6 @@
       stdout: true
       stderr: true
 
-# TODO: take a look /etc/os-release to seperate distros
+# NOTE: take a look /etc/os-release to seperate distros
 # See more: [reddit](https://www.reddit.com/r/linux4noobs/comments/k6t9uw/how_does_neofetch_know_what_distro_you_are_using/?rdt=40816)
 # Solution: https://unix.stackexchange.com/a/432819

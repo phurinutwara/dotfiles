@@ -41,6 +41,8 @@ $ cd ~/dotfiles && ./install
 - [x] Changed Shell to ZSH (via dotfile installation)
 - [x] Maximize key repeat period (configured for arch)
 - [ ] Git (config and SSH)
-- [ ] use arch on mac (See more: https://github.com/kyoz/mac-arch, https://t2linux.org)
-
+- [ ] use arch on mac (See more: https://github.com/kyoz/mac-arch
+                                 https://t2linux.org
+                                 https://wiki.archlinux.org/title/Mac
+                                 https://bbs.archlinux.org/viewtopic.php?id=122700)
 </details>
