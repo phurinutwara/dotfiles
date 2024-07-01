@@ -44,7 +44,7 @@
     - ~/Works
 
 - shell:
-    - command: git submodule sync --recursive
+    - command: git submodule update --init
       stdin: true
       stdout: true
       stderr: true

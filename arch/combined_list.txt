@@ -105,6 +105,7 @@ usbutils
 vim
 w3m
 wget
+xautomation
 xclip
 xdg-utils
 xdotool
