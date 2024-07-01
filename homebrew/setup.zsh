@@ -30,3 +30,6 @@ else
 		brew bundle --verbose --file "$BREWFILE_PATH"
 	fi
 fi
+
+# NOTE: To remove use this script (See more: https://mac.install.guide/homebrew/5)
+# /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/uninstall.sh)"

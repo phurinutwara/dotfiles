@@ -1,3 +1,4 @@
+ghq
 rtl8188gu-dkms-git
 tmuxinator
 yay
