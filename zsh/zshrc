@@ -198,7 +198,7 @@ function bbd() {
 # Use ZSH Plugins
 
 # ...Other Surprises
-if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+if [[ "$OSTYPE" == "darwin"* ]]; then
   . /home/linuxbrew/.linuxbrew/etc/profile.d/z.sh
   eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 fi

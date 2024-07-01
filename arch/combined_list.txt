@@ -13,6 +13,7 @@ bc
 bind
 btop
 conntrack-tools
+dbeaver
 dhcpcd
 dialog
 dmidecode
@@ -23,6 +24,8 @@ feh
 firefox
 fuse2
 fzf
+garcon
+ghq
 git
 grub
 htop
@@ -91,6 +94,7 @@ tmuxinator
 tree
 ttf-jetbrains-mono-nerd
 ttf-liberation
+tumbler
 unzip
 usb_modeswitch
 usbutils
@@ -101,6 +105,15 @@ xclip
 xdg-utils
 xdotool
 xf86-video-vesa
+xfce4-appfinder
+xfce4-panel
+xfce4-power-manager
+xfce4-session
+xfce4-settings
+xfce4-terminal
+xfdesktop
+xfwm4
+xfwm4-themes
 xorg-bdftopcf
 xorg-docs
 xorg-font-util
