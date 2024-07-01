@@ -10,6 +10,7 @@ bash-completion
 bat
 bat-extras
 bc
+bcc
 bind
 blueman
 bluez
@@ -20,6 +21,7 @@ conntrack-tools
 dbeaver
 dhcpcd
 dialog
+dkms
 dmidecode
 efibootmgr
 ethtool
@@ -63,6 +65,7 @@ mtr
 neofetch
 neovim
 net-tools
+network-manager-applet
 networkmanager
 networkmanager-openvpn
 nm-connection-editor
@@ -88,7 +91,7 @@ reflector
 ripgrep
 rofi
 rsync
-rtl8xxxu-dkms-git
+rtl8852au-dkms-git
 samba
 sof-firmware
 speedtest-cli

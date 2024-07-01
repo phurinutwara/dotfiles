@@ -10,6 +10,7 @@ bash-completion
 bat
 bat-extras
 bc
+bcc
 bind
 blueman
 bluez
@@ -20,6 +21,7 @@ conntrack-tools
 dbeaver
 dhcpcd
 dialog
+dkms
 dmidecode
 efibootmgr
 ethtool
@@ -61,6 +63,7 @@ mtr
 neofetch
 neovim
 net-tools
+network-manager-applet
 networkmanager
 networkmanager-openvpn
 nm-connection-editor

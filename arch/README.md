@@ -542,7 +542,7 @@ reboot
    $ echo 'exec --no-startup-id sxhkd' >> ~/.config/i3/config
    ```
 
-   16. My wifi dongle (TP-Link Archer TX20UH -- rtl8188gu chip)
+   16. My wifi dongle (TP-Link Archer TX20UH -- works with rtl8852au-dkms-git)
       ```sh
       $ sudo pacman -S linux-headers bc gcc
 
@@ -553,7 +553,7 @@ reboot
       # so
       $ sudo pacman -S pciutils usbutils
       $ sudo pacman -S usb_modeswitch
-      $ yay -S rtl8xxxu-dkms-git
+      $ yay -S rtl8852au-dkms-git
 
       $ sudo dkms status
       $ sudo dkms install -m ...           # if it wasn't install install it
