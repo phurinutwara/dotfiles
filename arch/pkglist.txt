@@ -47,6 +47,7 @@ linux-headers
 lshw
 lxappearance
 ly
+maim
 mtools
 mtr
 neofetch
@@ -80,6 +81,7 @@ samba
 sof-firmware
 speedtest-cli
 sudo
+sxhkd
 systemd-resolvconf
 tcpdump
 thefuck
@@ -162,6 +164,7 @@ xorg-xwd
 xorg-xwininfo
 xorg-xwud
 xsel
+xss-lock
 yq
 zip
 zsh

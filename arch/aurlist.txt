@@ -1,4 +1,5 @@
 ghq
+i3lock-fancy-git
 rtl8188gu-dkms-git
 tmuxinator
 yay
