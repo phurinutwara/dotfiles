@@ -368,6 +368,7 @@ reboot
       $ sudo pacman -S light               # for customize display light
       $ sudo pacman -S pango               # for text-rendering
       $ sudo pacman -S thunar              # GUI file explorer
+      $ yay -S i3-lock-fancy-git           # beautiful lock screen
       ```
       NOTE: use `sudo nvidia-settings` to adjust desktop resolution size and save to `/etc/X11/xorg.conf` file
       ```sh
@@ -617,3 +618,4 @@ My [Post-installation](https://wiki.archlinux.org/title/Installation_guide#Post-
 
    - WM: i3wm
      - https://www.youtube.com/watch?v=8YE1LlTxfMQ&list=PLsz00TDipIffGKMW4hmzmwXTvARXyJMn8&index=2
+     - goal: https://www.reddit.com/r/unixporn/comments/puplj7/i3gaps_polybar_my_first_window_manager_setup_took/

@@ -1,3 +1,5 @@
-space + alt
+alt + space
   setxkbmap -query | grep -q 'th' && setxkbmap us || setxkbmap th,us
 
+super + shift + q
+  i3lock-fancy -- maim
