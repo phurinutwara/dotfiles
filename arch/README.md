@@ -402,7 +402,6 @@ reboot
    $ sudo pacman -S sof-firmware pulseaudio alsa-utils alsa-plugins pavucontrol
 
    $ sudo pacman -S pipewire               # some one said it's better than pulseaudio
-   $ yay -S openfortivpn                   # for forticlient VPN
    ```
 
    7. SSD TRIM
@@ -511,10 +510,13 @@ reboot
                                            # to wake your pc up, use power button
    ```
 
-   14. NetworkManager additionals:
-   <!-- TODO: Do research -->
+   14. NetworkManager additionals (GUI, vpn):
    ```sh
    $ sudo pacman -S nm-connection-editor networkmanager-openvpn
+   $ sudo pacman -S openfortivpn           # for forticlient VPN.
+                                           # For pppd Versions > 2.5.0,
+                                           # you may need to additionally add the `--pppd-accept-remote`
+                                           # command line option to openfortivpn.
    ```
 
    15. [Keyboard configuration](https://wiki.archlinux.org/title/Xorg/Keyboard_configuration)
