@@ -1,5 +1,5 @@
 #!/usr/bin/env zsh
-
+source /etc/os-release
 TPM_PATH=~/.tmux/plugins/tpm
 
 echo "\n<<< Starting Tmux Plugin Manager Setup >>>\n"
@@ -12,5 +12,12 @@ else
 fi
 
 if exists tmuxinator; then
-	sudo wget https://raw.githubusercontent.com/tmuxinator/tmuxinator/master/completion/tmuxinator.zsh -O /usr/local/share/zsh/site-functions/_tmuxinator
+	echo "tmuxinator exists, skipping install"
+else
+	echo "tmuxinator doesn't exist, continuing with install"
+	if [[ $ID == "arch" ]]; then
+		yay -S tmuxinator
+	else
+		sudo wget https://raw.githubusercontent.com/tmuxinator/tmuxinator/master/completion/tmuxinator.zsh -O /usr/local/share/zsh/site-functions/_tmuxinator
+	fi
 fi

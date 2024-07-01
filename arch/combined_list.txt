@@ -27,6 +27,7 @@ fzf
 garcon
 ghq
 git
+git-delta
 grub
 htop
 i3-wm

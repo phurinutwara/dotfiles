@@ -26,6 +26,7 @@ fuse2
 fzf
 garcon
 git
+git-delta
 grub
 htop
 i3-wm
