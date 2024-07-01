@@ -10,8 +10,8 @@
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
 # i3 gaps next
-for_window [class="^.*"] border pixel 3
-gaps inner 10
+for_window [class="^.*"] border pixel 2
+gaps inner 8
 gaps outer 1
 #smart_gaps on
 #smart_borders on
@@ -19,7 +19,7 @@ gaps outer 1
 set $mod Mod4
 exec_always --no-startup-id setxkbmap -option caps:escape
 
-exec --no-startup-id picom
+exec --no-startup-id picom -b
 
 exec_always --no-startup-id killall sxhkd
 exec_always --no-startup-id sxhkd
