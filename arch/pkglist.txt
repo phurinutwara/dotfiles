@@ -49,8 +49,6 @@ keychain
 kitty
 languagetool
 lazygit
-lightdm
-lightdm-gtk-greeter
 linux
 linux-firmware
 linux-headers
