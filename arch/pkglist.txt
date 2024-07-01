@@ -41,6 +41,8 @@ keychain
 kitty
 languagetool
 lazygit
+lightdm
+lightdm-gtk-greeter
 linux
 linux-firmware
 linux-headers
@@ -65,7 +67,6 @@ openbsd-netcat
 openfortivpn
 openssh
 os-prober
-pango
 papirus-icon-theme
 pavucontrol
 picom
@@ -153,7 +154,6 @@ xorg-xlsatoms
 xorg-xlsclients
 xorg-xmodmap
 xorg-xpr
-xorg-xprop
 xorg-xrandr
 xorg-xrdb
 xorg-xrefresh

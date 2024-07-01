@@ -391,8 +391,8 @@ reboot
 
    5. Desktop Manager (For switch between i3 and Xfce)
    ```sh
-   $ sudo pacman -S ly
-   $ sudo systemctl enable ly
+   $ sudo pacman -S lightdm lightdm-gtk-greeter
+   $ sudo systemctl enable lightdm
    ```
 
    6. [Useful packages](https://github.com/silentz/arch-linux-install-guide?tab=readme-ov-file#configuring-installed-arch-linux)
