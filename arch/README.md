@@ -403,8 +403,8 @@ reboot
    $ sudo pacman -S wget iw wpa_supplicant openbsd-netcat axel tcpdump mtr net-tools rsync conntrack-tools ethtool
    $ sudo pacman -S sof-firmware pulseaudio alsa-utils alsa-plugins pavucontrol
 
-   $ sudo pacman -S pipewire               # some one said it's better than pulseaudio
-   $ sudo pacman -S gparted                # A Partition Magic clone, frontend to GNU Parted
+   $ sudo pacman -S pulseaudio             # Audio driver
+   $ sudo pacman -S gparted btrfs-progs    # A Partition Magic clone, frontend to GNU Parted + btrfs tool
    ```
 
    7. SSD TRIM
@@ -554,7 +554,9 @@ reboot
       $ sudo pacman -S pciutils usbutils
       $ sudo pacman -S usb_modeswitch
       $ yay -S rtl8188gu-dkms-git
+
       $ sudo dkms status
+      $ sudo dkms install -m rtl8188gu/r12.9dec829
       ```
 
    17. TODO: Intall printing settings
