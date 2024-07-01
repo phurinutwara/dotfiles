@@ -1,6 +1,6 @@
 ghq
 i3lock-fancy-git
-rtl8188gu-dkms-git
+rtl8xxxu-dkms-git
 tmuxinator
 yay
 yay-debug

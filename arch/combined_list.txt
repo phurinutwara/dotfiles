@@ -11,7 +11,11 @@ bat
 bat-extras
 bc
 bind
+blueman
+bluez
+bluez-utils
 btop
+btrfs-progs
 conntrack-tools
 dbeaver
 dhcpcd
@@ -28,6 +32,8 @@ garcon
 ghq
 git
 git-delta
+gnu-free-fonts
+gparted
 grub
 htop
 i3-wm
@@ -61,6 +67,8 @@ networkmanager
 networkmanager-openvpn
 nm-connection-editor
 nmap
+noto-fonts
+noto-fonts-emoji
 npm
 nvidia
 nvidia-settings
@@ -80,7 +88,7 @@ reflector
 ripgrep
 rofi
 rsync
-rtl8188gu-dkms-git
+rtl8xxxu-dkms-git
 samba
 sof-firmware
 speedtest-cli
@@ -88,6 +96,7 @@ sudo
 sxhkd
 systemd-resolvconf
 tcpdump
+terminus-font
 thefuck
 thunar
 thunar-archive-plugin
@@ -97,8 +106,14 @@ tldr
 tmux
 tmuxinator
 tree
+ttf-dejavu
+ttf-droid
 ttf-jetbrains-mono-nerd
 ttf-liberation
+ttf-nerd-fonts-symbols
+ttf-nerd-fonts-symbols-mono
+ttf-roboto
+ttf-ubuntu-font-family
 tumbler
 unzip
 usb_modeswitch

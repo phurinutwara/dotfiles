@@ -553,10 +553,10 @@ reboot
       # so
       $ sudo pacman -S pciutils usbutils
       $ sudo pacman -S usb_modeswitch
-      $ yay -S rtl8188gu-dkms-git
+      $ yay -S rtl8xxxu-dkms-git
 
       $ sudo dkms status
-      $ sudo dkms install -m rtl8188gu/r12.9dec829
+      $ sudo dkms install -m ...           # if it wasn't install install it
       ```
 
    17. TODO: Intall printing settings
