@@ -145,6 +145,7 @@ export EDITOR="nvim"
 
 # USE NVIM as VISUAL EDITOR: https://unix.stackexchange.com/a/501863
 export VISUAL="$EDITOR"
+export BROWSER="firefox"
 
 export HOMEBREW_CASK_OPTS="--no-quarantine"
 export NULLCMD=bat
