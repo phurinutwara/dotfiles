@@ -1,3 +1,6 @@
+# Specify OS first
+source /etc/os-release
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -155,21 +158,7 @@ alias eza='eza -lah --git'
 alias man='BAT_THEME="Monokai Extended" batman "$@"'
 alias trail='<<<${(F)path}'
 alias szsh='source ~/.zshrc'
-alias c=clear
 alias lg=lazygit
-
-## SPECIFY BY OS
-if [[ "$OSTYPE" == "darwin"* ]]; then
-  export BREWFILE_PATH="~/dotfiles/homebrew/macos/Brewfile"
-elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
-  export BREWFILE_PATH="~/dotfiles/homebrew/linux/Brewfile"
-  alias wsl='wsl.exe'
-  alias wezterm='wezterm.exe'
-  alias explorer='explorer.exe'
-  alias ipconfig='ipconfig.exe'
-  alias reset-network='ipconfig /release && ipconfig /flushdns && ipconfig /renew'
-fi
-
 
 # Customize Prompt(s)
 # PROMPT='
@@ -183,60 +172,16 @@ fi
 function mkcd() {
   mkdir -p "$@" && cd "$_"
 }
-function bbd() {
-  if [[ "$OSTYPE" == "darwin"* ]]; then
-    brew bundle dump --force --describe --file "$BREWFILE_PATH" \
-      && zsh -c "echo \"\" >> $BREWFILE_PATH && echo -e \"# vim:ft=ruby\" >> $BREWFILE_PATH"
-  elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
-    brew bundle dump --force --describe --file "$BREWFILE_PATH" \
-      && zsh -c "echo \"\" >> $BREWFILE_PATH && echo -e \"# vim:ft=ruby\" >> $BREWFILE_PATH"
-  else
-    echo "Unknown \$OSTYPE, aborting process"
-  fi
-}
 
 # Use ZSH Plugins
 
 # ...Other Surprises
-if [[ "$OSTYPE" == "darwin"* ]]; then
-  . /home/linuxbrew/.linuxbrew/etc/profile.d/z.sh
-  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-fi
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# Go environments
-# export GOROOT=/usr/local/go
-# export GOROOT="$(brew --prefix golang)/libexec"
-export GOROOT=/usr/lib/go
-export GOPATH=$HOME/go
-export PATH=$PATH:$GOPATH/bin:$GOROOT/bin:$PATH
+source ~/dotfiles/zsh/env/go.sh
 
-# Set up nvm
-mkdir ~/.nvm >/dev/null 2>&1
-export NVM_DIR="$HOME/.nvm"
-if [[ "$OSTYPE" == "linux-gnu"* ]]; then
-  [ -s "/home/linuxbrew/.linuxbrew/opt/nvm/nvm.sh" ] && \. "/home/linuxbrew/.linuxbrew/opt/nvm/nvm.sh"  # This loads nvm
-  [ -s "/home/linuxbrew/.linuxbrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/home/linuxbrew/.linuxbrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
-elif [[ "$OSTYPE" == "darwin"* ]]; then
-  [ -s "/usr/local/opt/nvm/nvm.sh" ] && \. "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
-  [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
-fi
-
-if [[ "$OSTYPE" == "linux-gnu"* ]]; then
-  alias gopen='git config --get remote.origin.url | perl -pe "s/:(?!\/\/)/\//g" | sed "s/^git@/https:\/\//" | sed "s/.git$//" | xargs -I % echo "sensible-browser %" | sh'
-  alias gopr='
-    git config --get remote.origin.url | \
-    perl -pe "s/:(?!\/\/)/\//g" | sed "s/^git@/https:\/\//" | \
-    sed "s/.git$//" | \
-    xargs -I _ echo "sensible-browser _/pull-requests/new?source=$(git branch --show-current)\&dest=develop" | sh'
-elif [[ "$OSTYPE" == "darwin"* ]]; then
-  alias gopen='git config --get remote.origin.url | perl -pe "s/:(?!\/\/)/\//g" | sed "s/^git@/https:\/\//" | sed "s/.git$//" | xargs -I % echo "open %" | sh'
-  alias gopr='
-    git config --get remote.origin.url | \
-    perl -pe "s/:(?!\/\/)/\//g" | \
-    sed "s/^git@/https:\/\//" | \
-    sed "s/.git$//" | \
-    xargs -I _ echo "open _/pull-requests/new?source=$(git branch --show-current)\&dest=develop" | sh'
-fi
+source ~/dotfiles/zsh/scripts/nvm.sh
+source ~/dotfiles/zsh/scripts/git.sh
+source ~/dotfiles/zsh/scripts/brew.sh
