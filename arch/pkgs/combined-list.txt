@@ -98,6 +98,7 @@ ripgrep
 rofi
 rsync
 rtl8852au-dkms-git
+rust
 samba
 sof-firmware
 speedtest-cli
@@ -124,6 +125,7 @@ ttf-nerd-fonts-symbols-mono
 ttf-roboto
 ttf-ubuntu-font-family
 tumbler
+udisks2
 unzip
 usb_modeswitch
 usbutils

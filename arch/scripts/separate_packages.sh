@@ -1,13 +1,15 @@
 #!/bin/bash
 
-pacman -Qqe > combined_list.txt
+SCRIPT_NAME="$(basename $0)"
+SCRIPT_DIR="$(realpath $(dirname $0))"
+# pacman -Qqe > combined_list.txt
 
 # Combined list of all packages
-combined_list="combined_list.txt"
+combined_list="$(realpath $SCRIPT_DIR/../pkgs/combined-list.txt)"
 
 # Files to store the separated package lists
-pkglist="pkglist.txt"
-aurlist="aurlist.txt"
+pkglist="$(realpath $SCRIPT_DIR/../pkgs/pacman/pkglist.txt)"
+aurlist="$(realpath $SCRIPT_DIR/../pkgs/yay/aurlist.txt)"
 
 # Empty the output files
 > $pkglist
