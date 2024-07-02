@@ -1,5 +1,7 @@
+docker-desktop
 ghq
 i3lock-fancy-git
+nvm
 rtl8852au-dkms-git
 tmuxinator
 yay
