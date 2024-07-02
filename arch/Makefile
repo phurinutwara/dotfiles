@@ -1,18 +1,28 @@
-.PHONY: pacdump seperate dump pacrestore yayrestore restore
+.PHONY: pacdump seperate dump pacrestore yayrestore restore cargodump
 
-
+# DUMP ========================================================================>
 pacdump:
-	pacman -Qqe > combined_list.txt
+	pacman -Qqe > ./pkgs/pacman/combined-list.txt
 
 seperate:
-	sh ./separate_packages.sh
+	sh ./scripts/separate_packages.sh
 
-dump: | pacdump seperate
+cargodump:
+	cargo install --list > ./pkgs/cargo/cargolist.txt
 
+dump: | pacdump cargodump seperate
+# <======================================================================  DUMP
+
+# RESTORE =====================================================================>
 pacrestore:
-	sudo pacman -S --needed - < pkglist.txt
+	sudo pacman -S --needed - < ./pkgs/pacman/pkglist.txt
 
 yayrestore:
-	yay -S --needed - < aurlist.txt
+	yay -S --needed - < ./pkgs/yay/aurlist.txt
 
 restore: | pacrestore yayrestore
+# <===================================================================== RESTORE
+
+# TODO:
+# - cargorestore
+# - flatpakdump, flatpakrestore

@@ -26,6 +26,7 @@ dkms
 dmidecode
 docker
 docker-compose
+docker-desktop
 efibootmgr
 ethtool
 eza
@@ -35,6 +36,7 @@ flatpak
 fuse2
 fzf
 garcon
+ghq
 git
 git-delta
 gnome-terminal
@@ -45,6 +47,7 @@ htop
 i3-wm
 i3blocks
 i3lock
+i3lock-fancy-git
 i3status
 imwheel
 intel-ucode
@@ -78,6 +81,7 @@ npm
 nvidia
 nvidia-settings
 nvidia-utils
+nvm
 openbsd-netcat
 openfortivpn
 openssh
@@ -93,6 +97,8 @@ reflector
 ripgrep
 rofi
 rsync
+rtl8852au-dkms-git
+rust
 samba
 sof-firmware
 speedtest-cli
@@ -108,6 +114,7 @@ thunar-media-tags-plugin
 thunar-volman
 tldr
 tmux
+tmuxinator
 tree
 ttf-dejavu
 ttf-droid
@@ -118,6 +125,7 @@ ttf-nerd-fonts-symbols-mono
 ttf-roboto
 ttf-ubuntu-font-family
 tumbler
+udisks2
 unzip
 usb_modeswitch
 usbutils
@@ -189,6 +197,8 @@ xorg-xwud
 xsel
 xss-lock
 yarn
+yay
+yay-debug
 yq
 zip
 zsh
