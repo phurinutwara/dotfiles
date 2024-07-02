@@ -23,6 +23,7 @@
       create: true
       path: ./config/btop/
     ~/.gitconfig: ./.gitconfig
+
     # Linux stuffs
     ~/.config/i3:
       create: true
@@ -42,6 +43,7 @@
 
 - create:
     - ~/Works
+    - ~/vpns
 
 - shell:
     - command: git submodule update --init

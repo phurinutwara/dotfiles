@@ -160,6 +160,20 @@ alias trail='<<<${(F)path}'
 alias szsh='source ~/.zshrc'
 alias lg=lazygit
 
+# My most frequently accessed directories (for simply, try using: `als cd`, `als nv`)
+alias cda='cd ~/dotfiles/arch/'
+alias cdc='cd ~/dotfiles/config/'
+alias cdw='cd ~/Works'
+alias cdz='cd ~/dotfiles/config/zsh'
+alias cddf='cd ~/dotfiles/'
+alias cdnv='cd ~/dotfiles/config/nvim/'
+
+alias nva='nvim ~/dotfiles/arch/'
+alias nvc='nvim ~/dotfiles/config/'
+alias nvdf='nvim ~/dotfiles/'
+alias nvnv='nvim ~/dotfiles/config/nvim/'
+alias nvzrc='nvim ~/dotfiles/zsh/zshrc'
+
 # Customize Prompt(s)
 # PROMPT='
 # %1~ %L %# '
