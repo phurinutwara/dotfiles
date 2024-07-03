@@ -161,6 +161,11 @@ alias trail='<<<${(F)path}'
 alias szsh='source ~/.zshrc'
 alias lg=lazygit
 
+# pick by fcsonline/tmux-thumbs
+# e.g. git log | pick
+alias pick='thumbs -u -r | xsel --clipboard -i' # TODO: FIX: THIS
+alias picks='thumbs -m' # TODO: FIX: THIS
+
 # My most frequently accessed directories (for simply, try using: `als cd`, `als nv`)
 alias cda='cd ~/dotfiles/arch/'
 alias cdc='cd ~/dotfiles/config/'
@@ -181,7 +186,9 @@ alias nvzrc='nvim ~/dotfiles/zsh/zshrc'
 #
 # RPROMPT='%*'
 
-# Add Locations to $PATH Variable
+# Add Locations to $PATH Variable (See also: https://unix.stackexchange.com/a/26059)
+export CARGOPATH="$HOME/.cargo/bin"
+export PATH=$PATH:$CARGOPATH
 
 # Write Handy Functions
 function mkcd() {
