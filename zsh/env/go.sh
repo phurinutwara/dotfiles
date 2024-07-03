@@ -11,4 +11,4 @@ elif [[ $OS_TYPE == "darwin"* ]]; then
 fi
 
 export GOPATH=$HOME/go
-export PATH=$PATH:$GOPATH/bin:$GOROOT/bin:$PATH
+export PATH=$PATH:$GOPATH/bin:$GOROOT/bin
