@@ -1,5 +1,5 @@
 #!/usr/bin/env zsh
-. /etc/os-release
+[[ -f /etc/os-release ]] && . /etc/os-release
 
 echo -e "\n<<< Starting ZSH Setup >>>\n"
 
@@ -45,7 +45,7 @@ else
 	echo -e "\n[2/3] login shell already changed, skipping change login shell"
 fi
 
-linked_shell=$(realpath private/var/select/sh >/dev/null 2>&1)
+linked_shell=$(realpath /private/var/select/sh)
 if [[ $linked_shell != $expect_zsh ]]; then
 	if [[ "$OSTYPE" == "darwin"* ]]; then
 		echo -ne "\n[3/3] "

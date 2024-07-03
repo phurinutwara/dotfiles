@@ -1,9 +1,9 @@
 #!/usr/bin/env zsh
 
+# TODO: EXECPT ARCH OS HERE
 if [[ "$OSTYPE" == "darwin"* ]]; then
   export BREWFILE_PATH="~/dotfiles/homebrew/macos/Brewfile"
-  . /home/linuxbrew/.linuxbrew/etc/profile.d/z.sh
-  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+  eval "$(/usr/local/bin/brew shellenv)"
 elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
   export BREWFILE_PATH="~/dotfiles/homebrew/linux/Brewfile"
 fi
