@@ -1,5 +1,6 @@
 #!/usr/bin/env zsh
-. /etc/os-release
+[[ -f /etc/os-release ]] && . /etc/os-release
+
 TPM_PATH=~/.tmux/plugins/tpm
 
 echo "\n<<< Starting Tmux Plugin Manager Setup >>>\n"

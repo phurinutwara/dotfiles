@@ -1,5 +1,5 @@
 #!/usr/bin/env zsh
-. /etc/os-release
+[[ -f /etc/os-release ]] && . /etc/os-release
 
 if [[ $ID == "arch" ]]; then
 	echo "you are using arch, skipping homebrew"
