@@ -162,9 +162,7 @@ alias szsh='source ~/.zshrc'
 alias lg=lazygit
 
 # pick by fcsonline/tmux-thumbs
-# e.g. git log | pick
-alias pick='thumbs -u -r | xsel --clipboard -i' # TODO: FIX: THIS
-alias picks='thumbs -m' # TODO: FIX: THIS
+# TODO: USE THIS SOLUTION INSTEAD: https://sw.kovidgoyal.net/kitty/kittens/hints/#
 
 # My most frequently accessed directories (for simply, try using: `als cd`, `als nv`)
 alias cda='cd ~/dotfiles/arch/'
