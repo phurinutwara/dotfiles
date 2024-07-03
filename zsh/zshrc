@@ -170,7 +170,7 @@ alias picks='thumbs -m' # TODO: FIX: THIS
 alias cda='cd ~/dotfiles/arch/'
 alias cdc='cd ~/dotfiles/config/'
 alias cdw='cd ~/Works'
-alias cdz='cd ~/dotfiles/config/zsh'
+alias cdz='cd ~/dotfiles/zsh'
 alias cddf='cd ~/dotfiles/'
 alias cdnv='cd ~/dotfiles/config/nvim/'
 
