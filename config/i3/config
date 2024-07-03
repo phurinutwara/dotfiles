@@ -25,8 +25,8 @@ exec_always --no-startup-id killall sxhkd
 exec_always --no-startup-id sxhkd
 
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock-fancy --nofork
-exec_always --no-startup-id xset dpms 0 0 120
 exec_always --no-startup-id xset r rate 175 70
+# exec_always --no-startup-id xset dpms 0 0 120 # disable turn off at 2 min
 
 exec_always --no-startup-id killall polybar
 exec_always --no-startup-id ~/.config/polybar/launch_polybar.sh
