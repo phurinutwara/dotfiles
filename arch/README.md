@@ -404,6 +404,7 @@ reboot
    $ sudo pacman -S sof-firmware pulseaudio alsa-utils alsa-plugins pavucontrol
 
    $ sudo pacman -S pulseaudio             # Audio driver
+   $ sudo pacman -S pulseaudio-bluetooth   # Audio driver - bluetooth support (For airpod support: https://gist.github.com/aidos-dev/b49078c1d8c6bb1621e4ac199d18213b )
    $ sudo pacman -S gparted btrfs-progs    # A Partition Magic clone, frontend to GNU Parted + btrfs tool
    ```
 

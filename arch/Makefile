@@ -2,7 +2,7 @@
 
 # DUMP ========================================================================>
 pacdump:
-	pacman -Qqe > ./pkgs/pacman/combined-list.txt
+	pacman -Qqe > ./pkgs/combined-list.txt
 
 seperate:
 	sh ./scripts/separate_packages.sh
