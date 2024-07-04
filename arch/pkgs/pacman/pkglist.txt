@@ -88,6 +88,7 @@ picom
 polybar
 powertop
 pulseaudio
+pulseaudio-bluetooth
 ranger
 reflector
 ripgrep
