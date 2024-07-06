@@ -142,6 +142,7 @@ zstyle ':omz:plugins:alias-finder' cheaper yes # disabled by default
 # export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 export TZ=Asia/Bangkok
 export EDITOR="nvim"
+export TERMINAL="kitty"
 
 # USE NVIM as VISUAL EDITOR: https://unix.stackexchange.com/a/501863
 export VISUAL="$EDITOR"
