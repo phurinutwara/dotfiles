@@ -23,10 +23,7 @@ exec --no-startup-id picom -b
 
 exec_always --no-startup-id killall sxhkd
 exec_always --no-startup-id sxhkd
-
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock-fancy --nofork
 exec_always --no-startup-id xset r rate 175 70
-# exec_always --no-startup-id xset dpms 0 0 120 # disable turn off at 2 min
 
 exec_always --no-startup-id killall polybar
 exec_always --no-startup-id ~/.config/polybar/launch_polybar.sh
@@ -49,6 +46,9 @@ exec --no-startup-id dex --autostart --environment i3
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
+# turn off screen saver and dpms feature, view configs by `xset q`, `xrandr -q`
+exec_always --no-startup-id xset s off
+# exec_always --no-startup-id xset -dpms
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
