@@ -372,6 +372,8 @@ reboot
       $ yay -S i3-lock-fancy-git           # beautiful lock screen
       ```
       NOTE: use `sudo nvidia-settings` to adjust desktop resolution size and save to `/etc/X11/xorg.conf` file
+            Be sure that on `X Server Display Configuration > Advanced... > Force Full Composition Pipeline`
+            must set to true
       ```sh
       # or manual config with xrandr
       # ~/.xprofile to run xrandr when logging in
@@ -459,7 +461,7 @@ reboot
    # Find `GRUB_CMDLINE_ LINUX_DEFAULT="..."` then put resume hook on the last e.g.
    # also add acpi_osi for nvidia specific configs
    # FROM `GRUB_CMDLINE_LINUX_DEFAULT="loglevel=3 quiet"` to
-   GRUB_CMDLINE_LINUX_DEFAULT="loglevel=3 quiet resume=UUID=7948187b-f119-450d-9511-9d7707c80be2 acpi_osi=! acpi_osi=\"Windows 2009\""
+   GRUB_CMDLINE_LINUX_DEFAULT="loglevel=3 quiet resume=UUID=7948187b-f119-450d-9511-9d7707c80be2 acpi_osi=! acpi_osi=\"Windows 2009\" nvidia-drm.modeset=1"
 
    # 4. Regenerate grub again
    $ sudo grub-mkconfig -o /boot/grub/grub.cfg
@@ -603,9 +605,8 @@ My [Post-installation](https://wiki.archlinux.org/title/Installation_guide#Post-
 
 #### KNOWN ISSUES:
 
-- [ ] When dpms is activated by afk and once we come back, <u>the screen did not turn on properly</u>\
-      - **Possibly solution**: [Use xrandr or turn off nvidia powerd](https://askubuntu.com/questions/1131558/second-external-monitor-not-waking-up)
-
+- [x] When dpms is activated by afk and once we come back, <u>the screen did not turn on properly</u>\
+      - **Solution**: Take a look [HERE](articles/monitor-not-turnon-when-wakeup.md)
 ---
 
 #### Current research:
