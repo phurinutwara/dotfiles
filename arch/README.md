@@ -598,6 +598,14 @@ My [Post-installation](https://wiki.archlinux.org/title/Installation_guide#Post-
 - [ ] Add some pics and gifs for better explanation
 - [ ] Move this doc to [docusaurus](https://docusaurus.io/) for powered with MDX
 
+
+---
+
+#### KNOWN ISSUES:
+
+- [ ] When dpms is activated by afk and once we come back, <u>the screen did not turn on properly</u>\
+      - **Possibly solution**: [Use xrandr or turn off nvidia powerd](https://askubuntu.com/questions/1131558/second-external-monitor-not-waking-up)
+
 ---
 
 #### Current research:
