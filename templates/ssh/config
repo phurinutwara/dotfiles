@@ -1,0 +1,24 @@
+# This file should have `chmod 600` permision
+Host bitbucket.org
+  HostName bitbucket.org
+  User git
+  IdentityFile ~/.ssh/id_ed25519
+  ForwardAgent yes
+
+Host github.com
+  HostName github.com
+  User git
+  IdentityFile ~/.ssh/id_ed25519
+  ForwardAgent yes
+
+# Or with forward agent
+Host example.com
+  ForwardAgent yes
+
+# example to cloud provider instance (later you can use `ssh aws`)
+HOST aws
+  HostName <your-instance-id>.ap-southeast-1.compute.amazonaws.com
+  User ec2-user
+  Port 22
+  IdentityFile ~/.ssh/keys/some_private_key.pem
+  ForwardAgent yes
