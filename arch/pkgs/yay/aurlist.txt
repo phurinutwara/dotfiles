@@ -2,6 +2,7 @@ docker-desktop
 ghq
 i3lock-fancy-git
 nvm
+postman-bin
 rtl8852au-dkms-git
 tmuxinator
 yay

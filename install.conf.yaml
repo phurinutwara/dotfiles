@@ -1,9 +1,7 @@
 - defaults:
     link:
       relink: true
-
 - clean: ["~"]
-
 - link:
     ~/.zshrc: ./zsh/zshrc
     ~/.zshenv: ./zsh/zshenv
@@ -23,7 +21,6 @@
       create: true
       path: ./config/btop/
     ~/.gitconfig: ./.gitconfig
-
     # Linux stuffs
     ~/.config/i3:
       create: true
@@ -40,11 +37,10 @@
     ~/.config/sxhkd:
       create: true
       path: ./config/sxhkd
-
 - create:
     - ~/Works
     - ~/vpns
-
+    - ~/packages # for extract packages which need to be built / manual installed
 - shell:
     - command: git submodule update --init
       stdin: true
