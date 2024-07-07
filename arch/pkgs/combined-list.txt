@@ -25,7 +25,6 @@ discord
 dkms
 dmidecode
 docker
-docker-compose
 docker-desktop
 efibootmgr
 ethtool
@@ -61,6 +60,7 @@ linux
 linux-firmware
 linux-headers
 lshw
+lsof
 lxappearance
 ly
 maim
@@ -90,6 +90,7 @@ papirus-icon-theme
 pavucontrol
 picom
 polybar
+postman-bin
 powertop
 pulseaudio
 pulseaudio-bluetooth
