@@ -39,8 +39,13 @@
       path: ./config/sxhkd
 - create:
     - ~/Works
-    - ~/vpns
     - ~/packages # for extract packages which need to be built / manual installed
+- create:
+    ~/vpns:
+      mode: 0700
+- create:
+    ~/.ssh/keys:
+      mode: 0700
 - shell:
     - command: git submodule update --init
       stdin: true
