@@ -1,29 +1,30 @@
 #!/usr/bin/env zsh
+
 [[ -f /etc/os-release ]] && . /etc/os-release
 
 echo -e "\n<<< Starting ZSH Setup >>>\n"
 
 # Installation unnecessary; it's in the Brewfile.
-if [[ $ID == "arch" ]] then
-  if ! command -v zsh &> /dev/null ; then
+if [[ $ID == "arch" ]]; then
+	expect_zsh="/bin/zsh"
+	if ! command -v zsh &>/dev/null; then
 		echo "No zsh installed, installing zsh"
 		sudo pacman -S zsh
-		expect_zsh="/usr/bin/zsh"
 	else
 		echo "zsh installed, continue binding zsh"
 	fi
 elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
+	expect_zsh="/usr/bin/zsh"
 	echo "This might be WSL"
-	if ! command -v zsh &> /dev/null ; then
+	if ! command -v zsh &>/dev/null; then
 		echo "No zsh installed, installing zsh"
 		sudo apt -y install zsh
-		expect_zsh="/usr/bin/zsh"
 	else
 		echo "zsh installed, continue binding zsh"
 	fi
 elif [[ "$OSTYPE" == "darwin"* ]]; then
-	echo "This is MacOS, continue binding zsh"
 	expect_zsh="/bin/zsh"
+	echo "This is MacOS, continue binding zsh"
 else
 	echo "Unknown OS"
 	exit 1
@@ -45,16 +46,16 @@ else
 	echo -e "\n[2/3] login shell already changed, skipping change login shell"
 fi
 
-linked_shell=$(realpath /private/var/select/sh)
-if [[ $linked_shell != $expect_zsh ]]; then
-	if [[ "$OSTYPE" == "darwin"* ]]; then
-		echo -ne "\n[3/3] "
+if [[ $ID == "arch" ]]; then
+	echo -e "\n[3/3] arch user, skipping create shell symlink"
+elif [[ $OSTYPE =~ darwin* ]]; then
+	linked_shell=$(realpath /private/var/select/sh)
+	if [[ $linked_shell != $expect_zsh ]]; then
+		echo -ne "\n[3/3] Creating shell symlink"
 		sudo ln -sfv /bin/zsh /private/var/select/sh
 	else
-		echo -e "\n[3/3] this is not macOS, skipping create shell symlink"
+		echo -e "\n[3/3] shell already linked, skipping create shell symlink"
 	fi
-else
-	echo -e "\n[3/3] shell already linked, skipping create shell symlink"
 fi
 
 exit

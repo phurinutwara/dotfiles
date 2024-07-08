@@ -10,11 +10,18 @@ function exists() {
   # STDIN  (Keyboard) = 0
   # STDOUT (Display)  = 1
   # STDERR (Display)  = 2
+
+  # What does 2>&1 means?
+  # https://stackoverflow.com/questions/818255/what-does-21-mean
 }
 
 function cc() {
   clear
-  if [ "$TMUX" != "" ]; then
+
+  # What differences between `[[ ]]` and `[]`
+  # https://stackoverflow.com/questions/3427872/whats-the-difference-between-and-in-bash
+  # https://stackoverflow.com/a/669486/15029223
+  if [[ -f $TMUX ]]; then
     tmux clear-history
   fi
 }
