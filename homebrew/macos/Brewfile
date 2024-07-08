@@ -1,11 +1,13 @@
 tap "abdfnx/tap"
 tap "arl/arl"
 tap "bufbuild/buf"
+tap "cmacrae/formulae"
 tap "eth-p/software"
 tap "fsouza/prettierd"
 tap "homebrew/bundle"
 tap "homebrew/services"
 tap "jakehilborn/jakehilborn"
+tap "koekeishiya/formulae"
 # Interpreted, interactive, object-oriented programming language
 brew "python@3.12"
 # OpenType text shaping engine
@@ -68,6 +70,8 @@ brew "less"
 brew "libpq", link: true
 # Small memory footprint, flexible web-server
 brew "lighttpd", restart_service: true
+# Utility for directing compilation
+brew "make"
 # Drop-in replacement for MySQL
 brew "mariadb"
 # Mac App Store command-line interface
@@ -94,6 +98,8 @@ brew "prettier"
 brew "pygments"
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
+# Safe, concurrent, practical language
+brew "rust"
 # Command-line interface for https://speedtest.net bandwidth tests
 brew "speedtest-cli"
 # User interface to the TELNET protocol
@@ -128,10 +134,16 @@ brew "zsh-syntax-highlighting"
 brew "arl/arl/gitmux"
 # The best way of working with Protocol Buffers.
 brew "bufbuild/buf/buf"
+# A minimal status bar for macOS.
+brew "cmacrae/formulae/spacebar"
 # Bash scripts that integrate bat with various command-line tools
 brew "eth-p/software/bat-extras"
 # prettier, on SPEED!
 brew "fsouza/prettierd/prettierd"
+# Simple hotkey-daemon for macOS.
+brew "koekeishiya/formulae/skhd"
+# A tiling window manager for macOS based on binary space partitioning.
+brew "koekeishiya/formulae/yabai"
 # Remove junk and unused files
 cask "ccleaner"
 # Clipboard manager with advanced features
