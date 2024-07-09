@@ -28,6 +28,7 @@ docker
 efibootmgr
 ethtool
 eza
+fd
 feh
 firefox
 flatpak
@@ -58,9 +59,11 @@ linux-firmware
 linux-headers
 lshw
 lsof
+luarocks
 lxappearance
 ly
 maim
+mercurial
 mtools
 mtr
 neofetch
@@ -89,6 +92,7 @@ polybar
 powertop
 pulseaudio
 pulseaudio-bluetooth
+python-pip
 ranger
 reflector
 ripgrep
