@@ -141,9 +141,9 @@ brew "eth-p/software/bat-extras"
 # prettier, on SPEED!
 brew "fsouza/prettierd/prettierd"
 # Simple hotkey-daemon for macOS.
-brew "koekeishiya/formulae/skhd"
+brew "koekeishiya/formulae/skhd", args: ["HEAD"]
 # A tiling window manager for macOS based on binary space partitioning.
-brew "koekeishiya/formulae/yabai"
+brew "koekeishiya/formulae/yabai", args: ["HEAD"]
 # Remove junk and unused files
 cask "ccleaner"
 # Clipboard manager with advanced features
