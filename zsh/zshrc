@@ -163,7 +163,7 @@ alias szsh='source ~/.zshrc'
 alias lg=lazygit
 
 # useful copy and travel path across terminal
-alias pwdc='pwd | clipcopy'
+alias pwdc='echo -n $(pwd) | clipcopy'
 
 # pick by fcsonline/tmux-thumbs
 # TODO: USE THIS SOLUTION INSTEAD: https://sw.kovidgoyal.net/kitty/kittens/hints/#
