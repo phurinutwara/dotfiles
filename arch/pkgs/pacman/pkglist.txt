@@ -41,10 +41,10 @@ gnu-free-fonts
 gparted
 grub
 htop
-i3-wm
 i3blocks
 i3lock
 i3status
+i3-wm
 imwheel
 intel-ucode
 inxi
@@ -67,11 +67,11 @@ neofetch
 neovide
 neovim
 net-tools
-network-manager-applet
 networkmanager
+network-manager-applet
 networkmanager-openvpn
-nm-connection-editor
 nmap
+nm-connection-editor
 noto-fonts
 noto-fonts-emoji
 npm
@@ -143,10 +143,10 @@ xfwm4
 xfwm4-themes
 xorg-bdftopcf
 xorg-docs
-xorg-font-util
 xorg-fonts-100dpi
 xorg-fonts-75dpi
 xorg-fonts-encodings
+xorg-font-util
 xorg-iceauth
 xorg-mkfontscale
 xorg-server
