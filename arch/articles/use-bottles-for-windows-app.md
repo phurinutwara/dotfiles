@@ -54,3 +54,5 @@ If you browse on bottles file open, .exe seems to hidden in some apps
 - [For Vulkan GL (AMD)](https://wiki.archlinux.org/title/Vulkan)
 - [line download link](https://software.thaiware.com/download.php?id=9498)
 - [Where do bottles app file location located?](https://www.reddit.com/r/linux_gaming/comments/xanzzv/comment/inuk2jl/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button)
+- [If settings don't persists](https://www.reddit.com/r/linux_gaming/comments/1d35zhf/xdefiant_bottles_game_settings_dont_persist)
+- [Wine Mono is missing](https://www.reddit.com/r/wine_gaming/comments/z2jc8u/wine_mono_is_not_installed)
