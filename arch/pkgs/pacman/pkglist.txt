@@ -25,6 +25,7 @@ discord
 dkms
 dmidecode
 docker
+dunst
 efibootmgr
 ethtool
 eza
@@ -41,6 +42,7 @@ gnome-terminal
 gnu-free-fonts
 gparted
 grub
+gvfs
 htop
 i3blocks
 i3lock
