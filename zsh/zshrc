@@ -85,6 +85,7 @@ plugins=(
   alias-finder
   aliases
   aws
+  colored-man-pages
   docker
   git
   history-substring-search
@@ -151,13 +152,15 @@ export BROWSER="firefox"
 export HOMEBREW_CASK_OPTS="--no-quarantine"
 export NULLCMD=bat
 export LESS='--quit-if-one-screen --ignore-case --status-column --LONG-PROMPT --RAW-CONTROL-CHARS --HILITE-UNREAD --tabs=4 --no-init --window=-4 --mouse --wheel-lines=5'
+export MANWIDTH_RIGHT_OFFSET=8
 
 # Change ZSH Options
 
 # Create Aliases
+alias rl='omz reload'
 alias ls='eza -lah --git'
 alias eza='eza -lah --git'
-alias man='BAT_THEME="Monokai Extended" batman "$@"'
+alias man="update_man_width;BAT_THEME='Monokai Extended' batman '$@'"
 alias trail='<<<${(F)path}'
 alias szsh='source ~/.zshrc'
 alias lg=lazygit
@@ -195,6 +198,18 @@ export PATH=$PATH:$CARGOPATH
 # Write Handy Functions
 function mkcd() {
   mkdir -p "$@" && cd "$_"
+}
+
+function update_man_width() {
+  # See also: https://unix.stackexchange.com/questions/215584/whats-the-name-of-the-environment-variable-with-current-terminal-width
+
+  # WAYS TO GET TERMINAL SIZES ()
+  # 1.with env $COLUMNS and $LINES
+  # 2.with stty `echo $(stty size) | awk '{print $2}'`
+  # 3.with tput `tput {cols,lines}` (it's run non-interactive shell and got 80)
+
+  # Using expr: https://unix.stackexchange.com/questions/480121/simple-command-line-calculator
+  export MANWIDTH="$(expr $COLUMNS - $MANWIDTH_RIGHT_OFFSET)"
 }
 
 # Use ZSH Plugins
