@@ -163,7 +163,8 @@ alias eza='eza -lah --git'
 alias man="update_man_width;BAT_THEME='Monokai Extended' batman '$@'"
 alias trail='<<<${(F)path}'
 alias szsh='source ~/.zshrc'
-alias lg=lazygit
+alias lg='lazygit'
+alias mk='make'
 
 # useful copy and travel path across terminal
 alias pwdc='echo -n $(pwd) | clipcopy'
