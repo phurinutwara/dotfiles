@@ -8,13 +8,18 @@
 # i3 config file (v4)
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
+# See also: https://github.com/TheDistroHopper/i3wm-nord/blob/main/i3/config
 
-# i3 gaps next
-for_window [class="^.*"] border pixel 2
+# i3-gaps
+# See also:
+# Official Github: https://github.com/Airblader/i3
+# https://github.com/jbenden/i3-gaps-rounded
+
+for_window [class="^.*"] border pixel 0
 gaps inner 8
-gaps outer 1
-#smart_gaps on
-#smart_borders on
+gaps outer 0
+# smart_gaps on
+# smart_borders on
 
 set $mod Mod4
 exec_always --no-startup-id setxkbmap -option caps:escape
@@ -28,6 +33,8 @@ exec_always --no-startup-id xset r rate 175 70
 exec_always --no-startup-id killall polybar
 exec_always --no-startup-id ~/.config/polybar/launch_polybar.sh
 exec_always --no-startup-id ~/.config/i3/scripts/mouse.sh
+
+exec_always --no-startup-id killall dunst;sleep 0.1; dunst --startup_notification
 
 exec_always feh --bg-scale ~/dotfiles/arch/bg/nice-blue-background.png
 
@@ -200,10 +207,10 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym h resize shrink width 10 px or 10 ppt
-        bindsym j resize grow height 10 px or 10 ppt
-        bindsym k resize shrink height 10 px or 10 ppt
-        bindsym l resize grow width 10 px or 10 ppt
+        bindsym h resize shrink width 5 px or 5 ppt
+        bindsym j resize grow height 5 px or 5 ppt
+        bindsym k resize shrink height 5 px or 5 ppt
+        bindsym l resize grow width 5 px or 5 ppt
 
         # same bindings, but for the arrow keys
         # bindsym Left resize shrink width 10 px or 10 ppt

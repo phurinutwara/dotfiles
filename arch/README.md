@@ -84,7 +84,7 @@ Goal to switch:
 6. Nice to have Skills
    - Basic CLI/TUI usage:
      - you will have to run a lot of commands through installation\
-       without helping of GUI (if you want deeply understand each command I suggest use `man`)
+       without helping of GUI (if you want deeply understand each command I suggest use [`man`](https://wiki.archlinux.org/title/man_page))
      - I use $ before command to demonstrate a command to run in shell prompt\
        otherwise, just a description in a code-block
    - A lot of Googling Research:
@@ -369,6 +369,7 @@ reboot
       $ sudo pacman -S light               # for customize display light
       $ sudo pacman -S pango               # for text-rendering
       $ sudo pacman -S thunar              # GUI file explorer
+      $ sudo pacman -S dunst               # A highly configurable and lightweight notification daemon.
       $ yay -S i3-lock-fancy-git           # beautiful lock screen
       ```
       NOTE: use `sudo nvidia-settings` to adjust desktop resolution size and save to `/etc/X11/xorg.conf` file
