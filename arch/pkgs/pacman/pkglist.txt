@@ -66,6 +66,7 @@ lxappearance
 ly
 maim
 mercurial
+mpv
 mtools
 mtr
 neofetch
