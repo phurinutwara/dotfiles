@@ -152,6 +152,8 @@ cask "copyq"
 cask "discord"
 # App to build and share containerised applications and microservices
 cask "docker"
+# Client for the Dropbox cloud storage service
+cask "dropbox"
 # Web browser
 cask "google-chrome"
 # Keyboard customiser
@@ -162,6 +164,8 @@ cask "keycastr"
 cask "macforge"
 # Reverse proxy, secure introspectable tunnels to localhost
 cask "ngrok"
+# Desktop virtualization software
+cask "parallels@16"
 # Collaboration platform for API development
 cask "postman"
 # HTTP debugging proxy
