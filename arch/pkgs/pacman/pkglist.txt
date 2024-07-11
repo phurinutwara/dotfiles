@@ -3,6 +3,7 @@ alsa-plugins
 alsa-utils
 arandr
 arc-gtk-theme
+aws-cli
 axel
 base
 base-devel
