@@ -26,6 +26,7 @@ dkms
 dmidecode
 docker
 docker-desktop
+dropbox
 dunst
 efibootmgr
 ethtool
@@ -69,6 +70,7 @@ lxappearance
 ly
 maim
 mercurial
+mpv
 mtools
 mtr
 neofetch

@@ -19,7 +19,7 @@
       path: ./config/kitty
     ~/.config/btop:
       create: true
-      path: ./config/btop/
+      path: ~/Dropbox/config/btop
     ~/.gitconfig: ./.gitconfig
     # Linux stuffs
     ~/.config/i3:
