@@ -23,6 +23,7 @@ gaps outer 0
 
 set $mod Mod4
 exec_always --no-startup-id setxkbmap -option caps:escape
+exec_always --no-startup-id ~/.config/i3/scripts/mouse.sh
 
 exec --no-startup-id picom -b
 
@@ -32,7 +33,8 @@ exec_always --no-startup-id xset r rate 175 70
 
 exec_always --no-startup-id killall polybar
 exec_always --no-startup-id ~/.config/polybar/launch_polybar.sh
-exec_always --no-startup-id ~/.config/i3/scripts/mouse.sh
+
+exec_always --no-startup-id killall xborders; ~/.config/xborder/xborders --border-width 3
 
 exec_always --no-startup-id killall dunst;sleep 0.1; dunst --startup_notification
 
