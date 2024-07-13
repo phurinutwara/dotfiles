@@ -40,6 +40,9 @@
     ~/.config/dunst:
       create: true
       path: ./config/dunst
+    ~/.config/xborder:
+      create: true
+      path: ./config/xborder
 - create:
     - ~/Works
     - ~/packages # for extract packages which need to be built / manual installed
