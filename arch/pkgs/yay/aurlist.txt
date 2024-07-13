@@ -1,5 +1,4 @@
 docker-desktop
-dropbox
 ghq
 i3lock-fancy-git
 nvm
