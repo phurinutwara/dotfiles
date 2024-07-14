@@ -91,6 +91,7 @@ nvidia
 nvidia-settings
 nvidia-utils
 nvm
+obsidian
 openbsd-netcat
 openfortivpn
 openssh
