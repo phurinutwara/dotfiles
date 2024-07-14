@@ -165,6 +165,7 @@ alias trail='<<<${(F)path}'
 alias szsh='source ~/.zshrc'
 alias lg='lazygit'
 alias mk='make'
+alias v='nvim'
 
 # useful copy and travel path across terminal
 alias pwdc='echo -n $(pwd) | clipcopy'

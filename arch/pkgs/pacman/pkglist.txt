@@ -87,6 +87,7 @@ npm
 nvidia
 nvidia-settings
 nvidia-utils
+obsidian
 openbsd-netcat
 openfortivpn
 openssh
