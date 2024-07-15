@@ -33,10 +33,13 @@ eza
 fd
 feh
 firefox
+flameshot
 flatpak
 fuse2
 fzf
 garcon
+ghq
+gimp
 git
 git-delta
 gnome-terminal

@@ -370,6 +370,8 @@ reboot
       $ sudo pacman -S pango               # for text-rendering
       $ sudo pacman -S thunar              # GUI file explorer
       $ sudo pacman -S dunst               # A highly configurable and lightweight notification daemon.
+      $ sudo pacman -S flameshot           # Great tool for screenshot
+
       $ yay -S i3-lock-fancy-git           # beautiful lock screen
       ```
       NOTE: use `sudo nvidia-settings` to adjust desktop resolution size and save to `/etc/X11/xorg.conf` file
