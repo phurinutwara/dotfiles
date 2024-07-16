@@ -40,7 +40,7 @@ exec_always --no-startup-id killall dunst;sleep 0.1; dunst --startup_notificatio
 
 exec_always feh --bg-scale ~/dotfiles/arch/bg/nice-blue-background.png
 
-exec --no-startup-id ~/.dropbox-dist/dropboxd
+exec_always --no-startup-id ~/.dropbox-dist/dropboxd
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
