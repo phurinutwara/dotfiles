@@ -82,8 +82,8 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  alias-finder
-  aliases
+  alias-finder               # try `als` for self-explanation
+  aliases                    # all good shortcuts (e.g. `glola` `glods` `gf` `gl`)
   aws
   colored-man-pages
   docker
@@ -188,6 +188,12 @@ alias nvd='nvim ~/dotfiles/'
 alias nvk='nvim ~/vaults/second-brain/'
 alias nvv='nvim ~/dotfiles/config/nvim/'
 alias nvz='nvim ~/dotfiles/zsh/zshrc'
+
+# DevOps tools aliases
+alias dcb='docker compose build'
+alias dcu='docker compose up -d'
+alias dcd='docker compose down'
+alias dcw='docker compose watch'
 
 # Customize Prompt(s)
 # PROMPT='
