@@ -15,32 +15,45 @@
 # Official Github: https://github.com/Airblader/i3
 # https://github.com/jbenden/i3-gaps-rounded
 
-for_window [class="^.*"] border pixel 0
+#####################################################################################################################
+#################                          Common Configuations                                     #################
+#####################################################################################################################
+
+# Modification-key Binding
+set $mod Mod4
+
+# Windows decoration
+for_window [class="^.*"] border pixel 5
 gaps inner 8
 gaps outer 0
 # smart_gaps on
 # smart_borders on
 
-set $mod Mod4
-exec_always --no-startup-id setxkbmap -option caps:escape
-exec_always --no-startup-id ~/.config/i3/scripts/mouse.sh
-
+# Compositor runner
 exec --no-startup-id picom -b
 
-exec_always --no-startup-id killall sxhkd
-exec_always --no-startup-id sxhkd
+# Keyboard-mouse configuration runner
+exec_always --no-startup-id ~/.config/i3/scripts/mouse.sh
+exec_always --no-startup-id setxkbmap -option caps:escape
+exec_always --no-startup-id killall sxhkd; sxhkd
 exec_always --no-startup-id xset r rate 175 70
 
+# Status-bar runner
 exec_always --no-startup-id killall polybar
 exec_always --no-startup-id ~/.config/polybar/launch_polybar.sh
 
-exec_always --no-startup-id killall xborders; ~/.config/xborder/xborders --border-width 3
-
 exec_always --no-startup-id killall dunst;sleep 0.1; dunst --startup_notification
 
+# Background-service runner
 exec_always feh --bg-scale ~/dotfiles/arch/bg/nice-blue-background.png
-
 exec_always --no-startup-id ~/.dropbox-dist/dropboxd
+
+# Disabled runners
+
+# xborders due to doesn't work well when group selection of windows
+# exec_always --no-startup-id killall xborders; ~/.config/xborder/xborders --border-width 3
+
+####################################################################################################################
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -48,7 +61,7 @@ font pango:JetBrainsMonoNL Nerd Font Propo 14
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-#font pango:DejaVu Sans Mono 8
+# font pango:DejaVu Sans Mono 8
 
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
