@@ -3,6 +3,7 @@ i3lock-fancy-git
 nvm
 postman-bin
 rtl8852au-dkms-git
+snapd
 tmuxinator
 yay
 yay-debug

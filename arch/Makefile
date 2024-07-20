@@ -1,4 +1,5 @@
-.PHONY: pacdump seperate dump pacrestore yayrestore restore cargodump
+.PHONY: dump pacdump seperate cargodump flatpakdump snapdump
+.PHONY: restore pacrestore yayrestore
 
 # DUMP ========================================================================>
 pacdump:
@@ -10,7 +11,13 @@ seperate:
 cargodump:
 	cargo install --list > ./pkgs/cargo/cargolist.txt
 
-dump: | pacdump cargodump seperate
+flatpakdump:
+	flatpak list --columns=application | tail -n +1 > ./pkgs/flatpak/flatpaklist.txt
+
+snapdump:
+	snap list --all | awk '{print $1}' | tail -n +2 > ./pkgs/snap/snaplist.txt
+
+dump: | pacdump cargodump flatpakdump snapdump seperate
 # <======================================================================  DUMP
 
 # RESTORE =====================================================================>
@@ -25,4 +32,5 @@ restore: | pacrestore yayrestore
 
 # TODO:
 # - cargorestore
-# - flatpakdump, flatpakrestore
+# - flatpakrestore
+# - snapdump
