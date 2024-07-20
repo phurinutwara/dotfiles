@@ -115,6 +115,7 @@ rsync
 rtl8852au-dkms-git
 rust
 samba
+snapd
 sof-firmware
 speedtest-cli
 sudo
