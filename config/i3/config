@@ -30,7 +30,7 @@ gaps outer 0
 # smart_borders on
 
 # Compositor runner
-exec --no-startup-id picom -b
+exec_always --no-startup-id picom -b
 
 # Keyboard-mouse configuration runner
 exec_always --no-startup-id ~/.config/i3/scripts/mouse.sh
