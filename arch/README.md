@@ -396,8 +396,15 @@ reboot
 
    5. Desktop Manager (For switch between i3 and Xfce)
    ```sh
-   $ sudo pacman -S ly
-   $ sudo systemctl enable ly
+   $ sudo pacman -S lightdm lightdm-gtk-greeter
+   $ sudo systemctl enable --now lightdm
+   $ echo '' | sudo tee -a /etc/lightdm/lightdm.conf
+   $ echo '[Seat:*]' | sudo tee -a /etc/lightdm/lightdm.conf
+   $ echo 'greeter-session=lightdm-gtk-greeter' | sudo tee -a /etc/lightdm/lightdm.conf
+   $ echo 'user-session=i3' | sudo tee -a /etc/lightdm/lightdm.conf
+
+   # $ sudo pacman -S ly (I found that it often crash after wakeup  from hibernate (i use nvidia))
+   # $ sudo systemctl enable ly
    ```
 
    6. [Useful packages](https://github.com/silentz/arch-linux-install-guide?tab=readme-ov-file#configuring-installed-arch-linux)

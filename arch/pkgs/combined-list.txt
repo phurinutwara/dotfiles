@@ -37,6 +37,7 @@ firefox
 flameshot
 flatpak
 fuse2
+fwupd
 fzf
 garcon
 ghq
@@ -63,6 +64,8 @@ kitty
 kubectl
 languagetool
 lazygit
+lightdm
+lightdm-gtk-greeter
 linux
 linux-firmware
 linux-headers
@@ -92,7 +95,6 @@ npm
 nvidia
 nvidia-settings
 nvidia-utils
-nvm
 obsidian
 openbsd-netcat
 openfortivpn
@@ -102,6 +104,7 @@ papirus-icon-theme
 pavucontrol
 picom
 polybar
+postgresql-libs
 postman-bin
 powertop
 pulseaudio
