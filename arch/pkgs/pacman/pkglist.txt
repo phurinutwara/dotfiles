@@ -36,6 +36,7 @@ firefox
 flameshot
 flatpak
 fuse2
+fwupd
 fzf
 garcon
 ghq
@@ -61,6 +62,8 @@ kitty
 kubectl
 languagetool
 lazygit
+lightdm
+lightdm-gtk-greeter
 linux
 linux-firmware
 linux-headers
@@ -99,6 +102,7 @@ papirus-icon-theme
 pavucontrol
 picom
 polybar
+postgresql-libs
 powertop
 pulseaudio
 pulseaudio-bluetooth
