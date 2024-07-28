@@ -58,12 +58,9 @@ Current stable (Mr.Silentz config):
 
 Goal to switch:
 ```
-- Display Server:         **Xorg(x11)** (due to compatability)       # $XDG_SESSION_TYPE to specify
-- Display Manager:        Ly
-- Desktop Environment:    xfce (Still experimenting)
-- Window Manager:         i3 (tiled) + keymap hint
-- Panel:                  ?? (Still experimenting) 
-- Desktop Manager:        ?? (Still experimenting) 
+- Display Server:         Wayland (due to compatability)       # $XDG_SESSION_TYPE to specify
+- Display Manager:        Sddm
+- Desktop Environment:    Hyprland
 - File Manager:           thunar
 - Volume Manager:         thunar-volman
 - Audio:                  pulseaudio (works with my GSX1000)
@@ -321,7 +318,7 @@ reboot
 
       A. [Appropriate/Proprietary Driver](https://linuxiac.com/arch-linux-install/#10-install-a-desktop-environment-on-arch-linux)
       ```sh
-      $ pacman -S nvidia nvidia-utils
+      $ pacman -S nvidia-dkms nvidia-utils
       $ pacman -S nvidia-settings          # GUI Graphic Settings for Nvidia
 
       # enable these will help suspend and hibernate more able to successful
@@ -392,6 +389,15 @@ reboot
       $   xfce4-xkb-plugin xfce4-battery-plugin xfce4-datetime-plugin xfce4-mount-plugin \
       $   xfce4-netload-plugin xfce4-notifyd xfce4-pulseaudio-plugin xfce4-screensaver \
       $   xfce4-wavelan-plugin xfce4-weather-plugin xfce4-whiskermenu-plugin network-manager-applet
+      ```
+
+      C. Hyprland (See https://wiki.hyprland.org/Getting-Started/Master-Tutorial/)
+      ```sh
+      $ sudo pacman -S sddm hyprland hypridle hyprlock hyprpaper eww wofi xdg-desktop-portal-hyprland polkit-kde-agent qt5-wayland qt6-wayland
+      $ sudo pacman -S dunst pipewire wireplumber nwg-look
+
+      # See https://aylur.github.io/ags-docs/config/installation/
+      $ yay -S aylurs-gtk-shell # or aylurs-gtk-shell-git
       ```
 
    5. Desktop Manager (For switch between i3 and Xfce)
