@@ -1,5 +1,6 @@
 aylurs-gtk-shell
 docker-desktop
+matugen-bin
 pfetch
 postman-bin
 rtl8852au-dkms-git
