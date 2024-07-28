@@ -393,21 +393,28 @@ reboot
 
       C. Hyprland (See https://wiki.hyprland.org/Getting-Started/Master-Tutorial/)
       ```sh
-      $ sudo pacman -S sddm hyprland hypridle hyprlock hyprpaper eww wofi xdg-desktop-portal-hyprland polkit-kde-agent qt5-wayland qt6-wayland
-      $ sudo pacman -S dunst pipewire wireplumber nwg-look
+      $ sudo pacman -S sddm hyprland hyprpicker hypridle hyprlock hyprpaper wofi xdg-desktop-portal-hyprland polkit-kde-agent qt5-wayland qt6-wayland
+      $ sudo pacman -S gnome-control-center
+      $ sudo pacman -S pipewire wireplumber nwg-look
 
       # See https://aylur.github.io/ags-docs/config/installation/
-      $ yay -S aylurs-gtk-shell # or aylurs-gtk-shell-git
+      # https://github.com/Aylur/dotfiles/tree/main
+      $ yay -S aylurs-gtk-shell matugen # or aylurs-gtk-shell-git
+      $ sudo pacman -S sass swww gnome-bluetooth-3.0 brightnessctl
+      $ npm i -g bun
       ```
 
    5. Desktop Manager (For switch between i3 and Xfce)
    ```sh
-   $ sudo pacman -S lightdm lightdm-gtk-greeter
-   $ sudo systemctl enable --now lightdm
-   $ echo '' | sudo tee -a /etc/lightdm/lightdm.conf
-   $ echo '[Seat:*]' | sudo tee -a /etc/lightdm/lightdm.conf
-   $ echo 'greeter-session=lightdm-gtk-greeter' | sudo tee -a /etc/lightdm/lightdm.conf
-   $ echo 'user-session=i3' | sudo tee -a /etc/lightdm/lightdm.conf
+   $ sudo pacman -S sddm
+   $ systemctl enable sddm
+
+   # $ sudo pacman -S lightdm lightdm-gtk-greeter
+   # $ sudo systemctl enable --now lightdm
+   # $ echo '' | sudo tee -a /etc/lightdm/lightdm.conf
+   # $ echo '[Seat:*]' | sudo tee -a /etc/lightdm/lightdm.conf
+   # $ echo 'greeter-session=lightdm-gtk-greeter' | sudo tee -a /etc/lightdm/lightdm.conf
+   # $ echo 'user-session=i3' | sudo tee -a /etc/lightdm/lightdm.conf
 
    # $ sudo pacman -S ly (I found that it often crash after wakeup  from hibernate (i use nvidia))
    # $ sudo systemctl enable ly

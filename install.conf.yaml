@@ -22,27 +22,12 @@
       path: ~/Dropbox/config/btop
     ~/.gitconfig: ./.gitconfig
     # Linux stuffs
-    ~/.config/i3:
+    ~/.config/hypr:
       create: true
-      path: ./config/i3
-    ~/.config/picom:
+      path: ./config/hypr
+    ~/.config/ags:
       create: true
-      path: ./config/picom
-    ~/.config/polybar:
-      create: true
-      path: ./config/polybar
-    ~/.config/rofi:
-      create: true
-      path: ./config/rofi
-    ~/.config/sxhkd:
-      create: true
-      path: ./config/sxhkd
-    ~/.config/dunst:
-      create: true
-      path: ./config/dunst
-    ~/.config/xborder:
-      create: true
-      path: ./config/xborder
+      path: ./config/ags
 - create:
     - ~/Works
     - ~/packages # for extract packages which need to be built / manual installed

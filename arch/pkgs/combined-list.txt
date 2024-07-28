@@ -17,9 +17,11 @@ bind
 blueman
 bluez
 bluez-utils
+brightnessctl
 btop
 btrfs-progs
 conntrack-tools
+dart-sass
 dbeaver
 dhcpcd
 dialog
@@ -44,6 +46,8 @@ ghq
 gimp
 git
 git-delta
+gnome-bluetooth-3.0
+gnome-control-center
 gnome-terminal
 gnu-free-fonts
 gparted
@@ -71,6 +75,7 @@ lsof
 luarocks
 lxappearance
 ly
+matugen-bin
 mercurial
 minikube
 mpv
@@ -122,6 +127,7 @@ sof-firmware
 speedtest-cli
 strace
 sudo
+swww
 sxhkd
 systemd-resolvconf
 tcpdump
