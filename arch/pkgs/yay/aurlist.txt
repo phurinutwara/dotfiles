@@ -1,5 +1,6 @@
+aylurs-gtk-shell
 docker-desktop
-i3lock-fancy-git
+pfetch
 postman-bin
 rtl8852au-dkms-git
 snapd
