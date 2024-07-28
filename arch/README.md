@@ -396,10 +396,12 @@ reboot
       $ sudo pacman -S sddm hyprland hyprpicker hypridle hyprlock hyprpaper wofi xdg-desktop-portal-hyprland polkit-kde-agent qt5-wayland qt6-wayland
       $ sudo pacman -S gnome-control-center
       $ sudo pacman -S pipewire wireplumber nwg-look
+      $ sudo pacman -S wl-clipboard copyq
 
       # See https://aylur.github.io/ags-docs/config/installation/
       # https://github.com/Aylur/dotfiles/tree/main
-      $ yay -S aylurs-gtk-shell matugen # or aylurs-gtk-shell-git
+      # https://github.com/hyprland-community/awesome-hyprland
+      $ yay -S aylurs-gtk-shell matugen hyprpicker-git # or aylurs-gtk-shell-git
       $ sudo pacman -S sass swww gnome-bluetooth-3.0 brightnessctl
       $ npm i -g bun
       ```

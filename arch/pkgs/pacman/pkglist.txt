@@ -20,6 +20,7 @@ brightnessctl
 btop
 btrfs-progs
 conntrack-tools
+copyq
 dart-sass
 dbeaver
 dhcpcd
@@ -150,6 +151,7 @@ vi
 vim
 w3m
 wget
+wl-clipboard
 wofi
 xautomation
 xclip

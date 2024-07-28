@@ -1,5 +1,6 @@
 aylurs-gtk-shell
 docker-desktop
+hyprpicker-git
 matugen-bin
 pfetch
 postman-bin
