@@ -21,6 +21,7 @@ brightnessctl
 btop
 btrfs-progs
 conntrack-tools
+copyq
 dart-sass
 dbeaver
 dhcpcd
@@ -58,6 +59,7 @@ hypridle
 hyprland
 hyprlock
 hyprpaper
+hyprpicker-git
 imwheel
 intel-ucode
 inxi
@@ -158,6 +160,7 @@ vi
 vim
 w3m
 wget
+wl-clipboard
 wofi
 xautomation
 xclip
