@@ -509,9 +509,8 @@ reboot
    # 2. put your swap in grub bootloader (view your uuid on `cat /etc/fstab` or `sudo blkid`)
    $ sudo vim /etc/default/grub
    # Find `GRUB_CMDLINE_ LINUX_DEFAULT="..."` then put resume hook on the last e.g.
-   # also add acpi_osi for nvidia specific configs
    # FROM `GRUB_CMDLINE_LINUX_DEFAULT="loglevel=3 quiet"` to
-   GRUB_CMDLINE_LINUX_DEFAULT="loglevel=3 quiet resume=UUID=7948187b-f119-450d-9511-9d7707c80be2 acpi_osi=! acpi_osi=\"Windows 2009\" nvidia-drm.modeset=1  nvidia.NVreg_PreserveVideoMemoryAllocations=1"
+   GRUB_CMDLINE_LINUX_DEFAULT="loglevel=3 quiet resume=UUID=7948187b-f119-450d-9511-9d7707c80be2 nvidia-drm.modeset=1 no_console_suspend"
 
    # 4. Regenerate grub again
    $ sudo grub-mkconfig -o /boot/grub/grub.cfg
@@ -521,18 +520,20 @@ reboot
 
    # 6. Look for an HOOKS=(base udev ... filesystems ... fsck)
    # adding the `resume` hook but the resume hook must go after the udev hook
+   # adding the `systemd` hook before udev
+   # See https://www.reddit.com/r/hyprland/comments/1cyb0h7/hibernate_on_nvidia/
    # so for me it's like
-   HOOKS=(base udev autodetect microcode modconf kms keyboard keymap consolefont block filesystems resume fsck)
+   HOOKS=(base systemd udev autodetect microcode modconf kms keyboard keymap consolefont block filesystems resume fsck)
 
    # 7. Configure NVIDIA Settings, https://download.nvidia.com/XFree86/Linux-x86_64/555.58/README/powermanagement.html
    ```sh
    $ sudo nvim /etc/modprobe.d/nvidia.conf
 
    # Add these
-   options nvidia_drm modeset=1 fbdev=1
    options nvidia NVreg_PreserveVideoMemoryAllocations=1
-   # options nvidia NVreg_TemporaryFilePath=/var/tmp
-   # options nvidia NVreg_EnableMSI=1
+   options nvidia NVreg_TemporaryFilePath=/var/tmp
+   options nvidia NVreg_EnableMSI=1
+   options nvidia_drm modeset=1 fbdev=1
    ```
 
    # 8. Regenerate initramfs
