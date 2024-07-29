@@ -28,6 +28,7 @@ fd
 firefox
 flameshot
 flatpak
+fq
 fuse2
 fzf
 ghq
@@ -50,6 +51,7 @@ keychain
 kitty
 lazygit
 libdbusmenu-gtk3
+libva-nvidia-driver
 linux
 linux-firmware
 linux-headers
@@ -67,6 +69,7 @@ nm-connection-editor
 noto-fonts
 noto-fonts-emoji
 nvidia
+nvidia-settings
 nvidia-utils
 nwg-look
 obsidian
@@ -81,7 +84,9 @@ pipewire-jack
 pipewire-pulse
 polkit-kde-agent
 powertop
+qt5ct
 qt5-wayland
+qt6ct
 qt6-wayland
 reflector
 ripgrep
