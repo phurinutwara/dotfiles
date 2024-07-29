@@ -404,6 +404,10 @@ reboot
       $ yay -S aylurs-gtk-shell matugen hyprpicker-git # or aylurs-gtk-shell-git
       $ sudo pacman -S sass swww gnome-bluetooth-3.0 brightnessctl
       $ npm i -g bun
+
+      # See https://wiki.archlinux.org/title/PipeWire#Audio
+      $ sudo pacman -Rdd pulseaudio
+      $ sudo pacman -S pipewire-{jack,alsa,pulse}
       ```
 
    5. Desktop Manager (For switch between i3 and Xfce)
