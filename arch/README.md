@@ -386,7 +386,7 @@ reboot
       # https://github.com/Aylur/dotfiles/tree/main
       # https://github.com/hyprland-community/awesome-hyprland
       $ yay -S aylurs-gtk-shell matugen hyprpicker-git # or aylurs-gtk-shell-git
-      $ sudo pacman -S gtk3 fd sass swww gnome-bluetooth-3.0 brightnessctl
+      $ sudo pacman -S gtk3 fd sass swww gnome-bluetooth-3.0 brightnessctl qt5ct qt6ct
       $ npm i -g bun
       $ sudo ln -s /home/pwarch/.nvm/versions/node/v20.16.0/bin/bun /usr/bin/bun
 
@@ -511,7 +511,7 @@ reboot
    # Find `GRUB_CMDLINE_ LINUX_DEFAULT="..."` then put resume hook on the last e.g.
    # also add acpi_osi for nvidia specific configs
    # FROM `GRUB_CMDLINE_LINUX_DEFAULT="loglevel=3 quiet"` to
-   GRUB_CMDLINE_LINUX_DEFAULT="loglevel=3 quiet resume=UUID=7948187b-f119-450d-9511-9d7707c80be2 acpi_osi=! acpi_osi=\"Windows 2009\" nvidia-drm.modeset=1"
+   GRUB_CMDLINE_LINUX_DEFAULT="loglevel=3 quiet resume=UUID=7948187b-f119-450d-9511-9d7707c80be2 acpi_osi=! acpi_osi=\"Windows 2009\" nvidia-drm.modeset=1  nvidia.NVreg_PreserveVideoMemoryAllocations=1"
 
    # 4. Regenerate grub again
    $ sudo grub-mkconfig -o /boot/grub/grub.cfg
@@ -527,11 +527,12 @@ reboot
    # 7. Configure NVIDIA Settings, https://download.nvidia.com/XFree86/Linux-x86_64/555.58/README/powermanagement.html
    ```sh
    $ sudo nvim /etc/modprobe.d/nvidia.conf
-   options nvidia NVreg_PreserveVideoMemoryAllocations=1
-   options nvidia NVreg_TemporaryFilePath=/var/tmp
-   options nvidia NVreg_EnableMSI=1
 
+   # Add these
    options nvidia_drm modeset=1 fbdev=1
+   options nvidia NVreg_PreserveVideoMemoryAllocations=1
+   # options nvidia NVreg_TemporaryFilePath=/var/tmp
+   # options nvidia NVreg_EnableMSI=1
    ```
 
    # 8. Regenerate initramfs
