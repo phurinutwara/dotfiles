@@ -346,15 +346,27 @@ reboot
    $ sudo pacman -S base-devel lshw zip unzip htop xsel tree fuse2 keychain arandr powertop inxi
    $ sudo pacman -S wget iw wpa_supplicant openbsd-netcat axel tcpdump mtr net-tools rsync conntrack-tools ethtool
    $ sudo pacman -S sof-firmware alsa-utils alsa-plugins
-   $ sudo pacman -S eza neovim firefox ripgrep lazygit
+   $ sudo pacman -S eza neovim firefox ripgrep lazygit bat bat-extras btop gvfs lsof neofetch nmap fzf ghq tldr rust
+   $ sudo pacman -S gnome-terminal docker obsidian
    $ sudo pacman -S gparted btrfs-progs    # A Partition Magic clone, frontend to GNU Parted + btrfs tool
 
    $ sudo pacman -S pulseaudio             # Audio driver
    $ sudo pacman -S pulseaudio-bluetooth   # Audio driver - bluetooth support (For airpod support: https://gist.github.com/aidos-dev/b49078c1d8c6bb1621e4ac199d18213b )
    $ sudo pacman -S pavucontrol            # GUI Audio Control panel for pulseaudio
 
-   $ yay -S nvm
+   $ yay -S nvm snapd docker-desktop
    $ nvm install --lts
+
+   # flatpak
+   $ sudo pacman -S flatpak
+   $ flatpak install flathub com.usebottles.bottles
+   $ flatpak install flathub com.github.tchx84.Flatseal
+
+   # initialize snap
+   $ systemctl enable --now apparmor
+   $ systemctl enable --now snapd.apparmor
+   $ systemctl enable --now snapd
+   $ sudo ln -s /var/lib/snapd/snap /snap
    ```
 
    4. Desktop Environment (DE/WM)
@@ -362,9 +374,9 @@ reboot
       A. Hyprland (See https://wiki.hyprland.org/Getting-Started/Master-Tutorial/)
       ```sh
       $ sudo pacman -S hyprland hypridle hyprlock xdg-desktop-portal-hyprland polkit-kde-agent qt5-wayland qt6-wayland
-      $ sudo pacman -S gnome-control-center gtk4nwg-look pango libdbusmenu-gtk3
+      $ sudo pacman -S gnome-control-center gtk4 nwg-look pango libdbusmenu-gtk3
       $ sudo pacman -S pipewire wireplumber ffmpeg gvfs
-      $ sudo pacman -S wl-clipboard copyq thunar thunar-volman thunar-archive-plugin playerctl
+      $ sudo pacman -S wl-clipboard copyq thunar thunar-volman thunar-media-tags-plugin thunar-archive-plugin playerctl
 
       # See https://aylur.github.io/ags-docs/config/installation/
       # https://github.com/Aylur/dotfiles/tree/main
@@ -372,6 +384,7 @@ reboot
       $ yay -S aylurs-gtk-shell matugen hyprpicker-git # or aylurs-gtk-shell-git
       $ sudo pacman -S gtk3 fd sass swww gnome-bluetooth-3.0 brightnessctl
       $ npm i -g bun
+      $ sudo ln -s /home/pwarch/.nvm/versions/node/v20.16.0/bin/bun /usr/bin/bun
 
       # See https://wiki.archlinux.org/title/PipeWire#Audio
       $ sudo pacman -S pipewire-{jack,alsa,pulse}
@@ -541,7 +554,7 @@ reboot
    $ su root
    $ cat /usr/lib/tmpfiles.d/samba.conf    # just to view that samba got permission as 0755
    
-   $ vim /etc/tmpfiles.d/disable-usb-wake.conf 
+   $ vim /etc/tmpfiles.d/disable-usb-wake.conf
    # put this in the file
    #    Path                  Mode UID  GID  Age Argument
    w+   /proc/acpi/wakeup     -    -    -    -   XHC

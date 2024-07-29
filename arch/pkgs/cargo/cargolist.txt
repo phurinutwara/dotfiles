@@ -1,3 +1,0 @@
-thumbs v0.7.1:
-    thumbs
-    tmux-thumbs
