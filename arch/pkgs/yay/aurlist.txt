@@ -2,8 +2,8 @@ aylurs-gtk-shell
 docker-desktop
 hyprpicker-git
 matugen-bin
-pfetch
-postman-bin
+nordic-theme
+nvm
 rtl8852au-dkms-git
 snapd
 tmuxinator
