@@ -142,8 +142,8 @@ Goal to switch:
 
    2. It needs 3 partitions for arch linux according to [Arch Documentation](https://wiki.archlinux.org/title/Installation_guide#Example_layouts)
       1. EFI System Partition at /boot (**1 GB**)
-      2. Root Partition (**> 32 GB**) [Type: Linux system]
-      3. Linux Swap (**[Recommend swap space](https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/8/html/managing_storage_devices/getting-started-with-swap_managing-storage-devices#recommended-system-swap-space_getting-started-with-swap)**) [It will need when hibernation] (See also: [discussion](https://askubuntu.com/questions/49109/i-have-16gb-ram-do-i-need-32gb-swap))
+      2. Linux Swap (**[Recommend swap space](https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/8/html/managing_storage_devices/getting-started-with-swap_managing-storage-devices#recommended-system-swap-space_getting-started-with-swap)**) [It will need when hibernation] (See also: [discussion](https://askubuntu.com/questions/49109/i-have-16gb-ram-do-i-need-32gb-swap))
+      3. Root Partition (**> 32 GB**) [Type: Linux system]
 
    3. [`fdisk -l | less`](https://wiki.archlinux.org/title/installation_guide#Partition_the_disks) to view list with details of disk and partitions
 
@@ -238,25 +238,25 @@ $ hwclock --systohc
 
 11. [Setup hostname](https://wiki.archlinux.org/title/installation_guide#Network_configuration) and `/etc/hosts`
 ```sh
-$ echo 'phurinutw-pc' > /etc/hostname
+$ echo 'pwarch-pc' > /etc/hostname
 $ vim /etc/hosts
 
 # add these 3 lines at the end of the `/etc/hosts` file
 127.0.0.1    localhost
 ::1          localhost
-127.0.1.1    phurinutw-pc
+127.0.1.1    pwarch-pc
 ```
 
 12. [Add new user](https://wiki.archlinux.org/title/Users_and_groups#Example_adding_a_user)
 ```sh
-$ useradd -m -G wheel,storage,power,audio,video -s /bin/zsh phurinutw 
+$ useradd -m -G wheel,storage,power,audio,video -s /bin/zsh pwarch
 
 # other use /bin/bash, but i personally use /bin/zsh and i had pacstrapped it
 
 # if you added user and group but your typo was wrong,
 # later you can use usermod to alter the user. for example,
 
-# $ useradd -m -G wheel -s /bin/besh phurinutw   
+# $ useradd -m -G wheel -s /bin/besh pwarch   
 #    ∟ you config default shell wrong and also you want more usergroup
 
 # $ usermod -m -G wheel,storage,power,audio,video -s /bin/zsh phurinutw
@@ -318,7 +318,7 @@ reboot
 
       A. [Appropriate/Proprietary Driver](https://linuxiac.com/arch-linux-install/#10-install-a-desktop-environment-on-arch-linux)
       ```sh
-      $ pacman -S nvidia-dkms nvidia-utils
+      $ pacman -S nvidia nvidia-utils
       $ pacman -S nvidia-settings          # GUI Graphic Settings for Nvidia
 
       # enable these will help suspend and hibernate more able to successful
@@ -329,13 +329,7 @@ reboot
       $ sudo systemctl enable nvidia-suspend.service
       ```
 
-   2. Install Desktop Server: [Xorg](https://github.com/silentz/arch-linux-install-guide?tab=readme-ov-file#configuring-installed-arch-linux)
-      
-      ```sh
-      $ pacman -S xorg xorg-apps xorg-xinit xdotool xclip
-      ```
-
-   3. Arch User Repository helper (I go for [yay](https://github.com/Jguer/yay))
+   2. Arch User Repository helper (I go for [yay](https://github.com/Jguer/yay))
    ```sh
    # base-devel is Basic tools to build Arch Linux packages
    $ pacman -S --needed git base-devel
@@ -345,9 +339,49 @@ reboot
    $ makepkg -si
    ```
 
+   3. [Useful packages](https://github.com/silentz/arch-linux-install-guide?tab=readme-ov-file#configuring-installed-arch-linux)
+   <!-- TODO: Take a look on each utils and turn it to list.txt file for later use -->
+   ```sh
+   $ sudo pacman -S bind dialog intel-ucode reflector bash-completion
+   $ sudo pacman -S base-devel lshw zip unzip htop xsel tree fuse2 keychain arandr powertop inxi
+   $ sudo pacman -S wget iw wpa_supplicant openbsd-netcat axel tcpdump mtr net-tools rsync conntrack-tools ethtool
+   $ sudo pacman -S sof-firmware alsa-utils alsa-plugins
+   $ sudo pacman -S eza neovim firefox ripgrep lazygit
+   $ sudo pacman -S gparted btrfs-progs    # A Partition Magic clone, frontend to GNU Parted + btrfs tool
+
+   $ sudo pacman -S pulseaudio             # Audio driver
+   $ sudo pacman -S pulseaudio-bluetooth   # Audio driver - bluetooth support (For airpod support: https://gist.github.com/aidos-dev/b49078c1d8c6bb1621e4ac199d18213b )
+   $ sudo pacman -S pavucontrol            # GUI Audio Control panel for pulseaudio
+
+   $ yay -S nvm
+   $ nvm install --lts
+   ```
+
    4. Desktop Environment (DE/WM)
-      A. i3 (My main)
+
+      A. Hyprland (See https://wiki.hyprland.org/Getting-Started/Master-Tutorial/)
       ```sh
+      $ sudo pacman -S hyprland hypridle hyprlock xdg-desktop-portal-hyprland polkit-kde-agent qt5-wayland qt6-wayland
+      $ sudo pacman -S gnome-control-center gtk4nwg-look pango libdbusmenu-gtk3
+      $ sudo pacman -S pipewire wireplumber ffmpeg gvfs
+      $ sudo pacman -S wl-clipboard copyq thunar thunar-volman thunar-archive-plugin playerctl
+
+      # See https://aylur.github.io/ags-docs/config/installation/
+      # https://github.com/Aylur/dotfiles/tree/main
+      # https://github.com/hyprland-community/awesome-hyprland
+      $ yay -S aylurs-gtk-shell matugen hyprpicker-git # or aylurs-gtk-shell-git
+      $ sudo pacman -S gtk3 fd sass swww gnome-bluetooth-3.0 brightnessctl
+      $ npm i -g bun
+
+      # See https://wiki.archlinux.org/title/PipeWire#Audio
+      $ sudo pacman -S pipewire-{jack,alsa,pulse}
+      ```
+
+      B. i3 (My past main)
+      ```sh
+      # Install Desktop Server: [Xorg](https://github.com/silentz/arch-linux-install-guide?tab=readme-ov-file#configuring-installed-arch-linux)
+      $ pacman -S xorg xorg-apps xorg-xinit xdotool xclip 
+
       $ sudo pacman -S i3 i3lock lxappearance firefox xfce4
       $ sudo pacman -S dunst \
                        xss-lock picom flameshot gsimplecal \
@@ -382,32 +416,16 @@ reboot
       xrandr --output DP-4 --mode 5120x1440 --rate 240
       ```
 
-      B. Xfce (Silentz's stable as a Fallback DE)
+      C. Xfce (Silentz's stable as a Fallback DE)
       ```sh
+      # Install Desktop Server: [Xorg](https://github.com/silentz/arch-linux-install-guide?tab=readme-ov-file#configuring-installed-arch-linux)
+      $ pacman -S xorg xorg-apps xorg-xinit xdotool xclip
+
       $ sudo pacman -S dbus xfce4 xfce4-screenshooter \
       $   thunar-archive-plugin thunar-media-tags-plugin \
       $   xfce4-xkb-plugin xfce4-battery-plugin xfce4-datetime-plugin xfce4-mount-plugin \
       $   xfce4-netload-plugin xfce4-notifyd xfce4-pulseaudio-plugin xfce4-screensaver \
       $   xfce4-wavelan-plugin xfce4-weather-plugin xfce4-whiskermenu-plugin network-manager-applet
-      ```
-
-      C. Hyprland (See https://wiki.hyprland.org/Getting-Started/Master-Tutorial/)
-      ```sh
-      $ sudo pacman -S sddm hyprland hyprpicker hypridle hyprlock hyprpaper wofi xdg-desktop-portal-hyprland polkit-kde-agent qt5-wayland qt6-wayland
-      $ sudo pacman -S gnome-control-center
-      $ sudo pacman -S pipewire wireplumber nwg-look
-      $ sudo pacman -S wl-clipboard copyq
-
-      # See https://aylur.github.io/ags-docs/config/installation/
-      # https://github.com/Aylur/dotfiles/tree/main
-      # https://github.com/hyprland-community/awesome-hyprland
-      $ yay -S aylurs-gtk-shell matugen hyprpicker-git # or aylurs-gtk-shell-git
-      $ sudo pacman -S sass swww gnome-bluetooth-3.0 brightnessctl
-      $ npm i -g bun
-
-      # See https://wiki.archlinux.org/title/PipeWire#Audio
-      $ sudo pacman -Rdd pulseaudio
-      $ sudo pacman -S pipewire-{jack,alsa,pulse}
       ```
 
    5. Desktop Manager (For switch between i3 and Xfce)
@@ -426,31 +444,18 @@ reboot
    # $ sudo systemctl enable ly
    ```
 
-   6. [Useful packages](https://github.com/silentz/arch-linux-install-guide?tab=readme-ov-file#configuring-installed-arch-linux)
-   <!-- TODO: Take a look on each utils and turn it to list.txt file for later use -->
-   ```sh
-   $ sudo pacman -S bind dialog intel-ucode reflector bash-completion w3m
-   $ sudo pacman -S base-devel lshw zip unzip htop xsel tree fuse2 keychain arandr powertop inxi
-   $ sudo pacman -S wget iw wpa_supplicant openbsd-netcat axel tcpdump mtr net-tools rsync conntrack-tools ethtool
-   $ sudo pacman -S sof-firmware pulseaudio alsa-utils alsa-plugins pavucontrol
-
-   $ sudo pacman -S pulseaudio             # Audio driver
-   $ sudo pacman -S pulseaudio-bluetooth   # Audio driver - bluetooth support (For airpod support: https://gist.github.com/aidos-dev/b49078c1d8c6bb1621e4ac199d18213b )
-   $ sudo pacman -S gparted btrfs-progs    # A Partition Magic clone, frontend to GNU Parted + btrfs tool
-   ```
-
-   7. SSD TRIM
+   6. SSD TRIM
    ```sh
    $ sudo systemctl enable fstrim.timer
    ```
 
-   8. Bluetooth
+   7. Bluetooth
    ```sh
    $ sudo pacman -S bluez bluez-utils blueman
    $ sudo systemctl enable bluetooth
    ```
 
-   9. Improve battery usage
+   8. Improve battery usage
    ```sh
    $ sudo pacman -S tlp tlp-rdw acpi acpi_call
    $ sudo systemctl enable tlp
@@ -458,7 +463,7 @@ reboot
    $ sudo systemctl mask systemd-rfkill.socket
    ```
 
-   10. Fonts (`fc-list` to view installed fonts name)
+   9. Fonts (`fc-list` to view installed fonts name)
    ```sh
    $ sudo pacman -S noto-fonts noto-fonts-emoji ttf-ubuntu-font-family ttf-dejavu ttf-freefont
    $ sudo pacman -S ttf-liberation ttf-droid ttf-roboto terminus-font
@@ -468,19 +473,18 @@ reboot
    $ yay -S ttf-nerd-fonts-symbols-mono
    ```
 
-   11. Theme and Icons
-   <!-- TODO: Customize your own -->
+   10. Theme and Icons
    ```sh
-   $ sudo pacman -S arc-gtk-theme
+   $ yay -S nordic-theme
    $ sudo pacman -S papirus-icon-theme
    ```
 
-   12. Setup the fastest pacman mirror
+   11. Setup the fastest pacman mirror
    ```sh
    $ sudo reflector --country Thailand,Singapore --fastest 10 --threads `nproc` --save /etc/pacman.d/mirrorlist
    ```
 
-   13. Enable [Hibernation](https://wiki.archlinux.org/title/Power_management/Suspend_and_hibernate)
+   12. Enable [Hibernation](https://wiki.archlinux.org/title/Power_management/Suspend_and_hibernate)
    ```sh
    # 1. find the swap partition first
    $ sudo swapon --show
@@ -509,6 +513,8 @@ reboot
    options nvidia NVreg_PreserveVideoMemoryAllocations=1
    options nvidia NVreg_TemporaryFilePath=/var/tmp
    options nvidia NVreg_EnableMSI=1
+
+   options nvidia_drm modeset=1 fbdev=1
    ```
 
    # 8. Regenerate initramfs
@@ -545,7 +551,7 @@ reboot
                                            # to wake your pc up, use power button
    ```
 
-   14. NetworkManager additionals (GUI, vpn):
+   13. NetworkManager additionals (GUI, vpn):
    ```sh
    $ sudo pacman -S nm-connection-editor networkmanager-openvpn
    $ sudo pacman -S openfortivpn           # for forticlient VPN.
@@ -554,7 +560,7 @@ reboot
                                            # command line option to openfortivpn.
    ```
 
-   15. [Keyboard configuration](https://wiki.archlinux.org/title/Xorg/Keyboard_configuration)
+   14. [Keyboard configuration](https://wiki.archlinux.org/title/Xorg/Keyboard_configuration)
        : See more: https://ejmastnak.com/tutorials/arch/typematic-rate/
        : See more: https://wiki.archlinux.org/title/Linux_console/Keyboard_configuration#Systemd_service
    ```sh
@@ -574,7 +580,7 @@ reboot
    $ echo 'exec --no-startup-id sxhkd' >> ~/.config/i3/config
    ```
 
-   16. My wifi dongle (TP-Link Archer TX20UH -- works with rtl8852au-dkms-git)
+   15. My wifi dongle (TP-Link Archer TX20UH -- works with rtl8852au-dkms-git)
       ```sh
       $ sudo pacman -S linux-headers bc gcc
 
@@ -591,7 +597,7 @@ reboot
       $ sudo dkms install -m ...           # if it wasn't install install it
       ```
 
-   17. TODO: Intall printing settings
+   16. TODO: Intall printing settings
 
 ---
 
@@ -625,10 +631,7 @@ My [Post-installation](https://wiki.archlinux.org/title/Installation_guide#Post-
 #### TODO:
 
 - [x] Catagorized install processes to group and explain more simpler and clearer
-- [x] Try switch to use **i3**, ~~awesomeWM~~ once expertise at Arch linux
-- [ ] Add some pics and gifs for better explanation
-- [ ] Move this doc to [docusaurus](https://docusaurus.io/) for powered with MDX
-
+- [x] Try switch to use Hyprland, ~~i3~~, ~~awesomeWM~~ once expertise at Arch linux
 
 ---
 
