@@ -101,13 +101,13 @@ openfortivpn
 openssh
 os-prober
 papirus-icon-theme
-pavucontrol
 picom
+pipewire-alsa
+pipewire-jack
+pipewire-pulse
 polkit-kde-agent
 postgresql-libs
 powertop
-pulseaudio
-pulseaudio-bluetooth
 python-pip
 qt6-wayland
 ranger
