@@ -367,6 +367,10 @@ reboot
    $ systemctl enable --now snapd.apparmor
    $ systemctl enable --now snapd
    $ sudo ln -s /var/lib/snapd/snap /snap
+
+   # dropbox
+   $ sudo pacman -S fq
+   $ cd ~ && wget -O - "https://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf -
    ```
 
    4. Desktop Environment (DE/WM)
@@ -611,6 +615,12 @@ reboot
       ```
 
    16. TODO: Intall printing settings
+
+   17. Docker
+   ```sh
+   $ sudo usermod -aG docker pwarch
+   $ sudo systemcdtl enable --now docker.service
+   ```
 
 ---
 
