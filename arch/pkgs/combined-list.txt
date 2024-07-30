@@ -115,6 +115,7 @@ thunar-volman
 tldr
 tlp
 tlp-rdw
+tmux
 tmuxinator
 tree
 ttf-dejavu
@@ -128,6 +129,7 @@ ttf-ubuntu-font-family
 unzip
 usb_modeswitch
 vim
+vulkan-tools
 wget
 wireplumber
 wl-clipboard
@@ -136,5 +138,6 @@ xdg-desktop-portal-hyprland
 xsel
 yay
 yay-debug
+yq
 zip
 zsh
