@@ -381,6 +381,7 @@ reboot
       $ sudo pacman -S gnome-control-center gtk4 nwg-look pango libdbusmenu-gtk3
       $ sudo pacman -S pipewire wireplumber ffmpeg gvfs
       $ sudo pacman -S wl-clipboard copyq thunar thunar-volman thunar-media-tags-plugin thunar-archive-plugin playerctl
+      $ sudo pacman -S yq tmux
 
       # See https://aylur.github.io/ags-docs/config/installation/
       # https://github.com/Aylur/dotfiles/tree/main
@@ -392,6 +393,9 @@ reboot
 
       # See https://wiki.archlinux.org/title/PipeWire#Audio
       $ sudo pacman -S pipewire-{jack,alsa,pulse}
+
+      # Install vulkan
+      sudo pacman -S vulkan-icd-loader vulkan-tools
       ```
 
       B. i3 (My past main)
