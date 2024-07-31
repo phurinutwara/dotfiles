@@ -83,6 +83,7 @@ pipewire-alsa
 pipewire-jack
 pipewire-pulse
 polkit-kde-agent
+postgresql-libs
 powertop
 qt5ct
 qt5-wayland
