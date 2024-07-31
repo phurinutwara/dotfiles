@@ -394,7 +394,7 @@ reboot
       # See https://wiki.archlinux.org/title/PipeWire#Audio
       $ sudo pacman -S pipewire-{jack,alsa,pulse}
 
-      # Install vulkan
+      # Install vulkan, See https://wiki.archlinux.org/title/Vulkan\#Installation
       sudo pacman -S vulkan-icd-loader vulkan-tools
       ```
 
@@ -628,6 +628,10 @@ reboot
    $ sudo systemcdtl enable --now docker.service
    ```
 
+   18. Backend Development Tool
+   ```sh
+   $ sudo pacman -S postgresql-client
+   ```
 ---
 
 ##### References:
