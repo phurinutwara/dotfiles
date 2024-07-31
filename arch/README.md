@@ -628,9 +628,14 @@ reboot
    $ sudo systemcdtl enable --now docker.service
    ```
 
-   18. Backend Development Tool
+   18. Backend Development Tools
    ```sh
    $ sudo pacman -S postgresql-client
+
+   $ sudo pacman -S minikube               # See https://minikube.sigs.k8s.io/docs/drivers/docker/
+   $ sudo pacman -S kubectl
+   $ minikube config set driver docker
+   $ minikube start
    ```
 ---
 

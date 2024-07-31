@@ -52,6 +52,7 @@ inxi
 iw
 keychain
 kitty
+kubectl
 lazygit
 libdbusmenu-gtk3
 libva-nvidia-driver
@@ -61,6 +62,7 @@ linux-headers
 lshw
 lsof
 matugen-bin
+minikube
 mtools
 mtr
 neofetch
