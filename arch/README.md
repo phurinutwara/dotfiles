@@ -371,6 +371,9 @@ reboot
    # dropbox, See https://wiki.archlinux.org/title/Dropbox
    $ sudo pacman -S fq
    $ yay -S dropbox thunar-dropbox
+
+   # obs, See https://wiki.archlinux.org/title/Open_Broadcaster_Software
+   $ sudo pacman -S obs-studio
    ```
 
    4. Desktop Environment (DE/WM)
