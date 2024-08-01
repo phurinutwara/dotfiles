@@ -12,7 +12,7 @@ cargodump:
 	cargo install --list > ./pkgs/cargo/cargolist.txt
 
 flatpakdump:
-	flatpak list --columns=application | tail -n +1 > ./pkgs/flatpak/flatpaklist.txt
+	flatpak list --columns=application,version | tail -n +1 > ./pkgs/flatpak/flatpaklist.txt
 
 snapdump:
 	snap list --all | awk '{print $1}' | tail -n +2 > ./pkgs/snap/snaplist.txt
