@@ -20,9 +20,11 @@ copyq
 dart-sass
 dhcpcd
 dialog
+discord
 dmidecode
 docker
 docker-desktop
+dropbox
 efibootmgr
 ethtool
 eza
@@ -80,6 +82,7 @@ nvidia-settings
 nvidia-utils
 nvm
 nwg-look
+obs-studio
 obsidian
 openbsd-netcat
 openfortivpn
@@ -113,6 +116,7 @@ tcpdump
 terminus-font
 thunar
 thunar-archive-plugin
+thunar-dropbox
 thunar-media-tags-plugin
 thunar-volman
 tldr

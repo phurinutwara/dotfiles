@@ -368,9 +368,9 @@ reboot
    $ systemctl enable --now snapd
    $ sudo ln -s /var/lib/snapd/snap /snap
 
-   # dropbox
+   # dropbox, See https://wiki.archlinux.org/title/Dropbox
    $ sudo pacman -S fq
-   $ cd ~ && wget -O - "https://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf -
+   $ yay -S dropbox thunar-dropbox
    ```
 
    4. Desktop Environment (DE/WM)

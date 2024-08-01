@@ -19,6 +19,7 @@ copyq
 dart-sass
 dhcpcd
 dialog
+discord
 dmidecode
 docker
 efibootmgr
@@ -75,6 +76,7 @@ nvidia-settings
 nvidia-utils
 nwg-look
 obsidian
+obs-studio
 openbsd-netcat
 openfortivpn
 openssh

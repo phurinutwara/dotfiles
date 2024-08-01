@@ -1,11 +1,13 @@
 aylurs-gtk-shell
 docker-desktop
+dropbox
 hyprpicker-git
 matugen-bin
 nordic-theme
 nvm
 rtl8852au-dkms-git
 snapd
+thunar-dropbox
 tmuxinator
 yay
 yay-debug
