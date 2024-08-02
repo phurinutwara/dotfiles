@@ -249,7 +249,7 @@ $ vim /etc/hosts
 
 12. [Add new user](https://wiki.archlinux.org/title/Users_and_groups#Example_adding_a_user)
 ```sh
-$ useradd -m -G wheel,storage,power,audio,video -s /bin/zsh pwarch
+$ useradd -m -G wheel,storage,power,audio,video,log -s /bin/zsh pwarch
 
 # other use /bin/bash, but i personally use /bin/zsh and i had pacstrapped it
 
