@@ -389,10 +389,13 @@ reboot
       # See https://aylur.github.io/ags-docs/config/installation/
       # https://github.com/Aylur/dotfiles/tree/main
       # https://github.com/hyprland-community/awesome-hyprland
-      $ yay -S aylurs-gtk-shell matugen hyprpicker-git # or aylurs-gtk-shell-git
+      $ yay -S aylurs-gtk-shell matugen hyprpicker-git # or aylurs-gtk-shell-git, try `ags --init` to link types folder
       $ sudo pacman -S gtk3 fd sass swww gnome-bluetooth-3.0 brightnessctl qt5ct qt6ct
-      $ npm i -g bun
-      $ sudo ln -s /home/pwarch/.nvm/versions/node/v20.16.0/bin/bun /usr/bin/bun
+      $ sudo pacman -S pnpm
+      $ pnpm setup
+      $ pnpm -g add npm nvm bun jest typescript
+      $ sudo ln -s $(pnpm root -g)/bun/bin/bun.exe /usr/bin/bun
+      $ sudo ln -s $(pnpm root -g)/bun/bin/bun.exe /usr/local/bin/bun
 
       # See https://wiki.archlinux.org/title/PipeWire#Audio
       $ sudo pacman -S pipewire-{jack,alsa,pulse}
