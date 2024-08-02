@@ -86,6 +86,7 @@ pavucontrol
 pipewire-alsa
 pipewire-jack
 pipewire-pulse
+pnpm
 polkit-kde-agent
 postgresql-libs
 powertop

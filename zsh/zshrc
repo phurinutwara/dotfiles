@@ -165,6 +165,8 @@ alias trail='<<<${(F)path}'
 alias szsh='source ~/.zshrc'
 alias lg='lazygit'
 alias mk='make'
+alias mux='tmuxinator'
+alias pn='pnpm'
 
 # useful copy and travel path across terminal
 alias pwdc='echo -n $(pwd) | clipcopy'
@@ -230,6 +232,7 @@ function update_man_width() {
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 source ~/dotfiles/zsh/env/go.sh
+source ~/dotfiles/zsh/env/pnpm.sh
 
 source ~/dotfiles/zsh/scripts/nvm.sh
 source ~/dotfiles/zsh/scripts/git.sh

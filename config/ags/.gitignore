@@ -1,6 +1,7 @@
 node_modules
 types
 package-lock.json
+pnpm-lock.yaml
 bun.lockb
 flake.lock
 .weather
