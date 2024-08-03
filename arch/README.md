@@ -360,6 +360,10 @@ reboot
    $ sudo pacman -S flatpak
    $ flatpak install flathub com.usebottles.bottles
    $ flatpak install flathub com.github.tchx84.Flatseal
+   $ flatpak install flathub net.lutris.Lutris        # See https://lutris.net/
+
+   $ yay -S wine wine-mono wine_gecko winetricks
+   $ yay -S lib32-gnutls                      # [for https support]
 
    # initialize snap
    $ systemctl enable --now apparmor
