@@ -340,7 +340,6 @@ reboot
    ```
 
    3. [Useful packages](https://github.com/silentz/arch-linux-install-guide?tab=readme-ov-file#configuring-installed-arch-linux)
-   <!-- TODO: Take a look on each utils and turn it to list.txt file for later use -->
    ```sh
    $ sudo pacman -S bind dialog intel-ucode reflector bash-completion
    $ sudo pacman -S base-devel lshw zip unzip htop xsel tree fuse2 keychain arandr powertop inxi
@@ -642,6 +641,16 @@ reboot
    $ sudo pacman -S kubectl
    $ minikube config set driver docker
    $ minikube start
+
+   $ sudo pacman -S virtualbox             # See https://wiki.archlinux.org/title/VirtualBox
+
+   $ sudo pacman -S vagrant                # See https://wiki.archlinux.org/title/Vagrant
+   $ vagrant plugin install vagrant-vbguest vagrant-share
+
+   $ sudo pacman -S jdk8-openjdk           # See https://wiki.archlinux.org/title/Java#OpenJDK
+
+   $ sudo pacman -S maven                  # See https://wiki.archlinux.org/title/Maven
+   $ yay -S aws-cli-v2                     # See https://aur.archlinux.org/packages/aws-cli-v2
    ```
 ---
 

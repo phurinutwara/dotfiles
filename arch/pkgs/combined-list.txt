@@ -1,5 +1,6 @@
 acpi
 acpi_call
+aws-cli-v2
 axel
 aylurs-gtk-shell
 base
@@ -52,6 +53,7 @@ hyprpicker-git
 intel-ucode
 inxi
 iw
+jdk8-openjdk
 keychain
 kitty
 kubectl
@@ -64,6 +66,7 @@ linux-headers
 lshw
 lsof
 matugen-bin
+maven
 minikube
 mtools
 mtr
@@ -136,7 +139,9 @@ ttf-roboto
 ttf-ubuntu-font-family
 unzip
 usb_modeswitch
+vagrant
 vim
+virtualbox
 vulkan-tools
 wget
 wireplumber
