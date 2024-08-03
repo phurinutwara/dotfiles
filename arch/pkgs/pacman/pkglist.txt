@@ -48,6 +48,7 @@ hyprlock
 intel-ucode
 inxi
 iw
+jdk8-openjdk
 keychain
 kitty
 kubectl
@@ -59,6 +60,7 @@ linux-firmware
 linux-headers
 lshw
 lsof
+maven
 minikube
 mtools
 mtr
@@ -125,7 +127,9 @@ ttf-roboto
 ttf-ubuntu-font-family
 unzip
 usb_modeswitch
+vagrant
 vim
+virtualbox
 vulkan-tools
 wget
 wireplumber

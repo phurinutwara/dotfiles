@@ -1,3 +1,4 @@
+aws-cli-v2
 aylurs-gtk-shell
 docker-desktop
 dropbox
