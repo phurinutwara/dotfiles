@@ -92,6 +92,7 @@ pnpm
 polkit-kde-agent
 postgresql-libs
 powertop
+pwgen
 qt5ct
 qt5-wayland
 qt6ct

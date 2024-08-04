@@ -1,3 +1,7 @@
-core18    20240612  2829   latest/stable  canonical**  base
-datagrip  2024.1.4  197    latest/stable  jetbrains**  classic
-snapd     2.63      21759  latest/stable  canonical**  snapd
+bare                    1.0              5      latest/stable       canonical**  base
+core18                  20240612         2829   latest/stable       canonical**  base
+core22                  20240408         1380   latest/stable       canonical**  base
+datagrip                2024.1.4         197    latest/stable       jetbrains**  classic
+gaming-graphics-core22  24.0.3~kisak1~j  166    kisak-fresh/stable  canonical**  -
+gtk-common-themes       0.1-81-g442e511  1535   latest/stable       canonical**  -
+snapd                   2.63             21759  latest/stable       canonical**  snapd
