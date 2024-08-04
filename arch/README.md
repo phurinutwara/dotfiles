@@ -660,6 +660,8 @@ reboot
 
    $ sudo pacman -S maven                  # See https://wiki.archlinux.org/title/Maven
    $ yay -S aws-cli-v2                     # See https://aur.archlinux.org/packages/aws-cli-v2
+
+   $ sudo pacman -S pwgen                  # cli password generator tool
    ```
 ---
 
