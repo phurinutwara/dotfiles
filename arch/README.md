@@ -353,6 +353,8 @@ reboot
    $ sudo pacman -S pulseaudio-bluetooth   # Audio driver - bluetooth support (For airpod support: https://gist.github.com/aidos-dev/b49078c1d8c6bb1621e4ac199d18213b )
    $ sudo pacman -S pavucontrol            # GUI Audio Control panel for pulseaudio
 
+   $ sudo pacman -S nsxiv                  # image viewer
+
    $ yay -S nvm snapd docker-desktop
    $ nvm install --lts
 
@@ -377,6 +379,9 @@ reboot
 
    # obs, See https://wiki.archlinux.org/title/Open_Broadcaster_Software
    $ sudo pacman -S obs-studio
+
+   # image stuffs
+   $ sudo pacman -S tumbler # image previewer for thunar
    ```
 
    4. Desktop Environment (DE/WM)
