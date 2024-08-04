@@ -169,21 +169,21 @@ alias lg='lazygit'
 alias mk='make'
 alias mux='tmuxinator'
 alias pn='pnpm'
+alias tmux-clear='rm ~/.local/share/tmux/resurrect/*'
+alias tmux!='tmux-clear; tmux'
 
 # useful copy and travel path across terminal
 alias pwdc='echo -n $(pwd) | clipcopy'
-
-# pick by fcsonline/tmux-thumbs
-# TODO: USE THIS SOLUTION INSTEAD: https://sw.kovidgoyal.net/kitty/kittens/hints/#
 
 # My most frequently accessed directories (for simply, try using: `als cd`, `als nv`)
 alias cda='cd ~/dotfiles/arch/'
 alias cdc='cd ~/dotfiles/config/'
 alias cdd='cd ~/dotfiles/'
 alias cdk='cd ~/vaults/second-brain/'
-alias cdw='cd ~/Works'
+alias cdw='cd ~/Works/'
 alias cdv='cd ~/dotfiles/config/nvim/'
-alias cdz='cd ~/dotfiles/zsh'
+alias cdz='cd ~/dotfiles/zsh/'
+alias cdtr='cd ~/.local/share/tmux/resurrect/'
 
 alias  nv='nvim'
 alias nva='nvim ~/dotfiles/arch/'
