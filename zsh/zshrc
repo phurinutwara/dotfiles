@@ -163,6 +163,8 @@ alias eza='eza -lah --git'
 alias man="update_man_width;BAT_THEME='Monokai Extended' batman '$@'"
 alias trail='<<<${(F)path}'
 alias szsh='source ~/.zshrc'
+alias cmd='command'
+
 alias lg='lazygit'
 alias mk='make'
 alias mux='tmuxinator'
