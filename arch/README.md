@@ -390,13 +390,14 @@ reboot
       ```sh
       $ sudo pacman -S hyprland hypridle hyprlock xdg-desktop-portal-hyprland polkit-kde-agent qt5-wayland qt6-wayland
       $ sudo pacman -S gnome-control-center gtk4 nwg-look pango libdbusmenu-gtk3
-      $ sudo pacman -S pipewire wireplumber ffmpeg gvfs
+      $ sudo pacman -S ffmpeg gvfs
       $ sudo pacman -S wl-clipboard copyq thunar thunar-volman thunar-media-tags-plugin thunar-archive-plugin playerctl
       $ sudo pacman -S yq tmux
 
       # See https://aylur.github.io/ags-docs/config/installation/
-      # https://github.com/Aylur/dotfiles/tree/main
-      # https://github.com/hyprland-community/awesome-hyprland
+      #     https://pipewire-debian.github.io/pipewire-debian/
+      #     https://github.com/Aylur/dotfiles/tree/main
+      #     https://github.com/hyprland-community/awesome-hyprland
       $ yay -S aylurs-gtk-shell matugen hyprpicker-git # or aylurs-gtk-shell-git, try `ags --init` to link types folder
       $ sudo pacman -S gtk3 fd sass swww gnome-bluetooth-3.0 brightnessctl qt5ct qt6ct
       $ sudo pacman -S pnpm
@@ -406,7 +407,17 @@ reboot
       $ sudo ln -s $(pnpm root -g)/bun/bin/bun.exe /usr/local/bin/bun
 
       # See https://wiki.archlinux.org/title/PipeWire#Audio
-      $ sudo pacman -S pipewire-{jack,alsa,pulse}
+      #     https://github.com/mikeroyal/PipeWire-Guide#installing-pipewire-on-arch-linux
+      #     https://kaeru.my/notes/pipewire-surround-headphones -- jconvolver not work
+      #     https://forum.endeavouros.com/t/virtual-surround-sound-in-pipewire/24958 -- how to use filter-chain (see my dotfiles/config/pipewire)
+      #     https://gitlab.freedesktop.org/pipewire/pipewire/-/wikis/Filter-Chain#virtual-surround
+      #     https://lemmy.world/post/1865680 -- best describe
+      #     https://airtable.com/appayGNkn3nSuXkaz/shruimhjdSakUPg2m/tbloLjoZKWJDnLtTc
+      $ sudo pacman -S pipewire wireplumber pipewire-audio pipewire-pulse pipewire-alsa pipewire-jack sox
+      $ sudo pacman -S helvum qpwgraph # pipewire GUI tool
+      $ systemctl --user enable --now pipewire.socket
+      $ systemctl --user enable --now pipewire-pulse.socket
+      $ systemctl --user enable --now wireplumber.service
 
       # Install vulkan, See https://wiki.archlinux.org/title/Vulkan\#Installation
       sudo pacman -S vulkan-icd-loader vulkan-tools

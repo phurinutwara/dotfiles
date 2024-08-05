@@ -28,6 +28,9 @@
     ~/.config/ags:
       create: true
       path: ./config/ags
+    ~/.config/pipewire:
+      create: true
+      path: ./config/pipewire
 - create:
     - ~/Works
     - ~/packages # for extract packages which need to be built / manual installed
