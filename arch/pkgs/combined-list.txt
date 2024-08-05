@@ -44,6 +44,7 @@ gnu-free-fonts
 gparted
 grub
 gvfs
+helvum
 htop
 hypridle
 hyprland
@@ -101,6 +102,7 @@ polkit-kde-agent
 postgresql-libs
 powertop
 pwgen
+qpwgraph
 qt5-wayland
 qt5ct
 qt6-wayland
@@ -114,6 +116,7 @@ samba
 sddm
 snapd
 sof-firmware
+sox
 sudo
 swww
 systemd-resolvconf
