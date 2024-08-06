@@ -244,6 +244,7 @@ function killrg() {
 
 source ~/dotfiles/zsh/env/go.sh
 source ~/dotfiles/zsh/env/pnpm.sh
+source ~/dotfiles/zsh/env/rubygems.sh
 
 source ~/dotfiles/zsh/scripts/nvm.sh
 source ~/dotfiles/zsh/scripts/git.sh
