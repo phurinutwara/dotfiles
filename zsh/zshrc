@@ -226,6 +226,15 @@ function update_man_width() {
   export MANWIDTH="$(expr $COLUMNS - $MANWIDTH_RIGHT_OFFSET)"
 }
 
+function killrg() {
+  # alias killrg="echo ps -ef | rg -v 'rg|root' | rg '$@'"
+  cmd="ps -ef | rg -v 'rg|root' | rg '$@' | awk '{print \$2}'"
+  tasks=$(zsh -c "$cmd")
+  echo $tasks | xargs -I %s echo "-> killing PID :: %s"
+  echo $tasks | xargs kill
+  echo "DONE"
+}
+
 # Use ZSH Plugins
 
 # ...Other Surprises
