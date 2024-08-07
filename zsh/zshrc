@@ -254,6 +254,3 @@ source ~/dotfiles/zsh/env/rubygems.sh
 source ~/dotfiles/zsh/scripts/nvm.sh
 source ~/dotfiles/zsh/scripts/git.sh
 source ~/dotfiles/zsh/scripts/brew.sh
-
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
