@@ -19,6 +19,12 @@ else
 	if [[ $ID == "arch" ]]; then
 		yay -S tmuxinator
 	else
-		sudo wget https://raw.githubusercontent.com/tmuxinator/tmuxinator/master/completion/tmuxinator.zsh -O /usr/local/share/zsh/site-functions/_tmuxinator
 	fi
+fi
+
+completion_path='/usr/local/share/zsh/site-functions'
+if [[ ! -f "$completion_path/_tmuxinator" ]]; then
+	echo "installing tmuxinator completion"
+	sudo mkdir -p $completion_path
+	sudo wget https://raw.githubusercontent.com/tmuxinator/tmuxinator/master/completion/tmuxinator.zsh -O "$completion_path/_tmuxinator"
 fi
