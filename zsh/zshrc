@@ -164,6 +164,7 @@ alias man="update_man_width;BAT_THEME='Monokai Extended' batman '$@'"
 alias trail='<<<${(F)path}' # See https://zsh.sourceforge.io/Doc/Release/Expansion.html
 alias szsh='source ~/.zshrc'
 alias cmd='command'
+alias sctl='systemctl'
 
 alias lg='lazygit'
 alias mk='make'
