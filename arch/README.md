@@ -184,7 +184,7 @@ Goal to switch:
 ```sh
 $ mount /dev/nvme1n1p5 /mnt                # mount your root drive
 
-$ mkdir /mnt/boot/efi                      # create efi boot partition for Linux EFI Partition in your root drive
+$ mkdir -p /mnt/boot/efi                      # create efi boot partition for Linux EFI Partition in your root drive
 $ mount /dev/nvme1n1p3 /mnt/boot/efi       # mount your EFI partition
 ```
 
@@ -259,14 +259,14 @@ $ useradd -m -G wheel,storage,power,audio,video,log -s /bin/zsh pwarch
 # $ useradd -m -G wheel -s /bin/besh pwarch   
 #    ∟ you config default shell wrong and also you want more usergroup
 
-# $ usermod -m -G wheel,storage,power,audio,video -s /bin/zsh phurinutw
+# $ usermod -m -G wheel,storage,power,audio,video -s /bin/zsh pwarch
 #    ∟ this will modified all of your params
 ```
 
 13. Set up your [root](https://wiki.archlinux.org/title/installation_guide#Root_password) and your user password
 ```sh
 $ passwd                                   # this will set-up the root password
-$ passwd phurinutw                         # this will set-up your user password for login
+$ passwd pwarch                            # this will set-up your user password for login
 ```
 
 14. Add [wheel group](https://wiki.archlinux.org/title/Users_and_groups#Group_list) to make your user able to use sudo cmds
@@ -294,7 +294,7 @@ $ grub-mkconfig -o /boot/grub/grub.cfg     # this will genearate the config
     : so we can make connection during post-installation
     : (We use `systemctl` to control [service management](https://wiki.archlinux.org/title/General_recommendations#Service_management) which is called [systemd](https://wiki.archlinux.org/title/Systemd))
 ```sh
-$ pacman -S openssh dhcpcd networkmanager resolvconf
+$ pacman -S openssh dhcpcd networkmanager resolvconf # maybe resolvconf = systemd-resolvconf ?
 $ systemctl enable sshd                    # sshd is the OpenSSH server process
 $ systemctl enable dhcpcd                  # DHCP Client, https://wiki.archlinux.org/title/dhcpcd
 $ systemctl enable NetworkManager          # Detect and config to automatically connect to networks, https://wiki.archlinux.org/title/NetworkManager
