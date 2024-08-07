@@ -161,7 +161,7 @@ alias rl='omz reload'
 alias ls='eza -lah --git'
 alias eza='eza -lah --git'
 alias man="update_man_width;BAT_THEME='Monokai Extended' batman '$@'"
-alias trail='<<<${(F)path}'
+alias trail='<<<${(F)path}' # See https://zsh.sourceforge.io/Doc/Release/Expansion.html
 alias szsh='source ~/.zshrc'
 alias cmd='command'
 
@@ -199,6 +199,7 @@ alias dcu='docker compose up -d'
 alias dcd='docker compose down'
 alias dcw='docker compose watch'
 alias dcuw='docker compose up --build --watch'
+alias vagrant!='VAGRANT_DISABLE_STRICT_DEPENDENCY_ENFORCEMENT=1 vagrant $@' # NOTE: temporary fix rubygem dependency bug
 
 # Customize Prompt(s)
 # PROMPT='
