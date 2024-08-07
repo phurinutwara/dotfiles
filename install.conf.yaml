@@ -40,8 +40,8 @@
 - create:
     ~/.ssh/keys:
       mode: 0700
-  ~/logs:
-    mode: 0744
+    ~/logs:
+      mode: 0744
 - shell:
     - command: git submodule update --init
       stdin: true
