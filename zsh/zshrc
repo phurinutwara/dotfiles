@@ -168,10 +168,11 @@ alias sctl='systemctl'
 
 alias lg='lazygit'
 alias mk='make'
-alias mux='tmuxinator'
 alias pn='pnpm'
-alias tmux-clear='rm ~/.local/share/tmux/resurrect/*'
-alias tmux!='tmux-clear; tmux'
+alias mux='tmux'
+alias muxi='tmuxinator'
+alias mux-clear='rm ~/.local/share/tmux/resurrect/*'
+alias mux!='mux-clear; tmux'
 
 # useful copy and travel path across terminal
 alias pwdc='echo -n $(pwd) | clipcopy'
@@ -200,7 +201,8 @@ alias dcu='docker compose up -d'
 alias dcd='docker compose down'
 alias dcw='docker compose watch'
 alias dcuw='docker compose up --build --watch'
-alias vagrant!='VAGRANT_DISABLE_STRICT_DEPENDENCY_ENFORCEMENT=1 vagrant $@' # NOTE: temporary fix rubygem dependency bug
+alias vag='vagrant'
+alias vag!='VAGRANT_DISABLE_STRICT_DEPENDENCY_ENFORCEMENT=1 vagrant $@' # NOTE: temporary fix rubygem dependency bug
 
 # Customize Prompt(s)
 # PROMPT='
