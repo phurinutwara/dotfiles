@@ -1,5 +1,6 @@
 aws-cli-v2
 aylurs-gtk-shell
+bibata-cursor-theme
 docker-desktop
 dropbox
 hyprpicker-git
@@ -10,5 +11,7 @@ rtl8852au-dkms-git
 snapd
 thunar-dropbox
 tmuxinator
+ttf-gabarito-git
+ttf-material-symbols-variable-git
 yay
 yay-debug

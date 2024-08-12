@@ -30,6 +30,25 @@
     ~/.config/pipewire:
       create: true
       path: ./config/pipewire
+    ~/.config/qt5ct:
+      create: true
+      path: ./config/qt5ct
+    ~/.config/mpv:
+      create: true
+      path: ./config/mpv
+    ~/.config/fuzzel:
+      create: true
+      path: ./config/fuzzel
+    ~/.config/foot:
+      create: true
+      path: ./config/foot
+    ~/.config/fontconfig:
+      create: true
+      path: ./config/fontconfig
+    ~/.config/anyrun:
+      create: true
+      path: ./config/anyrun
+
 - create:
     - ~/Works
     - ~/packages # for extract packages which need to be built / manual installed

@@ -249,7 +249,7 @@ $ vim /etc/hosts
 
 12. [Add new user](https://wiki.archlinux.org/title/Users_and_groups#Example_adding_a_user)
 ```sh
-$ useradd -m -G wheel,storage,power,audio,video,log -s /bin/zsh pwarch
+$ useradd -m -G wheel,storage,power,audio,video,log,input -s /bin/zsh pwarch
 
 # other use /bin/bash, but i personally use /bin/zsh and i had pacstrapped it
 
@@ -349,9 +349,7 @@ reboot
    $ sudo pacman -S gnome-terminal docker obsidian
    $ sudo pacman -S gparted btrfs-progs    # A Partition Magic clone, frontend to GNU Parted + btrfs tool
 
-   $ sudo pacman -S pulseaudio             # Audio driver
-   $ sudo pacman -S pulseaudio-bluetooth   # Audio driver - bluetooth support (For airpod support: https://gist.github.com/aidos-dev/b49078c1d8c6bb1621e4ac199d18213b )
-   $ sudo pacman -S pavucontrol            # GUI Audio Control panel for pulseaudio
+   $ sudo pacman -S pavucontrol            # GUI Audio Control panel for pulseaudio, pipewire-pulse
 
    $ sudo pacman -S nsxiv                  # image viewer
 
@@ -389,7 +387,7 @@ reboot
       A. Hyprland (See https://wiki.hyprland.org/Getting-Started/Master-Tutorial/)
       ```sh
       $ sudo pacman -S hyprland hypridle hyprlock xdg-desktop-portal-hyprland polkit-kde-agent qt5-wayland qt6-wayland
-      $ sudo pacman -S gnome-control-center gtk4 nwg-look pango libdbusmenu-gtk3
+      $ sudo pacman -S gnome-control-center gtk3 gtk4 nwg-look pango libdbusmenu-gtk3
       $ sudo pacman -S ffmpeg gvfs
       $ sudo pacman -S wl-clipboard copyq thunar thunar-volman thunar-media-tags-plugin thunar-archive-plugin playerctl
       $ sudo pacman -S yq tmux
@@ -421,73 +419,45 @@ reboot
 
       # Install vulkan, See https://wiki.archlinux.org/title/Vulkan\#Installation
       sudo pacman -S vulkan-icd-loader vulkan-tools
+
+      # illogical-impulse (See https://github.com/end-4/dots-hyprland)
+      ## ags
+      $ sudo pacman -S --needed git gobject-introspection meson
+      $ sudo pacman -S --needed gjs glib2 glib2-devel glibc gtk3 gtk-layer-shell libpulse pam
+      $ sudo pacman -S --needed gnome-bluetooth-3.0 greetd libdbusmenu-gtk3 libsoup3 libnotify networkmanager power-profiles-daemon upower
+      ## audio
+      $ sudo pacman -S --needed pavucontrol wireplumber libdbusmenu-gtk3 playerctl swww
+      ## backlight
+      $ sudo pacman -S --needed brightnessctl ddcutil
+      ## basic
+      $ sudo pacman -S --needed axel bc coreutils cliphist cmake curl fuzzel rsync wget ripgrep jq npm meson typescript gjs xdg-user-dirs
+      ## bibata-cursor
+      $ yay -S --needed bibata-cursor-theme
+      ## fonts-themes
+      $ yay -S --needed ttf-material-symbols-variable ttf-gabarito adw-gtk3 ttf-readex-pro ttf-rubik-vf
+      $ sudo pacman -S --needed qt5ct qt5-wayland fontconfig ttf-jetbrains-mono-nerd ttf-space-mono-nerd fish foot starship
+      ## gnome
+      $ sudo pacman -S --needed polkit-gnome gnome-keyring gnome-control-center blueberry networkmanager gammastep gnome-bluetooth-3.0
+      ## gtk
+      $ sudo pacman -S --needed webp-pixbuf-loader gtk-layer-shell gtk3 gtksourceview3 gobject-introspection upower yad ydotool xdg-user-dirs-gtk
+      ## microtex
+      $ sudo pacman -S --needed tinyxml2 gtkmm3 gtksourceviewmm cairomm
+      ## oneui4-icons (TODO)
+      ## portal
+      $ sudo pacman -S --needed xdg-desktop-portal xdg-desktop-portal-gtk xdg-desktop-portal-hyprland
+      ## python
+      $ sudo pacman -S --needed python-build python-pillow python-pywal python-setuptools-scm python-wheel
+      ## screencapture
+      $ sudo pacman -S --needed swappy wf-recorder grim tesseract tesseract-data-eng slurp
+      ## widgets
+      $ sudo pacman -S --needed hypridle hyprutils hyprlock dart-sass python-pywayland python-psutil wl-clipboard
+      $ yay -S --needed hyprpicker anyrun-git wlogout-git
       ```
 
-      B. i3 (My past main)
-      ```sh
-      # Install Desktop Server: [Xorg](https://github.com/silentz/arch-linux-install-guide?tab=readme-ov-file#configuring-installed-arch-linux)
-      $ pacman -S xorg xorg-apps xorg-xinit xdotool xclip 
-
-      $ sudo pacman -S i3 i3lock lxappearance firefox xfce4
-      $ sudo pacman -S dunst \
-                       xss-lock picom flameshot gsimplecal \
-                       thunar-archive-plugin thunar-media-tags-plugin
-
-      # you can install these at one commands but I seperate 
-      # to comment description line-by-line
-      $ sudo pacman -S picom               # pycom as composite manager (x11 compositor)
-      $ sudo pacman -S polybar             # polybar for status bar (use this instead of i3status)
-      $ sudo pacman -S feh                 # Image viewer (as background)
-      $ sudo pacman -S rofi                # better of dmenu (use this instead of dmenu)
-      $ sudo pacman -S alacritty           # default term for i3
-      $ sudo pacman -S kitty               # my prefered choice of term emu
-      $ sudo pacman -S ranger              # cli-styled file explorer
-      $ sudo pacman -S lxappearance        # for customize theme of i3
-      $ sudo pacman -S light               # for customize display light
-      $ sudo pacman -S pango               # for text-rendering
-      $ sudo pacman -S thunar              # GUI file explorer
-      $ sudo pacman -S dunst               # A highly configurable and lightweight notification daemon.
-      $ sudo pacman -S flameshot           # Great tool for screenshot
-
-      $ yay -S i3-lock-fancy-git           # beautiful lock screen
-      ```
-      NOTE: use `sudo nvidia-settings` to adjust desktop resolution size and save to `/etc/X11/xorg.conf` file
-            Be sure that on `X Server Display Configuration > Advanced... > Force Full Composition Pipeline`
-            must set to true
-      ```sh
-      # or manual config with xrandr
-      # ~/.xprofile to run xrandr when logging in
-      # see more: https://askubuntu.com/a/754233
-
-      xrandr --output DP-4 --mode 5120x1440 --rate 240
-      ```
-
-      C. Xfce (Silentz's stable as a Fallback DE)
-      ```sh
-      # Install Desktop Server: [Xorg](https://github.com/silentz/arch-linux-install-guide?tab=readme-ov-file#configuring-installed-arch-linux)
-      $ pacman -S xorg xorg-apps xorg-xinit xdotool xclip
-
-      $ sudo pacman -S dbus xfce4 xfce4-screenshooter \
-      $   thunar-archive-plugin thunar-media-tags-plugin \
-      $   xfce4-xkb-plugin xfce4-battery-plugin xfce4-datetime-plugin xfce4-mount-plugin \
-      $   xfce4-netload-plugin xfce4-notifyd xfce4-pulseaudio-plugin xfce4-screensaver \
-      $   xfce4-wavelan-plugin xfce4-weather-plugin xfce4-whiskermenu-plugin network-manager-applet
-      ```
-
-   5. Desktop Manager (For switch between i3 and Xfce)
+   5. Desktop Manager
    ```sh
    $ sudo pacman -S sddm
    $ systemctl enable sddm
-
-   # $ sudo pacman -S lightdm lightdm-gtk-greeter
-   # $ sudo systemctl enable --now lightdm
-   # $ echo '' | sudo tee -a /etc/lightdm/lightdm.conf
-   # $ echo '[Seat:*]' | sudo tee -a /etc/lightdm/lightdm.conf
-   # $ echo 'greeter-session=lightdm-gtk-greeter' | sudo tee -a /etc/lightdm/lightdm.conf
-   # $ echo 'user-session=i3' | sudo tee -a /etc/lightdm/lightdm.conf
-
-   # $ sudo pacman -S ly (I found that it often crash after wakeup  from hibernate (i use nvidia))
-   # $ sudo systemctl enable ly
    ```
 
    6. SSD TRIM
@@ -501,7 +471,7 @@ reboot
    $ sudo systemctl enable bluetooth
    ```
 
-   8. Improve battery usage
+   8. Improve battery usage (For laptop)
    ```sh
    $ sudo pacman -S tlp tlp-rdw acpi acpi_call
    $ sudo systemctl enable tlp
@@ -703,20 +673,7 @@ My [Post-installation](https://wiki.archlinux.org/title/Installation_guide#Post-
 
 ---
 
-#### TODO:
-
-- [x] Catagorized install processes to group and explain more simpler and clearer
-- [x] Try switch to use Hyprland, ~~i3~~, ~~awesomeWM~~ once expertise at Arch linux
-
----
-
-#### KNOWN ISSUES:
-
-- [x] When dpms is activated by afk and once we come back, <u>the screen did not turn on properly</u>\
-      - **Solution**: Take a look [HERE](articles/monitor-not-turnon-when-wakeup.md)
----
-
-#### Current research:
+#### Previous researches:
 
 - [GUI](https://wiki.archlinux.org/title/General_recommendations#Graphical_user_interface)
 
