@@ -24,6 +24,7 @@ const keybindList = getKeybindList();
 
 const keySubstitutions = {
     "Super": "󰖳",
+    "$mainMod": "󰖳",
     "mouse_up": "Scroll ↓",    // ikr, weird
     "mouse_down": "Scroll ↑",  // trust me bro
     "mouse:272": "LMB",
