@@ -65,6 +65,7 @@ linux-firmware
 linux-headers
 lshw
 lsof
+make
 matugen-bin
 maven
 minikube

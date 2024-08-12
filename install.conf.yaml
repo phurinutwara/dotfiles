@@ -13,7 +13,6 @@
     ~/.config/nvim:
       create: true
       path: ./config/nvim
-    ~/.config/wezterm: ./config/wezterm
     ~/.config/kitty:
       create: true
       path: ./config/kitty

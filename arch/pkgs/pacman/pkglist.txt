@@ -60,6 +60,7 @@ linux-firmware
 linux-headers
 lshw
 lsof
+make
 maven
 minikube
 mtools
