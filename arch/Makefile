@@ -22,10 +22,10 @@ dump: | pacdump cargodump flatpakdump snapdump seperate
 
 # RESTORE =====================================================================>
 pacrestore:
-	sudo pacman -S --needed - < ./pkgs/pacman/pkglist.txt
+	sudo pacman -S --needed --noconfirm - < ./pkgs/pacman/pkglist.txt
 
 yayrestore:
-	yay -S --needed - < ./pkgs/yay/aurlist.txt
+	yay -S --needed --noconfirm - < ./pkgs/yay/aurlist.txt
 
 restore: | pacrestore yayrestore
 # <===================================================================== RESTORE
