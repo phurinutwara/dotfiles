@@ -41,29 +41,15 @@
 
 ---
 
-##### Target Specification on each component
+##### Specification
 
-Current stable (Mr.Silentz config):
 ```
-- Display Server:         **Xorg(x11)** (due to compatability)       # $XDG_SESSION_TYPE to specify
-- Display Manger:         Ly
-- Desktop Environment:    xfce
-- Window Manager:         xfwm4
-- Panel:                  xfce4-panel
-- Desktop Manager:        xfdesktop
-- File Manager:           thunar
-- Volume Manager:         thunar-volman
-- Audio:                  pulseaudio (works with my GSX1000)
-```
-
-Goal to switch:
-```
-- Display Server:         Wayland (due to compatability)       # $XDG_SESSION_TYPE to specify
-- Display Manager:        Sddm
+- Display Server:         Wayland                              # $XDG_SESSION_TYPE to specify
+- Display Manager:        -
 - Desktop Environment:    Hyprland
 - File Manager:           thunar
 - Volume Manager:         thunar-volman
-- Audio:                  pulseaudio (works with my GSX1000)
+- Audio:                  pipewire
 ```
 
 ---
@@ -454,7 +440,7 @@ reboot
       $ yay -S --needed hyprpicker anyrun-git wlogout-git
       ```
 
-   5. Desktop Manager
+   5. Desktop Manager (If you prefer, but i use bare tty with auto-Hypr script)
    ```sh
    $ sudo pacman -S sddm
    $ systemctl enable sddm
@@ -497,7 +483,7 @@ reboot
 
    11. Setup the fastest pacman mirror
    ```sh
-   $ sudo reflector --country Thailand,Singapore --fastest 10 --threads `nproc` --save /etc/pacman.d/mirrorlist
+   $ sudo reflector --country 'Thailand,Singapore,' --fastest 10 --threads `nproc` --save /etc/pacman.d/mirrorlist
    ```
 
    12. Enable [Hibernation](https://wiki.archlinux.org/title/Power_management/Suspend_and_hibernate)
@@ -620,7 +606,7 @@ reboot
    17. Docker
    ```sh
    $ sudo usermod -aG docker pwarch
-   $ sudo systemcdtl enable --now docker.service
+   $ sudo systemctl enable --now docker.service
    ```
 
    18. Backend Development Tools

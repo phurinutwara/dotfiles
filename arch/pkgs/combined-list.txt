@@ -1,5 +1,6 @@
 acpi
 acpi_call
+anyrun-git
 aws-cli-v2
 axel
 aylurs-gtk-shell
@@ -34,7 +35,9 @@ ethtool
 eza
 fd
 firefox
+fish
 flatpak
+foot
 fq
 fuse2
 fuzzel
@@ -127,11 +130,11 @@ rsync
 rtl8852au-dkms-git
 rust
 samba
-sddm
 slurp
 snapd
 sof-firmware
 sox
+starship
 sudo
 swappy
 swww
@@ -161,6 +164,7 @@ ttf-material-symbols-variable-git
 ttf-nerd-fonts-symbols
 ttf-nerd-fonts-symbols-mono
 ttf-roboto
+ttf-space-mono-nerd
 ttf-ubuntu-font-family
 tumbler
 unzip

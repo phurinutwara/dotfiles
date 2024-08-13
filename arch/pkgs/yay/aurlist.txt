@@ -1,3 +1,4 @@
+anyrun-git
 aws-cli-v2
 aylurs-gtk-shell
 bibata-cursor-theme

@@ -254,3 +254,5 @@ source ~/dotfiles/zsh/env/rubygems.sh
 source ~/dotfiles/zsh/scripts/nvm.sh
 source ~/dotfiles/zsh/scripts/git.sh
 source ~/dotfiles/zsh/scripts/brew.sh
+
+source ~/dotfiles/zsh/scripts/auto-Hypr.sh
