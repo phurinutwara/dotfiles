@@ -649,6 +649,21 @@ reboot
 
    $ sudo pacman -S pwgen                  # cli password generator tool
    ```
+
+   19. Auto-login via greetd and agreety
+   ```sh
+   # See https://wiki.archlinux.org/title/Greetd#Enabling_autologin
+
+   $ sudo vim /etc/greetd/config.toml
+   # Append Type this to /etc/greetd/config.toml
+   ...
+   [initial_session]
+   command = "sh /home/pwarch/dotfiles/zsh/scripts/auto-Hypr.sh"
+   user = "pwarch"
+   ...
+   ```
+
+   20. TODO: Encrypt drive via LUKS
 ---
 
 ##### References:
