@@ -13,6 +13,7 @@ bat-extras
 bc
 bibata-cursor-theme
 bind
+blueberry
 blueman
 bluez
 bluez-utils
@@ -35,6 +36,7 @@ dropbox
 efibootmgr
 ethtool
 eza
+fcitx5
 fd
 firefox
 fish
@@ -52,6 +54,7 @@ gnome-control-center
 gnome-terminal
 gnu-free-fonts
 gparted
+greetd
 grim
 grub
 gtksourceview3
@@ -62,7 +65,8 @@ htop
 hypridle
 hyprland
 hyprlock
-hyprpicker-git
+hyprpicker
+hyprutils
 intel-ucode
 inxi
 iw
@@ -114,8 +118,10 @@ pipewire-jack
 pipewire-pulse
 playerctl
 pnpm
+polkit-gnome
 polkit-kde-agent
 postgresql-libs
+power-profiles-daemon
 powertop
 pwgen
 python-pillow
@@ -154,8 +160,6 @@ thunar-media-tags-plugin
 thunar-volman
 tinyxml2
 tldr
-tlp
-tlp-rdw
 tmux
 tmuxinator
 tree
@@ -167,7 +171,9 @@ ttf-liberation
 ttf-material-symbols-variable-git
 ttf-nerd-fonts-symbols
 ttf-nerd-fonts-symbols-mono
+ttf-readex-pro
 ttf-roboto
+ttf-rubik-vf
 ttf-space-mono-nerd
 ttf-ubuntu-font-family
 tumbler
@@ -182,10 +188,12 @@ wf-recorder
 wget
 wireplumber
 wl-clipboard
+wlogout-git
 wofi
 xdg-desktop-portal-hyprland
 xdg-user-dirs
 xdg-user-dirs-gtk
+xorg-xhost
 xsel
 yad
 yay

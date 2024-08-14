@@ -4,7 +4,7 @@ aylurs-gtk-shell
 bibata-cursor-theme
 docker-desktop
 dropbox
-hyprpicker-git
+hyprpicker
 matugen-bin
 nordic-theme
 nvm
@@ -14,5 +14,8 @@ thunar-dropbox
 tmuxinator
 ttf-gabarito-git
 ttf-material-symbols-variable-git
+ttf-readex-pro
+ttf-rubik-vf
+wlogout-git
 yay
 yay-debug
