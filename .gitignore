@@ -1,3 +1,4 @@
 Brewfile.lock.json
 config/btop/btop.log
 config/hypr/custom
+config/kitty/kitty.conf.d
