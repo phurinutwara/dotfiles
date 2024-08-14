@@ -1,5 +1,6 @@
 acpi
 acpi_call
+ark
 axel
 base
 base-devel
@@ -24,6 +25,7 @@ dialog
 discord
 dmidecode
 docker
+docker-compose
 efibootmgr
 ethtool
 eza
@@ -36,6 +38,7 @@ fq
 fuse2
 fuzzel
 fzf
+gammastep
 ghq
 git
 gnome-bluetooth-3.0
@@ -93,6 +96,7 @@ openbsd-netcat
 openfortivpn
 openssh
 os-prober
+pacman-contrib
 papirus-icon-theme
 pavucontrol
 pipewire-alsa

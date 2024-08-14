@@ -1,4 +1,4 @@
 core18    20240612  2829   latest/stable  canonical**  base
-datagrip  2024.1.5  202    latest/stable  jetbrains**  disabled,classic
-datagrip  2024.2    203    latest/stable  jetbrains**  classic
+datagrip  2024.2    203    latest/stable  jetbrains**  disabled,classic
+datagrip  2024.2.1  204    latest/stable  jetbrains**  classic
 snapd     2.63      21759  latest/stable  canonical**  snapd

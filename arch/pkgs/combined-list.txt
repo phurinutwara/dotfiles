@@ -1,6 +1,7 @@
 acpi
 acpi_call
 anyrun-git
+ark
 aws-cli-v2
 axel
 aylurs-gtk-shell
@@ -28,6 +29,7 @@ dialog
 discord
 dmidecode
 docker
+docker-compose
 docker-desktop
 dropbox
 efibootmgr
@@ -42,6 +44,7 @@ fq
 fuse2
 fuzzel
 fzf
+gammastep
 ghq
 git
 gnome-bluetooth-3.0
@@ -103,6 +106,7 @@ openbsd-netcat
 openfortivpn
 openssh
 os-prober
+pacman-contrib
 papirus-icon-theme
 pavucontrol
 pipewire-alsa

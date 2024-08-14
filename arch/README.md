@@ -337,9 +337,8 @@ reboot
 
    $ sudo pacman -S pavucontrol            # GUI Audio Control panel for pulseaudio, pipewire-pulse
 
-   $ sudo pacman -S nsxiv                  # image viewer
-
    $ yay -S nvm snapd docker-desktop
+   $ sudo pacman -S docker-compose
    $ nvm install --lts
 
    # flatpak
@@ -364,8 +363,13 @@ reboot
    # obs, See https://wiki.archlinux.org/title/Open_Broadcaster_Software
    $ sudo pacman -S obs-studio
 
-   # image stuffs
-   $ sudo pacman -S tumbler # image previewer for thunar
+   # thunar stuffs
+   $ sudo pacman -S ark                    # gui file archiver for thunar
+   $ sudo pacman -S nsxiv                  # gui image viewer
+   $ sudo pacman -S tumbler                # image previewer for thunar
+
+   # pacman cache cleaner
+   $ sudo pacman -S pacman-contrib
    ```
 
    4. Desktop Environment (DE/WM)
