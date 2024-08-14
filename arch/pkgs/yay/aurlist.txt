@@ -5,6 +5,7 @@ bibata-cursor-theme
 docker-desktop
 dropbox
 hyprpicker
+iwgtk
 matugen-bin
 nordic-theme
 nvm

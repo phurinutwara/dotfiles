@@ -60,9 +60,11 @@ hypridle
 hyprland
 hyprlock
 hyprutils
+impala
 intel-ucode
 inxi
 iw
+iwd
 jdk8-openjdk
 keychain
 kitty

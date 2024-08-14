@@ -67,9 +67,12 @@ hyprland
 hyprlock
 hyprpicker
 hyprutils
+impala
 intel-ucode
 inxi
 iw
+iwd
+iwgtk
 jdk8-openjdk
 keychain
 kitty

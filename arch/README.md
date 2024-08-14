@@ -460,6 +460,7 @@ reboot
    ```sh
    $ sudo pacman -S bluez bluez-utils blueman
    $ sudo systemctl enable bluetooth
+   # if airpods went wrong, uncomment ControllerMode on /etc/bluetooth/main.conf
    ```
 
    8. Improve battery usage (For laptop)
@@ -567,6 +568,19 @@ reboot
                                            # For pppd Versions > 2.5.0,
                                            # you may need to additionally add the `--pppd-accept-remote`
                                            # command line option to openfortivpn.
+
+   # Fallback network interface (Optional)
+   $ sudo pacman -S iwd                    # CLI :: iwctl
+   $ sudo systemctl enable --now iwd
+   $ sudo pacman -S impala                 # a TUI tool for iwd
+   $ yay -S iwgtk                          # a GUI tool for iwd
+
+   # Use iwd as NetworkManager backend
+   # See https://wiki.archlinux.org/title/NetworkManager#Using_iwd_as_the_Wi-Fi_backend
+   $ sudo vim /etc/NetworkManager/conf.d/wifi_backend.conf
+   # paste this to let NetworkManager use iwd as backend
+   [device]
+   wifi.backend=iwd
    ```
 
    14. [Keyboard configuration](https://wiki.archlinux.org/title/Xorg/Keyboard_configuration)
