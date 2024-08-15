@@ -579,8 +579,8 @@ reboot
    # See https://wiki.archlinux.org/title/NetworkManager#Using_iwd_as_the_Wi-Fi_backend
    $ sudo vim /etc/NetworkManager/conf.d/wifi_backend.conf
    # paste this to let NetworkManager use iwd as backend
-   [device]
-   wifi.backend=iwd
+   # [device]
+   # wifi.backend=iwd
    ```
 
    14. [Keyboard configuration](https://wiki.archlinux.org/title/Xorg/Keyboard_configuration)
@@ -656,11 +656,15 @@ reboot
 
    $ sudo vim /etc/greetd/config.toml
    # Append Type this to /etc/greetd/config.toml
-   ...
-   [initial_session]
-   command = "sh /home/pwarch/dotfiles/zsh/scripts/auto-Hypr.sh"
-   user = "pwarch"
-   ...
+
+   # [initial_session]
+   # command = "sh /home/pwarch/dotfiles/zsh/scripts/auto-Hypr.sh"
+   # user = "pwarch"
+
+   # Don't for get to change agreety shell to zsh at default_session (default is sh)
+   # command = "agretty --cmd /bin/zsh"
+   
+   $ sudo systemctl enable greetd
    ```
 
    20. TODO: Encrypt drive via LUKS
