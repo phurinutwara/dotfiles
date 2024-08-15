@@ -37,6 +37,7 @@ efibootmgr
 ethtool
 eza
 fcitx5
+fcitx5-configtool
 fd
 firefox
 fish

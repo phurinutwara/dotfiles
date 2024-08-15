@@ -428,7 +428,7 @@ reboot
       $ sudo pacman -S --needed qt5ct qt5-wayland fontconfig ttf-jetbrains-mono-nerd ttf-space-mono-nerd fish foot starship
       ## gnome
       $ sudo pacman -S --needed polkit-gnome gnome-keyring gnome-control-center blueberry networkmanager gammastep gnome-bluetooth-3.0
-      $ sudo pacman -S --needed fcitx5 xorg-xhost # for running gparted specifically, See https://www.reddit.com/r/hyprland/comments/13ri2nj/gparted_cannot_open_display/ , https://wiki.archlinux.org/title/Xhost
+      $ sudo pacman -S --needed fcitx5 fcitx5-configtool xorg-xhost # for running gparted specifically, See https://www.reddit.com/r/hyprland/comments/13ri2nj/gparted_cannot_open_display/ , https://wiki.archlinux.org/title/Xhost
       ## gtk
       $ sudo pacman -S --needed webp-pixbuf-loader gtk-layer-shell gtk3 gtksourceview3 gobject-introspection upower yad ydotool xdg-user-dirs-gtk
       ## microtex

@@ -48,6 +48,9 @@
     ~/.config/anyrun:
       create: true
       path: ./config/anyrun
+    ~/.config/fcitx5:
+      create: true
+      path: ./config/fcitx5
 
 - create:
     - ~/Works
