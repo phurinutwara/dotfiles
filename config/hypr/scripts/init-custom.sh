@@ -71,3 +71,15 @@ if [[ ! -f "$rules" ]]; then
 		EOF
 	) >"$rules"
 fi
+
+colors=$(realpath $script_dir/../custom/colors.conf)
+if [[ ! -f "$colors" ]]; then
+	echo 'Adding colors.conf ...'
+	(
+		tee <<-EOF
+			# vim: ft=hyprlang
+			#
+			# You can put custom colors here
+		EOF
+	) >"$colors"
+fi
