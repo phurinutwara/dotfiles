@@ -158,7 +158,8 @@ const BatteryModule = () => Stack({
                     MaterialIcon('device_thermostat', 'small'),
                     Label({
                         label: 'Weather',
-                    })
+                    }),
+                    BarGroup({ child: Utilities() })
                 ],
                 setup: (self) => self.poll(900000, async (self) => {
                     const WEATHER_CACHE_PATH = WEATHER_CACHE_FOLDER + '/wttr.in.txt';
