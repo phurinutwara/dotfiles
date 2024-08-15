@@ -4,11 +4,15 @@ aylurs-gtk-shell
 bibata-cursor-theme
 docker-desktop
 dropbox
+gradience
 hyprpicker
 iwgtk
 matugen-bin
 nordic-theme
 nvm
+python-libsass
+python-material-color-utilities
+python-materialyoucolor-git
 rtl8852au-dkms-git
 snapd
 thunar-dropbox

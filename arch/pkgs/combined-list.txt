@@ -55,6 +55,7 @@ gnome-control-center
 gnome-terminal
 gnu-free-fonts
 gparted
+gradience
 greetd
 grim
 grub
@@ -128,6 +129,9 @@ postgresql-libs
 power-profiles-daemon
 powertop
 pwgen
+python-libsass
+python-material-color-utilities
+python-materialyoucolor-git
 python-pillow
 python-psutil
 python-pywal

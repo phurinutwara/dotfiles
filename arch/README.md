@@ -438,6 +438,8 @@ reboot
       $ sudo pacman -S --needed xdg-desktop-portal xdg-desktop-portal-gtk xdg-desktop-portal-hyprland
       ## python
       $ sudo pacman -S --needed python-build python-pillow python-pywal python-setuptools-scm python-wheel
+      ## python-pymyc
+      $ yay -S --needed python-materialyoucolor-git gradience python-libsass python-material-color-utilities
       ## screencapture
       $ sudo pacman -S --needed swappy wf-recorder grim tesseract tesseract-data-eng slurp
       ## widgets
