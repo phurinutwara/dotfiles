@@ -19,28 +19,28 @@ colorstrings=''
 colorlist=()
 colorvalues=()
 
-# wallpath=$(swww query | head -1 | awk -F 'image: ' '{print $2}')
-# wallpath_png="$CACHE_DIR/user/generated/hypr/lockscreen.png"
-# convert "$wallpath" "$wallpath_png"
-# wallpath_png=$(echo "$wallpath_png" | sed 's/\//\\\//g')
-# wallpath_png=$(sed 's/\//\\\\\//g' <<< "$wallpath_png")
+wallpath=$(swww query | head -1 | awk -F 'image: ' '{print $2}')
+wallpath_png="$CACHE_DIR/user/generated/hypr/lockscreen.png"
+convert "$wallpath" "$wallpath_png"
+wallpath_png=$(echo "$wallpath_png" | sed 's/\//\\\//g')
+wallpath_png=$(sed 's/\//\\\\\//g' <<<"$wallpath_png")
 
 transparentize() {
-  local hex="$1"
-  local alpha="$2"
-  local red green blue
+    local hex="$1"
+    local alpha="$2"
+    local red green blue
 
-  red=$((16#${hex:1:2}))
-  green=$((16#${hex:3:2}))
-  blue=$((16#${hex:5:2}))
+    red=$((16#${hex:1:2}))
+    green=$((16#${hex:3:2}))
+    blue=$((16#${hex:5:2}))
 
-  printf 'rgba(%d, %d, %d, %.2f)\n' "$red" "$green" "$blue" "$alpha"
+    printf 'rgba(%d, %d, %d, %.2f)\n' "$red" "$green" "$blue" "$alpha"
 }
 
 get_light_dark() {
     lightdark=""
     if [ ! -f "$STATE_DIR/user/colormode.txt" ]; then
-        echo "" > "$STATE_DIR/user/colormode.txt"
+        echo "" >"$STATE_DIR/user/colormode.txt"
     else
         lightdark=$(sed -n '1p' "$STATE_DIR/user/colormode.txt")
     fi
@@ -61,7 +61,7 @@ apply_fuzzel() {
         sed -i "s/{{ ${colorlist[$i]} }}/${colorvalues[$i]#\#}/g" "$CACHE_DIR"/user/generated/fuzzel/fuzzel.ini
     done
 
-    cp  "$CACHE_DIR"/user/generated/fuzzel/fuzzel.ini "$XDG_CONFIG_HOME"/fuzzel/fuzzel.ini
+    cp "$CACHE_DIR"/user/generated/fuzzel/fuzzel.ini "$XDG_CONFIG_HOME"/fuzzel/fuzzel.ini
 }
 
 apply_term() {
@@ -81,9 +81,9 @@ apply_term() {
     sed -i "s/\$alpha/$term_alpha/g" "$CACHE_DIR/user/generated/terminal/sequences.txt"
 
     for file in /dev/pts/*; do
-      if [[ $file =~ ^/dev/pts/[0-9]+$ ]]; then
-        cat "$CACHE_DIR"/user/generated/terminal/sequences.txt > "$file"
-      fi
+        if [[ $file =~ ^/dev/pts/[0-9]+$ ]]; then
+            cat "$CACHE_DIR"/user/generated/terminal/sequences.txt >"$file"
+        fi
     done
 }
 
@@ -114,7 +114,7 @@ apply_hyprlock() {
     mkdir -p "$CACHE_DIR"/user/generated/hypr/
     cp "scripts/templates/hypr/hyprlock.conf" "$CACHE_DIR"/user/generated/hypr/hyprlock.conf
     # Apply colors
-    # sed -i "s/{{ SWWW_WALL }}/${wallpath_png}/g" "$CACHE_DIR"/user/generated/hypr/hyprlock.conf
+    perl -i -p -e "s#{{ SWWW_WALL }}#$(echo $wallpath_png | sed 's/\\//g')#g" "$CACHE_DIR"/user/generated/hypr/hyprlock.conf
     for i in "${!colorlist[@]}"; do
         sed -i "s/{{ ${colorlist[$i]} }}/${colorvalues[$i]#\#}/g" "$CACHE_DIR"/user/generated/hypr/hyprlock.conf
     done
@@ -166,12 +166,11 @@ apply_ags() {
     ags run-js 'openColorScheme.value = true; Utils.timeout(2000, () => openColorScheme.value = false);'
 }
 
-
 colornames=$(cat $STATE_DIR/scss/_material.scss | cut -d: -f1)
 colorstrings=$(cat $STATE_DIR/scss/_material.scss | cut -d: -f2 | cut -d ' ' -f2 | cut -d ";" -f1)
 IFS=$'\n'
-colorlist=( $colornames ) # Array of color names
-colorvalues=( $colorstrings ) # Array of color values
+colorlist=($colornames)     # Array of color names
+colorvalues=($colorstrings) # Array of color values
 
 apply_ags &
 apply_hyprland &
