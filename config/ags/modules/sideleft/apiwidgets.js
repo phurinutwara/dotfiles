@@ -92,7 +92,7 @@ export const chatEntry = TextView({
         .on("key-press-event", (widget, event) => {
             // Don't send when Shift+Enter
             if (event.get_keyval()[1] === Gdk.KEY_Return) {
-                if (event.get_state()[1] !== 17) {// SHIFT_MASK doesn't work but 17 should be shift
+                if (event.get_state()[1] !== 1) { // This become 1 when SHIFT is pressed
                     apiSendMessage(widget);
                     return true;
                 }
