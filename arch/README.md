@@ -583,6 +583,11 @@ reboot
    # paste this to let NetworkManager use iwd as backend
    # [device]
    # wifi.backend=iwd
+
+   # Enable Enable built-in network configuration
+   # See https://wiki.archlinux.org/title/Iwd#Enable_built-in_network_configuration
+   # [General]
+   # EnableNetworkConfiguration=true
    ```
 
    14. [Keyboard configuration](https://wiki.archlinux.org/title/Xorg/Keyboard_configuration)
