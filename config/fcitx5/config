@@ -9,7 +9,7 @@ EnumerateBackwardKeys=
 EnumerateSkipFirst=False
 
 [Hotkey/TriggerKeys]
-0=Alt+space
+0=Super+space
 
 [Hotkey/AltTriggerKeys]
 0=Shift_L
