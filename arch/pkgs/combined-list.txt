@@ -17,6 +17,7 @@ blueberry
 blueman
 bluez
 bluez-utils
+brave-bin
 brightnessctl
 btop
 btrfs-progs
