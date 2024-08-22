@@ -565,7 +565,7 @@ reboot
 
    13. NetworkManager additionals (GUI, vpn):
    ```sh
-   $ sudo pacman -S nm-connection-editor networkmanager-openvpn
+   $ sudo pacman -S nm-connection-editor networkmanager-openvpn network-manager-applet
    $ sudo pacman -S openfortivpn           # for forticlient VPN.
                                            # For pppd Versions > 2.5.0,
                                            # you may need to additionally add the `--pppd-accept-remote`

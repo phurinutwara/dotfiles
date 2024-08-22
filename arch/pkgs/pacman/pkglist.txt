@@ -87,6 +87,7 @@ neofetch
 neovim
 net-tools
 networkmanager
+network-manager-applet
 networkmanager-openvpn
 nmap
 nm-connection-editor

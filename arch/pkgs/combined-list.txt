@@ -97,6 +97,7 @@ mtr
 neofetch
 neovim
 net-tools
+network-manager-applet
 networkmanager
 networkmanager-openvpn
 nm-connection-editor
