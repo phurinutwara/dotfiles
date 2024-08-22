@@ -632,7 +632,6 @@ reboot
    17. Docker
    ```sh
    $ sudo usermod -aG docker pwarch
-   $ sudo systemctl enable --now docker.service
    ```
 
    18. Backend Development Tools
