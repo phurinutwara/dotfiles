@@ -588,6 +588,11 @@ reboot
    # See https://wiki.archlinux.org/title/Iwd#Enable_built-in_network_configuration
    # [General]
    # EnableNetworkConfiguration=true
+
+   # Select DNS manager
+   # See https://wiki.archlinux.org/title/Iwd#Select_DNS_manager
+   # [Network]
+   # NameResolvingService=systemd
    ```
 
    14. [Keyboard configuration](https://wiki.archlinux.org/title/Xorg/Keyboard_configuration)
