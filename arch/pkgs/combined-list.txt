@@ -17,7 +17,6 @@ blueberry
 blueman
 bluez
 bluez-utils
-brave-bin
 brightnessctl
 btop
 btrfs-progs
@@ -50,6 +49,7 @@ fuzzel
 fzf
 gammastep
 ghq
+gimp
 git
 gnome-bluetooth-3.0
 gnome-control-center
@@ -172,6 +172,7 @@ tinyxml2
 tldr
 tmux
 tmuxinator
+traceroute
 tree
 ttf-dejavu
 ttf-droid

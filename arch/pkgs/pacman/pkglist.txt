@@ -43,6 +43,7 @@ fuzzel
 fzf
 gammastep
 ghq
+gimp
 git
 gnome-bluetooth-3.0
 gnome-control-center
@@ -152,6 +153,7 @@ thunar-volman
 tinyxml2
 tldr
 tmux
+traceroute
 tree
 ttf-dejavu
 ttf-droid
