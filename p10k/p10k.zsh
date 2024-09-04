@@ -1812,8 +1812,8 @@
   typeset -g POWERLEVEL9K_EXAMPLE_BACKGROUND=1
   # typeset -g POWERLEVEL9K_EXAMPLE_VISUAL_IDENTIFIER_EXPANSION='⭐'
 
-  typeset -g POWERLEVEL9K_SHLVL_FOREGROUND=8
-  typeset -g POWERLEVEL9K_SHLVL_BACKGROUND=3
+  typeset -g POWERLEVEL9K_SHLVL_FOREGROUND=2
+  typeset -g POWERLEVEL9K_SHLVL_BACKGROUND=0
 
   # Transient prompt works similarly to the builtin transient_rprompt option. It trims down prompt
   # when accepting a command line. Supported values:
