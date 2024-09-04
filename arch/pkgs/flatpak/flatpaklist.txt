@@ -1,7 +1,6 @@
 com.github.tchx84.Flatseal	2.2.0
 com.usebottles.bottles	51.13
 com.valvesoftware.Steam	1.0.0.79
-io.github.zen_browser.zen	1.0.0-a.28
 net.lutris.Lutris	0.5.17
 org.freedesktop.Platform	freedesktop-sdk-23.08.21
 org.freedesktop.Platform.Compat.i386

@@ -211,5 +211,6 @@ yay
 yay-debug
 ydotool
 yq
+zen-browser-bin
 zip
 zsh

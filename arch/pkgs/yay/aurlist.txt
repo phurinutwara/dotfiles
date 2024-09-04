@@ -24,3 +24,4 @@ ttf-rubik-vf
 wlogout-git
 yay
 yay-debug
+zen-browser-bin
