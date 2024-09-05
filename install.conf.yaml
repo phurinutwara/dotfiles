@@ -9,7 +9,6 @@
     ~/.config/bat:
       create: true
       path: ./config/bat
-    ~/.p10k.zsh: ./p10k/p10k.zsh
     ~/.config/nvim:
       create: true
       path: ./config/nvim
@@ -51,6 +50,7 @@
     ~/.config/fcitx5:
       create: true
       path: ./config/fcitx5
+    ~/.config/starship.toml: ./config/starship.toml
 
 - create:
     - ~/Works
@@ -76,11 +76,11 @@
       stdin: true
       stdout: true
       stderr: true
-    - command: ./tmux/setup_tpm.zsh
+    - command: ./starship/setup.zsh
       stdin: true
       stdout: true
       stderr: true
-    - command: './homebrew/setup.zsh'
+    - command: ./tmux/setup_tpm.zsh
       stdin: true
       stdout: true
       stderr: true
