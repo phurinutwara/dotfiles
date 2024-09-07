@@ -8,6 +8,8 @@ if [ "$HYPRGAMEMODE" = 1 ]; then
         keyword general:gaps_in 0;\
         keyword general:gaps_out 0;\
         keyword general:border_size 1;\
+        keyword general:col.active_border rgb(11111C);\
+        keyword general:col.inactive_border rgb(11111C);\
         keyword decoration:rounding 0;\
         keyword decoration:active_opacity 1;
         keyword decoration:inactive_opacity 1;
