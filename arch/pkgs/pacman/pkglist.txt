@@ -68,6 +68,7 @@ inxi
 iw
 iwd
 jdk8-openjdk
+keepass
 keychain
 kitty
 kubectl
