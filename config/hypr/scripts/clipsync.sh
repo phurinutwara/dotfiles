@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 # One-way clipboard syncronization from Wayland to X11.
 # Requires: wl-clipboard, xclip, clipnotify.
 #
@@ -17,7 +17,11 @@
 watch() {
     # Wayland -> X11
     while clipnotify; do
-        wl-paste | xclip -r -selection clipboard
+        CLIPTYPE=$(wl-paste --list-types)
+        echo $CLIPTYPE
+        if [[ $CLIPTYPE =~ 'text' ]]; then
+            wl-paste | xclip -r -selection clipboard
+        fi
     done &
 }
 
