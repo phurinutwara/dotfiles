@@ -11,6 +11,7 @@ bash-completion
 bat
 bat-extras
 bc
+bfg
 bibata-cursor-theme
 bind
 blueberry

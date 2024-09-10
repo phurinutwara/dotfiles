@@ -1,6 +1,7 @@
 anyrun-git
 aws-cli-v2
 aylurs-gtk-shell
+bfg
 bibata-cursor-theme
 docker-desktop
 dropbox

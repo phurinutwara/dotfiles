@@ -461,7 +461,9 @@ reboot
    7. Bluetooth
    ```sh
    $ sudo pacman -S bluez bluez-utils blueman
-   $ sudo systemctl enable bluetooth
+   $ sudo systemctl enable bluetooth.service
+   $ sudo systemctl enable bluetooth.target
+   $ sudo systemctl enable blueman-mechanism.service
    # if airpods went wrong, uncomment ControllerMode on /etc/bluetooth/main.conf
    ```
 
@@ -659,6 +661,7 @@ reboot
    $ yay -S aws-cli-v2                     # See https://aur.archlinux.org/packages/aws-cli-v2
 
    $ sudo pacman -S pwgen                  # cli password generator tool
+   $ yay -S bfg                            # See https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository
    ```
 
    19. Auto-login via greetd and agreety
