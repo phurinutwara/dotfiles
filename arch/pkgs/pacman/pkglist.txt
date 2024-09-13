@@ -49,6 +49,7 @@ gnome-bluetooth-3.0
 gnome-control-center
 gnome-terminal
 gnu-free-fonts
+goverlay
 gparted
 greetd
 grim

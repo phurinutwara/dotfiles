@@ -10,6 +10,7 @@ org.freedesktop.Platform.GL.nvidia-560-35-03
 org.freedesktop.Platform.GL32.default	24.1.3
 org.freedesktop.Platform.GL32.default	24.1.3
 org.freedesktop.Platform.GL32.nvidia-560-35-03
+org.freedesktop.Platform.VulkanLayer.MangoHud	0.7.2
 org.freedesktop.Platform.ffmpeg-full
 org.freedesktop.Platform.ffmpeg_full.i386
 org.freedesktop.Platform.openh264	2.1.0

@@ -662,6 +662,7 @@ reboot
 
    $ sudo pacman -S pwgen                  # cli password generator tool
    $ yay -S bfg                            # See https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository
+   $ sudo pacman -S goverlay               # GUI Overlay for vulkan, OpenGL apps
    ```
 
    19. Auto-login via greetd and agreety
