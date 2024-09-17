@@ -8,6 +8,7 @@ dropbox
 gradience
 hyprpicker
 iwgtk
+kcat-cli
 matugen-bin
 nordic-theme
 nvm

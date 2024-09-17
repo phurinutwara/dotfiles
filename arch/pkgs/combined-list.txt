@@ -79,6 +79,7 @@ iw
 iwd
 iwgtk
 jdk8-openjdk
+kcat-cli
 keepass
 keychain
 kitty
