@@ -95,6 +95,7 @@ lsof
 make
 matugen-bin
 maven
+mesa-utils
 minikube
 mtools
 mtr
@@ -213,7 +214,6 @@ xorg-xhost
 xsel
 yad
 yay
-yay-debug
 ydotool
 yq
 zen-browser-bin

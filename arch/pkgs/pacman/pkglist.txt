@@ -83,6 +83,7 @@ lshw
 lsof
 make
 maven
+mesa-utils
 minikube
 mtools
 mtr

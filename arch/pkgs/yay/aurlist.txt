@@ -25,5 +25,4 @@ ttf-readex-pro
 ttf-rubik-vf
 wlogout-git
 yay
-yay-debug
 zen-browser-bin
