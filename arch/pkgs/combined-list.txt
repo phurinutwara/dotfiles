@@ -71,6 +71,7 @@ hypridle
 hyprland
 hyprlock
 hyprpicker
+hyprprop-git
 hyprutils
 impala
 intel-ucode

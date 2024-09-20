@@ -7,6 +7,7 @@ docker-desktop
 dropbox
 gradience
 hyprpicker
+hyprprop-git
 iwgtk
 kcat-cli
 matugen-bin
