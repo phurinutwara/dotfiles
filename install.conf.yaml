@@ -51,6 +51,9 @@
       create: true
       path: ./config/fcitx5
     ~/.config/starship.toml: ./config/starship.toml
+    ~/.config/ranger:
+      create: true
+      path: ./config/ranger
 
 - create:
     - ~/Works
