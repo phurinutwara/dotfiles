@@ -24,6 +24,7 @@ btrfs-progs
 clipnotify
 conntrack-tools
 copyq
+cpio
 dart-sass
 ddcutil
 dhcpcd
