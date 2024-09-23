@@ -236,6 +236,14 @@ function killrg() {
   echo "DONE"
 }
 
+function killport() {
+  cmd="lsof -i ':$@' | tail +2 | awk '{print \$2}'"
+  tasks=$(zsh -c "$cmd")
+  echo $tasks | xargs -I %s echo "-> killing PID :: %s"
+  echo $tasks | xargs kill
+  echo "DONE"
+}
+
 # Use ZSH Plugins
 
 # ...Other Surprises
