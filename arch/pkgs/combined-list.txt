@@ -80,6 +80,7 @@ inxi
 iw
 iwd
 iwgtk
+jdk17-openjdk
 jdk8-openjdk
 kcat-cli
 keepass

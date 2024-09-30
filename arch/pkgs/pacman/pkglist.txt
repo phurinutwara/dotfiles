@@ -69,6 +69,7 @@ intel-ucode
 inxi
 iw
 iwd
+jdk17-openjdk
 jdk8-openjdk
 keepass
 keychain
