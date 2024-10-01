@@ -257,3 +257,8 @@ source ~/dotfiles/zsh/scripts/git.sh
 source ~/dotfiles/zsh/scripts/brew.sh
 
 source ~/dotfiles/zsh/scripts/auto-Hypr.sh
+
+# Support custom scripts
+for script in "$(realpath ~/dotfiles/zsh/scripts/custom)"/*.sh; do
+  source "$script"
+done
