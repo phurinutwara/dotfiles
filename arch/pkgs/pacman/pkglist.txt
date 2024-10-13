@@ -26,8 +26,8 @@ dhcpcd
 dialog
 discord
 dmidecode
+dnsmasq
 docker
-docker-compose
 efibootmgr
 ethtool
 eza
@@ -63,13 +63,14 @@ htop
 hypridle
 hyprland
 hyprlock
+hyprpicker
 hyprutils
 impala
 intel-ucode
 inxi
+iptables-nft
 iw
 iwd
-jdk17-openjdk
 jdk8-openjdk
 keepass
 keychain
@@ -78,6 +79,7 @@ kubectl
 lazygit
 libdbusmenu-gtk3
 libva-nvidia-driver
+libvirt
 linux
 linux-firmware
 linux-headers
@@ -129,6 +131,7 @@ python-psutil
 python-pywal
 python-pywayland
 python-setuptools-scm
+qemu-full
 qpwgraph
 qt5ct
 qt5-wayland
@@ -146,6 +149,7 @@ sox
 starship
 sudo
 swappy
+swtpm
 swww
 systemd-resolvconf
 tcpdump
@@ -175,7 +179,9 @@ unzip
 usb_modeswitch
 vagrant
 vim
+virt-manager
 virtualbox
+virt-viewer
 vulkan-tools
 webp-pixbuf-loader
 wf-recorder

@@ -5,8 +5,8 @@ bfg
 bibata-cursor-theme
 docker-desktop
 dropbox
+gpu-passthrough-manager
 gradience
-hyprpicker
 hyprprop-git
 iwgtk
 kcat-cli
