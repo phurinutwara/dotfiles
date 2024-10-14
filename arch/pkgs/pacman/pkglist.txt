@@ -86,6 +86,7 @@ linux-headers
 lshw
 lsof
 make
+lzip
 maven
 mesa-utils
 minikube

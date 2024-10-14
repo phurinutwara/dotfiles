@@ -3,6 +3,7 @@ aws-cli-v2
 aylurs-gtk-shell
 bfg
 bibata-cursor-theme
+binder_linux-dkms
 docker-desktop
 dropbox
 gpu-passthrough-manager
@@ -24,6 +25,7 @@ ttf-gabarito-git
 ttf-material-symbols-variable-git
 ttf-readex-pro
 ttf-rubik-vf
+waydroid
 wlogout-git
 yay
 zen-browser-bin

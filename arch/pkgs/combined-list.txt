@@ -14,6 +14,7 @@ bc
 bfg
 bibata-cursor-theme
 bind
+binder_linux-dkms
 blueberry
 blueman
 bluez
@@ -98,6 +99,7 @@ linux-headers
 lshw
 lsof
 make
+lzip
 matugen-bin
 maven
 mesa-utils
@@ -209,6 +211,7 @@ virt-manager
 virt-viewer
 virtualbox
 vulkan-tools
+waydroid
 webp-pixbuf-loader
 wf-recorder
 wget
