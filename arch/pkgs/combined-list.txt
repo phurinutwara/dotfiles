@@ -14,6 +14,7 @@ bc
 bfg
 bibata-cursor-theme
 bind
+binder_linux-dkms
 blueberry
 blueman
 bluez
@@ -209,6 +210,7 @@ virt-manager
 virt-viewer
 virtualbox
 vulkan-tools
+waydroid
 webp-pixbuf-loader
 wf-recorder
 wget
