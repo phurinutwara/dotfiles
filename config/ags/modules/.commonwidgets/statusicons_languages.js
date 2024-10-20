@@ -55,6 +55,11 @@ export const languages = [
         flag: '🇻🇳',
     },
     {
+        layout: 'th',
+        name: 'Thai',
+        flag: '🇹🇭'
+    },
+    {
         layout: 'undef',
         name: 'Undefined',
         flag: '🧐',
