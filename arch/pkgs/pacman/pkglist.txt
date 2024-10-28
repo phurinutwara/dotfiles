@@ -80,13 +80,14 @@ lazygit
 libdbusmenu-gtk3
 libva-nvidia-driver
 libvirt
+libxpresent
 linux
 linux-firmware
 linux-headers
 lshw
 lsof
-make
 lzip
+make
 maven
 mesa-utils
 minikube

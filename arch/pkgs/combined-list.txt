@@ -93,13 +93,14 @@ lazygit
 libdbusmenu-gtk3
 libva-nvidia-driver
 libvirt
+libxpresent
 linux
 linux-firmware
 linux-headers
 lshw
 lsof
-make
 lzip
+make
 matugen-bin
 maven
 mesa-utils
@@ -140,6 +141,7 @@ pnpm
 polkit-gnome
 polkit-kde-agent
 postgresql-libs
+postman-bin
 power-profiles-daemon
 powertop
 pwgen
