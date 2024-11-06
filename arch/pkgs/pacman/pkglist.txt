@@ -86,7 +86,6 @@ linux-firmware
 linux-headers
 lshw
 lsof
-lzip
 make
 maven
 mesa-utils

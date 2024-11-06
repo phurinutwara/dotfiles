@@ -3,7 +3,6 @@ aws-cli-v2
 aylurs-gtk-shell
 bfg
 bibata-cursor-theme
-binder_linux-dkms
 docker-desktop
 dropbox
 gpu-passthrough-manager

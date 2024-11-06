@@ -14,7 +14,6 @@ bc
 bfg
 bibata-cursor-theme
 bind
-binder_linux-dkms
 blueberry
 blueman
 bluez
@@ -99,7 +98,6 @@ linux-firmware
 linux-headers
 lshw
 lsof
-lzip
 make
 matugen-bin
 maven
