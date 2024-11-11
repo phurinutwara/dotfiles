@@ -78,6 +78,7 @@ kitty
 kubectl
 lazygit
 libdbusmenu-gtk3
+libreoffice-fresh
 libva-nvidia-driver
 libvirt
 libxpresent
