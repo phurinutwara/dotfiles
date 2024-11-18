@@ -1,10 +1,13 @@
 anyrun-git
 aws-cli-v2
-aylurs-gtk-shell
+aylurs-gtk-shell-git
 bfg
 bibata-cursor-theme
+binder_linux-dkms
 docker-desktop
 dropbox
+genymotion
+google-chrome
 gpu-passthrough-manager
 gradience
 hyprprop-git
@@ -25,7 +28,6 @@ ttf-gabarito-git
 ttf-material-symbols-variable-git
 ttf-readex-pro
 ttf-rubik-vf
-waydroid
 wlogout-git
 yay
 zen-browser-bin

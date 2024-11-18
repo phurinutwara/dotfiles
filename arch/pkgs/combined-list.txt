@@ -4,7 +4,7 @@ anyrun-git
 ark
 aws-cli-v2
 axel
-aylurs-gtk-shell
+aylurs-gtk-shell-git
 base
 base-devel
 bash-completion
@@ -14,6 +14,7 @@ bc
 bfg
 bibata-cursor-theme
 bind
+binder_linux-dkms
 blueberry
 blueman
 bluez
@@ -50,6 +51,7 @@ fuse2
 fuzzel
 fzf
 gammastep
+genymotion
 ghq
 gimp
 git
@@ -57,6 +59,7 @@ gnome-bluetooth-3.0
 gnome-control-center
 gnome-terminal
 gnu-free-fonts
+google-chrome
 goverlay
 gparted
 gpu-passthrough-manager
@@ -212,7 +215,6 @@ virt-manager
 virt-viewer
 virtualbox
 vulkan-tools
-waydroid
 webp-pixbuf-loader
 wf-recorder
 wget
