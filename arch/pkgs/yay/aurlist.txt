@@ -28,6 +28,7 @@ ttf-gabarito-git
 ttf-material-symbols-variable-git
 ttf-readex-pro
 ttf-rubik-vf
+visual-studio-code-bin
 wlogout-git
 yay
 zen-browser-bin

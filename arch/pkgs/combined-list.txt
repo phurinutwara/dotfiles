@@ -214,6 +214,7 @@ vim
 virt-manager
 virt-viewer
 virtualbox
+visual-studio-code-bin
 vulkan-tools
 webp-pixbuf-loader
 wf-recorder
