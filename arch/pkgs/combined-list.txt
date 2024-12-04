@@ -59,6 +59,7 @@ git
 gnome-bluetooth-3.0
 gnome-control-center
 gnome-terminal
+gnome-themes-extra
 gnu-free-fonts
 google-chrome
 goverlay

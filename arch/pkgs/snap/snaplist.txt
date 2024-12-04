@@ -1,7 +1,8 @@
 core18    20240612  2829   latest/stable  canonical**  base,disabled
 core18    20240920  2846   latest/stable  canonical**  base
-core22    20241001  1663   latest/stable  canonical**  base
+core22    20241001  1663   latest/stable  canonical**  base,disabled
+core22    20241119  1722   latest/stable  canonical**  base
 datagrip  2024.2.2  205    latest/stable  jetbrains**  disabled,classic
 datagrip  2024.3    207    latest/stable  jetbrains**  classic
-snapd     2.65.3    22991  latest/stable  canonical**  snapd,disabled
-snapd     2.63      21759  latest/stable  canonical**  snapd
+snapd     2.63      21759  latest/stable  canonical**  snapd,disabled
+snapd     2.66.1    23258  latest/stable  canonical**  snapd
