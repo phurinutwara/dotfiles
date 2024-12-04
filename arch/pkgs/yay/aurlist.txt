@@ -4,6 +4,7 @@ aylurs-gtk-shell-git
 bfg
 bibata-cursor-theme
 binder_linux-dkms
+debtap
 docker-desktop
 dropbox
 genymotion

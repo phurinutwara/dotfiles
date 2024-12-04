@@ -28,6 +28,7 @@ copyq
 cpio
 dart-sass
 ddcutil
+debtap
 dhcpcd
 dialog
 discord
