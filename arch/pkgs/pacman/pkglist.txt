@@ -28,6 +28,7 @@ discord
 dmidecode
 dnsmasq
 docker
+dpkg
 efibootmgr
 ethtool
 eza
