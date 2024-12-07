@@ -39,6 +39,7 @@ docker-desktop
 dpkg
 dropbox
 efibootmgr
+eog
 ethtool
 eza
 fcitx5
@@ -123,7 +124,6 @@ nmap
 nordic-theme
 noto-fonts
 noto-fonts-emoji
-nsxiv
 nvidia
 nvidia-settings
 nvidia-utils
@@ -138,6 +138,7 @@ os-prober
 pacman-contrib
 papirus-icon-theme
 pavucontrol
+pinta
 pipewire-alsa
 pipewire-jack
 pipewire-pulse
