@@ -262,3 +262,5 @@ source ~/dotfiles/zsh/scripts/auto-Hypr.sh
 for script in "$(realpath ~/dotfiles/zsh/scripts/custom)"/*.sh; do
   source "$script"
 done
+
+# Other uncategorized stuffs here (from appending output to >> .zshrc)

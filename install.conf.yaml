@@ -1,7 +1,7 @@
 - defaults:
     link:
       relink: true
-- clean: ['~']
+- clean: ["~"]
 - link:
     ~/.zshrc: ./zsh/zshrc
     ~/.zshenv: ./zsh/zshenv
@@ -87,6 +87,10 @@
       stdout: true
       stderr: true
     - command: ./tmux/setup_tpm.zsh
+      stdin: true
+      stdout: true
+      stderr: true
+    - command: ./arch/builds/setup.zsh
       stdin: true
       stdout: true
       stderr: true
