@@ -26,6 +26,9 @@
     ~/.config/ags:
       create: true
       path: ./config/ags
+    ~/.config/ags.v1:
+      create: true
+      path: ./config/ags.v1
     ~/.config/pipewire:
       create: true
       path: ./config/pipewire
