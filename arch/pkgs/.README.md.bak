@@ -1,0 +1,299 @@
+# Packages list
+
+Please add package here when there is a change
+on the txt list file and also catogorize it.
+
+---
+
+## Graphical application
+
+- useful utilities
+  - ark (archiveing tool)
+- illogical-impulse (github.com/end-4/dots-hyprland)
+  - app launcher
+    - anyrun-git
+    - fuzzel
+  - libraries
+    - dart-sass
+  - theme switcher
+    - gradience
+- vm and emulators
+  - binder_linux-dkms
+  - todo: virt-manager
+    - cpio
+  - docker
+  - docker-desktop
+  - genymotion
+  - gpu-passthrough-manager
+- gtk & desktop stuffs
+  - bluetooth
+    - blueberry (bluetooth configuration tool)
+    - blueman (GTK+ Bluetooth Manager)
+    - bluez (daemon)
+    - bluez-utils (debugging utilities)
+    - gnome-bluetooth-3.0
+  - gnome-control-center
+  - gnome-terminal
+  - gnome-themes-extra
+  - fonts
+    - gnu-free-fonts
+  - hyprland
+    - hypridle
+    - hyprlock
+    - hyprpicker
+    - hyprprop-git
+    - hyprutils
+- clipboard
+  - copyq
+- social network
+  - discord
+- cloud
+  - dropbox
+    - fq
+- image
+  - eog
+  - gimp
+  - grim (screenshot)
+- screen mirroring
+  - eshare (custom install via dpkg or debtap)
+- keyboard
+  - fcitx5
+  - fcitx5-configtool
+- browser
+  - firefox
+  - google-chrome
+- goverlay (aka `msi afterbuner overlay` for linux)
+- gparted (disk manager)
+  - parted ?
+- sound
+  - helvum
+- tray
+  - iwgtk
+- password manager
+  - keepass
+  - keychain
+- terminal emulator
+  - kitty
+
+## Linux cli & TUI tools
+
+- useful utilities
+  - aws-cli-v2
+  - axel (curl alternative)
+  - bat
+  - bat-extras
+  - bc (cli calculator)
+  - bfg (git file removers)
+  - brightnessctl
+  - clipnotify
+  - linux package helper
+    - debtap
+    - dpkg
+    - flatpak
+  - eza
+  - fd
+  - fzf
+  - gammastep (screen color temp adjust)
+  - ghq
+  - git
+  - grub
+  - htop
+  - networks
+    - ethtool
+    - impala
+    - iptables-nft (network firewall)
+    - iw
+  - lazygit
+- shell
+  - fish
+  - foot
+- programming languages & dev tools
+  - jdk8-openjdk
+  - kcat-cli
+  - kubectl
+
+## Libraries and linux services
+
+- library stuffs
+
+  - battery and power optimizing
+    - acpi
+    - acpi_call
+  - gtk
+    - aylurs-gtk-shell-git
+      - greetd
+    - gtksourceview3
+    - gtksourceviewmm
+    - libdbusmenu-gtk3
+  - shell essentials
+    - bash-completion
+  - theme stuffs
+    - bibata-cursor-theme
+  - process monitor
+    - btop
+  - arch/linux essentials
+
+    - base
+    - base-devel
+    - bind (dns protocol)
+    - btrfs-progs
+    - dhcpcd
+    - dialog (spawn tui dialog boxes from shell script)
+    - dnsmasq
+    - gvfs (used by nautilus)
+    - intel-ucode
+    - inxi (system info)
+
+  - kernels
+    - conntrack-tools
+    - ddcutil
+    - dmidecode (use to troubleshoot hibernating implementation)
+    - efibootmgr (efi stuffs)
+    - fuse2 (fs stuffs)
+    - iwd
+
+## Other uncategorized
+
+- libreoffice-fresh
+- libva-nvidia-driver
+- libvirt
+- libxpresent
+- linux
+- linux-firmware
+- linux-headers
+- lshw
+- lsof
+- make
+- matugen-bin
+- maven
+- mesa-utils
+- minikube
+- mtools
+- mtr
+- neofetch
+- neovim
+- net-tools
+- network-manager-applet
+- networkmanager
+- networkmanager-openvpn
+- nm-connection-editor
+- nmap
+- nordic-theme
+- noto-fonts
+- noto-fonts-emoji
+- nvidia
+- nvidia-settings
+- nvidia-utils
+- nvm
+- nwg-look
+- obs-studio
+- obsidian
+- openbsd-netcat
+- openfortivpn
+- openssh
+- os-prober
+- pacman-contrib
+- papirus-icon-theme
+- pavucontrol
+- pinta
+- pipewire-alsa
+- pipewire-jack
+- pipewire-pulse
+- playerctl
+- pnpm
+- polkit-gnome
+- polkit-kde-agent
+- postgresql-libs
+- postman-bin
+- power-profiles-daemon
+- powertop
+- pwgen
+- python-libsass
+- python-material-color-utilities
+- python-materialyoucolor-git
+- python-pillow
+- python-psutil
+- python-pywal
+- python-pywayland
+- python-setuptools-scm
+- qemu-full
+- qpwgraph
+- qt5-wayland
+- qt5ct
+- qt6-wayland
+- qt6ct
+- ranger
+- reflector
+- ripgrep
+- rsync
+- rtl8852au-dkms-git
+- rust
+- samba
+- slurp
+- snapd
+- sof-firmware
+- sox
+- starship
+- sudo
+- swappy
+- swtpm
+- swww
+- systemd-resolvconf
+- tcpdump
+- terminus-font
+- tesseract
+- tesseract-data-eng
+- thunar
+- thunar-archive-plugin
+- thunar-dropbox
+- thunar-media-tags-plugin
+- thunar-volman
+- tinyxml2
+- tldr
+- tmux
+- tmuxinator
+- traceroute
+- tree
+- ttf-dejavu
+- ttf-droid
+- ttf-gabarito-git
+- ttf-jetbrains-mono
+- ttf-liberation
+- ttf-material-symbols-variable-git
+- ttf-nerd-fonts-symbols
+- ttf-nerd-fonts-symbols-mono
+- ttf-readex-pro
+- ttf-roboto
+- ttf-rubik-vf
+- ttf-space-mono-nerd
+- ttf-ubuntu-font-family
+- tumbler
+- unzip
+- usb_modeswitch
+- vagrant
+- vim
+- virt-manager
+- virt-viewer
+- virtualbox
+- visual-studio-code-bin
+- vulkan-tools
+- webp-pixbuf-loader
+- wf-recorder
+- wget
+- wireplumber
+- wl-clipboard
+- wlogout-git
+- wofi
+- xclip
+- xdg-desktop-portal-hyprland
+- xdg-user-dirs
+- xdg-user-dirs-gtk
+- xorg-xhost
+- xsel
+- yad
+- yay
+- ydotool
+- yq
+- zen-browser-bin
+- zip
+- zsh
