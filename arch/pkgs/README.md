@@ -242,6 +242,7 @@ on the txt list file and also catogorize it.
 - blueman
 - bluez
 - bluez-utils
+- cronie
 - dropbox
 - helvum
 - keychain
