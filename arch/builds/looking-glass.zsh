@@ -8,6 +8,7 @@ APP_NAME='LookingGlass'
 cd ~/packages
 git clone --recursive https://github.com/gnif/LookingGlass.git
 cd $APP_NAME
+git checkout Release/B6
 
 # Installation on other distributions
 # see https://looking-glass.io/wiki/Installation_on_other_distributions#Arch_Linux_.2F_Manjaro
