@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env bash
 
 # TODO: EXECPT ARCH OS HERE
 if [[ "$OSTYPE" == "darwin"* ]]; then
@@ -10,11 +10,11 @@ fi
 
 function bbd() {
   if [[ "$OSTYPE" == "darwin"* ]]; then
-    brew bundle dump --force --describe --file "$BREWFILE_PATH" \
-      && zsh -c "echo \"\" >> $BREWFILE_PATH && echo -e \"# vim:ft=ruby\" >> $BREWFILE_PATH"
+    brew bundle dump --force --describe --file "$BREWFILE_PATH" &&
+      zsh -c "echo \"\" >> $BREWFILE_PATH && echo -e \"# vim:ft=ruby\" >> $BREWFILE_PATH"
   elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
-    brew bundle dump --force --describe --file "$BREWFILE_PATH" \
-      && zsh -c "echo \"\" >> $BREWFILE_PATH && echo -e \"# vim:ft=ruby\" >> $BREWFILE_PATH"
+    brew bundle dump --force --describe --file "$BREWFILE_PATH" &&
+      zsh -c "echo \"\" >> $BREWFILE_PATH && echo -e \"# vim:ft=ruby\" >> $BREWFILE_PATH"
   else
     echo "Unknown \$OSTYPE, aborting process"
   fi

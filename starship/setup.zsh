@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env bash
 
 echo "\n<<< Starting oh-my-zsh Setup >>>\n"
 

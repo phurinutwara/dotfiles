@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env bash
 [[ -f /etc/os-release ]] && . /etc/os-release
 
 TPM_PATH=~/.tmux/plugins/tpm

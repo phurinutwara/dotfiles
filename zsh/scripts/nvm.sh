@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env bash
 
 # Set up nvm
 mkdir ~/.nvm >/dev/null 2>&1

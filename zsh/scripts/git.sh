@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env bash
 
 if [[ $ID == "arch" ]]; then
   alias gopen='git config --get remote.origin.url | perl -pe "s/:(?!\/\/)/\//g" | sed "s/.*git@/https:\/\//" | sed "s/.git$//" | xargs -I % echo "xdg-open %" | sh'
