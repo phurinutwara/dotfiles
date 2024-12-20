@@ -1,0 +1,25 @@
+tap "eth-p/software"
+tap "homebrew/bundle"
+# Clone of cat(1) with syntax highlighting and Git integration
+brew "bat"
+# Modern, maintained replacement for ls
+brew "eza"
+# Remote repository management made easy
+brew "ghq"
+# Distributed revision control system
+brew "git"
+# Simple terminal UI for git commands
+brew "lazygit"
+# Ambitious Vim-fork focused on extensibility and agility
+brew "neovim"
+# Port scanning utility for large networks
+brew "nmap"
+# Search tool like grep and The Silver Searcher
+brew "ripgrep"
+# Manage complex tmux sessions easily
+brew "tmuxinator"
+# Read system manual pages using bat as the manual page formatter
+brew "eth-p/software/bat-extras-batman"
+vscode "command is only available in wsl or inside a visual studio code terminal."
+
+# vim:ft=ruby
