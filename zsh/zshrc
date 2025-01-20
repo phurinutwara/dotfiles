@@ -200,15 +200,26 @@ alias dcuw='docker compose up --build --watch'
 alias vag='vagrant'
 alias vag!='VAGRANT_DISABLE_STRICT_DEPENDENCY_ENFORCEMENT=1 vagrant $@' # NOTE: temporary fix rubygem dependency bug
 
+# macOS specifics
+[[ $OSTYPE == "darwin"* ]] && alias rm='trash'
+
 # Customize Prompt(s)
 # PROMPT='
 # %1~ %L %# '
 #
 # RPROMPT='%*'
 
-# Add Locations to $PATH Variable (See also: https://unix.stackexchange.com/a/26059)
-export CARGOPATH="$HOME/.cargo/bin"
-export PATH=$PATH:$CARGOPATH
+# Add Locations to $path Array
+# See https://zsh.sourceforge.io/Guide/zshguide02.html at 2.5.11
+# ( For $PATH Variable See https://unix.stackexchange.com/a/26059 )
+# NOTE: brew injecting paths at ~/.zprofile
+typeset -U path
+
+path=(
+  "$NVM_BIN"
+  $path
+  "$HOME/.cargo/bin"
+)
 
 # Write Handy Functions
 function mkcd() {
