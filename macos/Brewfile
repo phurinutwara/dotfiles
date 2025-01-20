@@ -14,12 +14,16 @@ brew "go"
 brew "lazygit"
 # Apple Silicon Monitor Top written in Golang
 brew "mactop"
+# Mac App Store command-line interface
+brew "mas"
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
 # Port scanning utility for large networks
 brew "nmap"
 # Manage multiple Node.js versions
 brew "nvm"
+# Fast, disk space efficient package manager
+brew "pnpm"
 # Interpreted, interactive, object-oriented programming language
 brew "python@3.13"
 # Search tool like grep and The Silver Searcher
@@ -28,22 +32,49 @@ brew "ripgrep"
 brew "starship"
 # Manage complex tmux sessions easily
 brew "tmuxinator"
+# JavaScript package manager
+brew "yarn"
 # Read system manual pages using bat as the manual page formatter
 brew "eth-p/software/bat-extras-batman"
+# Chromium based browser
+cask "arc"
+# Image, video and clipboard optimiser
+cask "clop"
 # App to build and share containerised applications and microservices
 cask "docker"
 # Client for the Dropbox cloud storage service
 cask "dropbox"
-# Web browser
-cask "google-chrome"
+# HTTP and GraphQL Client
+cask "insomnia"
+# System monitoring app
+cask "istat-menus"
 # GPU-based terminal emulator
 cask "kitty"
 # Software for Logitech devices
 cask "logi-options+"
+# System and utility switches
+cask "only-switch"
+# Collaboration platform for API development
+cask "postman"
+# Control your tools with a few keystrokes
+cask "raycast"
 # Open-source code editor
 cask "visual-studio-code"
 # Gecko based web browser
 cask "zen-browser"
+mas "ColorSlurp", id: 1287239339
+mas "DevCleaner", id: 1388020431
+mas "Dropover", id: 1355679052
+mas "Dynamic wallpaper", id: 1582358382
+mas "Enchanted", id: 6474268307
+mas "Hand Mirror", id: 1502839586
+mas "Hidden Bar", id: 1452453066
+mas "Keynote", id: 409183694
+mas "Numbers", id: 409203825
+mas "Pages", id: 409201541
+mas "PastePal", id: 1503446680
+mas "Widgetter", id: 1553223588
+mas "Xcode", id: 497799835
 vscode "aaron-bond.better-comments"
 vscode "alefragnani.bookmarks"
 vscode "andenetalexander.vim-cheatsheet"
