@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 [[ -f /etc/os-release ]] && . /etc/os-release
 
 TPM_PATH=~/.tmux/plugins/tpm
@@ -18,13 +18,12 @@ else
 	echo "tmuxinator doesn't exist, continuing with install"
 	if [[ $ID == "arch" ]]; then
 		yay -S tmuxinator
+		completion_path='/usr/local/share/zsh/site-functions'
+		if [[ ! -f "$completion_path/_tmuxinator" ]]; then
+			echo "installing tmuxinator completion"
+			sudo mkdir -p $completion_path
+			sudo wget https://raw.githubusercontent.com/tmuxinator/tmuxinator/master/completion/tmuxinator.zsh -O "$completion_path/_tmuxinator"
+		fi
 	else
 	fi
-fi
-
-completion_path='/usr/local/share/zsh/site-functions'
-if [[ ! -f "$completion_path/_tmuxinator" ]]; then
-	echo "installing tmuxinator completion"
-	sudo mkdir -p $completion_path
-	sudo wget https://raw.githubusercontent.com/tmuxinator/tmuxinator/master/completion/tmuxinator.zsh -O "$completion_path/_tmuxinator"
 fi

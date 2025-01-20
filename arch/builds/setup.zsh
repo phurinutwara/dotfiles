@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 [[ -f /etc/os-release ]] && . /etc/os-release
 
 echo -e "\n<<< Starting custom packages build setup >>>\n"

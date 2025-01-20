@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
-  export BREWFILE_PATH="$HOME/dotfiles/brew/macos/Brewfile"
+  export BREWFILE_PATH="$HOME/dotfiles/macos/Brewfile"
   mkdir -p "$(dirname "$BREWFILE_PATH")"
-  eval "$(/usr/local/bin/brew shellenv)"
+  eval "$(/opt/homebrew/bin/brew shellenv)"
 elif [[ $(uname -r) == *'WSL'* ]]; then
   export BREWFILE_PATH="$HOME/dotfiles/linux/WSL/Brewfile"
   mkdir -p "$(dirname "$BREWFILE_PATH")"

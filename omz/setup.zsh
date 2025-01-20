@@ -1,11 +1,11 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 
 echo "\n<<< Starting oh-my-zsh Setup >>>\n"
 
-if cmd ls ~/.oh-my-zsh >/dev/null 2>&1; then
+if command ls ~/.oh-my-zsh >/dev/null 2>&1; then
 	echo "omz exists, skipping install"
 else
-	curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh | /bin/bash
+	curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh | /bin/zsh
 	echo -n "removing .zshrc from omz: "
 	rm ~/.zshrc && echo "DONE" || echo "FAILED"
 	echo -n "replacing with symlink: "
