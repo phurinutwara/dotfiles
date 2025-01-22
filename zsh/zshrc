@@ -117,11 +117,13 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-bindkey '^e' autosuggest-accept
-bindkey '^L' vi-forward-word
-bindkey '^k' up-line-or-search
-bindkey '^j' down-line-or-search
-bindkey '^A' autosuggest-toggle
+if [[ $TERM_PROGRAM != "WarpTerminal" ]]; then
+  bindkey '^e' autosuggest-accept
+  bindkey '^L' vi-forward-word
+  bindkey '^k' up-line-or-search
+  bindkey '^j' down-line-or-search
+  bindkey '^A' autosuggest-toggle
+fi
 
 zstyle ':omz:plugins:alias-finder' autoload yes # disabled by default
 zstyle ':omz:plugins:alias-finder' longer yes   # disabled by default
