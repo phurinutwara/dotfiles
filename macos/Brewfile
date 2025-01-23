@@ -56,6 +56,8 @@ cask "discord"
 cask "docker"
 # Client for the Dropbox cloud storage service
 cask "dropbox"
+# Elgato FACECAM configuration tool
+cask "elgato-camera-hub"
 # HTTP and GraphQL Client
 cask "insomnia"
 # System monitoring app
@@ -68,6 +70,8 @@ cask "kitty"
 cask "logi-options+"
 # Open-source, KeePass-client and password manager
 cask "macpass"
+# Handy utility to manage and customize the notch area
+cask "notchnook"
 # System and utility switches
 cask "only-switch"
 # Collaboration platform for API development
