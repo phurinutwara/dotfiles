@@ -58,6 +58,8 @@ cask "docker"
 cask "dropbox"
 # Elgato FACECAM configuration tool
 cask "elgato-camera-hub"
+# Download manager with a torrent client
+cask "folx"
 # HTTP and GraphQL Client
 cask "insomnia"
 # System monitoring app
@@ -78,6 +80,8 @@ cask "only-switch"
 cask "postman"
 # Control your tools with a few keystrokes
 cask "raycast"
+# Emoji picker optimised for blind people
+cask "rocket"
 # Displays all open files and sockets in use by all running processes
 cask "sloth"
 # Open-source code editor
