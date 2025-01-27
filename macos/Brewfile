@@ -1,5 +1,7 @@
 tap "eth-p/software"
 tap "homebrew/bundle"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.13"
 # Emacs dependency management
 brew "cask"
 # Modern, maintained replacement for ls
@@ -30,12 +32,12 @@ brew "pnpm"
 brew "postgresql@14", link: false
 # Object-relational database system
 brew "postgresql@17", link: true
-# Interpreted, interactive, object-oriented programming language
-brew "python@3.13"
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
 # Cross-shell prompt for astronauts
 brew "starship"
+# OCR (Optical Character Recognition) engine
+brew "tesseract"
 # Manage complex tmux sessions easily
 brew "tmuxinator"
 # JavaScript package manager
@@ -78,6 +80,8 @@ cask "notchnook"
 cask "only-switch"
 # Collaboration platform for API development
 cask "postman"
+# IDE for Python programming - Community Edition
+cask "pycharm-ce"
 # Control your tools with a few keystrokes
 cask "raycast"
 # Emoji picker optimised for blind people
@@ -95,6 +99,7 @@ mas "DevCleaner", id: 1388020431
 mas "Dropover", id: 1355679052
 mas "Dynamic wallpaper", id: 1582358382
 mas "Enchanted", id: 6474268307
+mas "Free Ruler", id: 1483172210
 mas "Hand Mirror", id: 1502839586
 mas "Keynote", id: 409183694
 mas "LINE", id: 539883307
