@@ -94,6 +94,7 @@ cask "visual-studio-code"
 cask "warp"
 # Gecko based web browser
 cask "zen-browser"
+mas "Boom 3D", id: 1233048948
 mas "ColorSlurp", id: 1287239339
 mas "DevCleaner", id: 1388020431
 mas "Dropover", id: 1355679052
