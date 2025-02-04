@@ -1,5 +1,6 @@
 tap "eth-p/software"
 tap "homebrew/bundle"
+tap "homebrew/services"
 # Interpreted, interactive, object-oriented programming language
 brew "python@3.13"
 # Emacs dependency management
@@ -64,8 +65,6 @@ cask "elgato-camera-hub"
 cask "folx"
 # HTTP and GraphQL Client
 cask "insomnia"
-# System monitoring app
-cask "istat-menus"
 # Menu bar manager
 cask "jordanbaird-ice"
 # GPU-based terminal emulator
@@ -88,6 +87,8 @@ cask "raycast"
 cask "rocket"
 # Displays all open files and sockets in use by all running processes
 cask "sloth"
+# System monitor for the menu bar
+cask "stats"
 # Open-source code editor
 cask "visual-studio-code"
 # Rust-based terminal
