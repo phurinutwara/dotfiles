@@ -1,4 +1,5 @@
 tap "eth-p/software"
+tap "hashicorp/tap"
 tap "homebrew/bundle"
 tap "homebrew/services"
 # Interpreted, interactive, object-oriented programming language
@@ -13,6 +14,8 @@ brew "ghq"
 brew "git"
 # Open source programming language to build simple/reliable/efficient software
 brew "go"
+# Tool to move from `docker-compose` to Kubernetes
+brew "kompose"
 # Simple terminal UI for git commands
 brew "lazygit"
 # Apple Silicon Monitor Top written in Golang
@@ -45,6 +48,10 @@ brew "tmuxinator"
 brew "yarn"
 # Read system manual pages using bat as the manual page formatter
 brew "eth-p/software/bat-extras-batman"
+# Terraform
+brew "hashicorp/tap/terraform"
+# Application uninstaller
+cask "appcleaner"
 # Chromium based browser
 cask "arc"
 # Window manager that organizes desktop applications into predefined zones
@@ -104,7 +111,6 @@ mas "Free Ruler", id: 1483172210
 mas "Hand Mirror", id: 1502839586
 mas "Keynote", id: 409183694
 mas "LINE", id: 539883307
-mas "Magnet", id: 441258766
 mas "MonitorControlLite", id: 1595464182
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
@@ -166,6 +172,7 @@ vscode "ms-vscode.js-debug-nightly"
 vscode "ms-vscode.makefile-tools"
 vscode "ms-vsliveshare.vsliveshare"
 vscode "naumovs.color-highlight"
+vscode "oderwat.indent-rainbow"
 vscode "orta.vscode-jest"
 vscode "pkief.material-icon-theme"
 vscode "plex.vscode-protolint"
