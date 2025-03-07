@@ -38,6 +38,8 @@ brew "postgresql@14", link: false
 brew "postgresql@17", link: true
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
+# SMART hard drive monitoring
+brew "smartmontools"
 # Cross-shell prompt for astronauts
 brew "starship"
 # OCR (Optical Character Recognition) engine
