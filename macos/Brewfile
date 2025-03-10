@@ -48,6 +48,8 @@ brew "tesseract"
 brew "tldr"
 # Manage complex tmux sessions easily
 brew "tmuxinator"
+# Display directories as trees (with optional color/HTML output)
+brew "tree"
 # JavaScript package manager
 brew "yarn"
 # Read system manual pages using bat as the manual page formatter
@@ -86,6 +88,8 @@ cask "kitty"
 cask "logi-options+"
 # Open-source, KeePass-client and password manager
 cask "macpass"
+# Reverse proxy, secure introspectable tunnels to localhost
+cask "ngrok"
 # Handy utility to manage and customize the notch area
 cask "notchnook"
 # System and utility switches
