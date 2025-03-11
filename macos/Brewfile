@@ -1,11 +1,18 @@
+tap "cloudflare/cloudflare"
 tap "eth-p/software"
 tap "hashicorp/tap"
 tap "homebrew/bundle"
 tap "homebrew/services"
+# In-depth attack surface mapping and asset discovery
+brew "amass"
+# Official Amazon AWS command-line interface
+brew "awscli"
 # Interpreted, interactive, object-oriented programming language
 brew "python@3.13"
 # Emacs dependency management
 brew "cask"
+# Cloudflare Tunnel client (formerly Argo Tunnel)
+brew "cloudflared"
 # Modern, maintained replacement for ls
 brew "eza"
 # Remote repository management made easy
@@ -42,6 +49,8 @@ brew "ripgrep"
 brew "smartmontools"
 # Cross-shell prompt for astronauts
 brew "starship"
+# Subdomain discovery tool
+brew "subfinder"
 # OCR (Optical Character Recognition) engine
 brew "tesseract"
 # Simplified and community-driven man pages
@@ -74,8 +83,6 @@ cask "discord"
 cask "docker"
 # Client for the Dropbox cloud storage service
 cask "dropbox"
-# Elgato FACECAM configuration tool
-cask "elgato-camera-hub"
 # Download manager with a torrent client
 cask "folx"
 # HTTP and GraphQL Client
