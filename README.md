@@ -21,7 +21,7 @@
 1. Clone this repo to your machine
 
 ```bash
-$ git clone git@github.com:phurinutwara/dotfiles.git --recursive
+$ git clone git@github.com:itsphurin/dotfiles.git --recursive
 ```
 
 2. Go to dotfiles directory and execute the installer
