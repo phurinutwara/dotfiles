@@ -21,6 +21,8 @@ brew "ghq"
 brew "git"
 # Open source programming language to build simple/reliable/efficient software
 brew "go"
+# Kubernetes package manager
+brew "helm"
 # Tool to move from `docker-compose` to Kubernetes
 brew "kompose"
 # Simple terminal UI for git commands
@@ -29,6 +31,8 @@ brew "lazygit"
 brew "mactop"
 # Mac App Store command-line interface
 brew "mas"
+# Run a Kubernetes cluster locally
+brew "minikube"
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
 # Port scanning utility for large networks
@@ -43,6 +47,8 @@ brew "pnpm"
 brew "postgresql@14", link: false
 # Object-relational database system
 brew "postgresql@17", link: true
+# Password generator
+brew "pwgen"
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
 # SMART hard drive monitoring
@@ -137,6 +143,7 @@ mas "S3", id: 6447647340
 mas "Widgetter", id: 1553223588
 mas "Xcode", id: 497799835
 vscode "aaron-bond.better-comments"
+vscode "ahmadalli.vscode-nginx-conf"
 vscode "alefragnani.bookmarks"
 vscode "andenetalexander.vim-cheatsheet"
 vscode "apollographql.vscode-apollo"
@@ -176,6 +183,7 @@ vscode "mhutchie.git-graph"
 vscode "mikestead.dotenv"
 vscode "ms-azuretools.vscode-docker"
 vscode "ms-edgedevtools.vscode-edge-devtools"
+vscode "ms-kubernetes-tools.kind-vscode"
 vscode "ms-kubernetes-tools.vscode-kubernetes-tools"
 vscode "ms-python.debugpy"
 vscode "ms-python.python"
@@ -207,6 +215,7 @@ vscode "sumneko.lua"
 vscode "timonwong.shellcheck"
 vscode "vintharas.learn-vim"
 vscode "wayou.vscode-todo-highlight"
+vscode "william-voyek.vscode-nginx"
 vscode "wix.vscode-import-cost"
 vscode "xabikos.javascriptsnippets"
 vscode "yzhang.markdown-all-in-one"
